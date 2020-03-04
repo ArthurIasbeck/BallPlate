@@ -1,9 +1,11 @@
 #include "Motor.h"
 
-Motor::Motor(int controlPin, int zeroPos)
+Motor::Motor(int controlPin, int zeroPos, int infLim, int supLim)
 {
     this->controlPin = controlPin;
     this->zeroPos = zeroPos;
+    this->infLimit = infLimit;
+    this->supLimit = supLimit;
 }
 
 void Motor::setupMotor()
@@ -13,10 +15,12 @@ void Motor::setupMotor()
 
 void Motor::setPos(int pos)
 {
+    if(pos < infLimit) pos = infLimit;
+    if(pos > supLimit) pos = supLimit;
     servo.write(pos + zeroPos);
 }
 
 void Motor::goZero()
 {
-    servo.write(zeroPos);
+    setPos(0);
 }

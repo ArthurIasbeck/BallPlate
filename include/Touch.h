@@ -3,18 +3,24 @@
 
 #include "Arduino.h"
 
-#define TOUCH_1 A1
-#define TOUCH_2 A2
+// Pinos da touch screen 
+#define TOUCH_1 A1 // Fio preto
+#define TOUCH_2 A2 
 #define TOUCH_3 A0
 #define TOUCH_4 A3
 
+//! Realiza leitura da touchscreen.
 class Touch
 {
     public:
+        //! Retorna o valor bruto (0-1023) lido no eixo X.
         int getRawX();
+        //! Retorna o valor bruto (0-1023) lido no eixo Y.
         int getRawY();
     private:
+        //! Valor bruto (0-1023) lido no eixo X.
         int xRaw;
+        //! Valor bruto (0-1023) lido no eixo Y.
         int yRaw;
 };
 

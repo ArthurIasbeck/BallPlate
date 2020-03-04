@@ -18,9 +18,7 @@ class Touch
         //! Retorna o valor bruto (0-1023) lido no eixo Y.
         int getRawY();
     private:
-        //! Valor bruto (0-1023) lido no eixo X.
         int xRaw;
-        //! Valor bruto (0-1023) lido no eixo Y.
         int yRaw;
 };
 

@@ -8,13 +8,14 @@
 class Motor
 {
     public:
-        // TODO: Neste construtor preciso dar o atacch. Uma função na classe Motors vai mandar os dois motores pra posição 0.
         Motor(int controlPin, int zeroPos); 
+        void setupMotor();
         void setPos(int pos);
         void goZero();
     private:
         int controlPin;
         int zeroPos;
+        Servo servo;
 };
 
 #endif

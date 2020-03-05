@@ -13,7 +13,7 @@ class Pid
          * @param kp Constante proporcional.
          * @param ki Constante integral.
          * @param kd Constante derivativa.
-         * @param T Tempo de amostragem em milissegundos.
+         * @param T Tempo de amostragem (em milissegundos).
          */
         Pid(float kp, float ki, float kd, float T);
         /**

@@ -23,15 +23,23 @@ class PidBp
         Motor motorA;
         Motor motorB;
         Pid pidX;
-        Pid pixY;
+        Pid pidY;
         float x; 
         float y;
         void updatePosXY();
         void controlStop();
         void checkBall();
-        void computeControl();
+        void applyControl();
+        void waitSampleTime();
         int countNoBall;
         bool stopControl;
+        float controlX;
+        float controlY;
+        long dt;
+        long t0;
+        long tf; 
+        int Tm; 
+        int T;
 };
 
 #endif

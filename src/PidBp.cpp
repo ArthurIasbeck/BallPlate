@@ -20,6 +20,7 @@ void PidBp::loop()
 {
     updatePosXY();
     checkBall();
+    computeControl();
 }
 
 void PidBp::updatePosXY()
@@ -38,10 +39,15 @@ void PidBp::checkBall()
     if(stopControl)
     {
         motorA.goZero();
-        motorB.goZero
-        while(1)
+        motorB.goZero();
+        while(x == Touch::NO_BALL)
         {
-
+            x = touch.getCmX();
         }
     }
+}
+
+void PidBp::computeControl()
+{
+    
 }

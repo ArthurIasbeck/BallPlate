@@ -29,6 +29,7 @@ class PidBp
         void updatePosXY();
         void controlStop();
         void checkBall();
+        void computeControl();
         int countNoBall;
         bool stopControl;
 };

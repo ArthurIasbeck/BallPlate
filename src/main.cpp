@@ -20,4 +20,5 @@ void loop() {
  * TODO: Testar a classe Motor
  * TODO: Testar a classe Touch
  * TODO: Implementar o controle PID
+ * TODO: Testar a classe MovingAverage
  */

@@ -4,6 +4,7 @@
 #include "Arduino.h"
 #include "Touch.h"
 #include "Motor.h"
+#include "Pid.h"
 #include "Pin.h"
 #include "MovingAverage.h"
 
@@ -21,6 +22,15 @@ class PidBp
         MovingAverage filterY;
         Motor motorA;
         Motor motorB;
+        Pid pidX;
+        Pid pixY;
+        float x; 
+        float y;
+        void updatePosXY();
+        void controlStop();
+        void checkBall();
+        int countNoBall;
+        bool stopControl;
 };
 
 #endif

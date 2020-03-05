@@ -12,10 +12,11 @@ class Touch
         int getRawX();
         //! Retorna o valor bruto (0-1023) lido no eixo Y.
         int getRawY();
+        float getCmX();
+        float getCmY();
+        static const int NO_BALL = -999;
     private:
         int touchPin1, touchPin2, touchPin3, touchPin4;
-        int xRaw;
-        int yRaw;
 };
 
 #endif

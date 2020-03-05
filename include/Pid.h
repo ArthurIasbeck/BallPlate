@@ -16,6 +16,7 @@ class Pid
          * @param T Tempo de amostragem (em milissegundos).
          */
         Pid(float kp, float ki, float kd, float T);
+        Pid();
         /**
          * @brief Computa a ação de controle.
          * 
@@ -36,7 +37,11 @@ class Pid
          * @param ref Referência (valor desejado para a saída).
          */
         void setRef(float ref);
-        //! Retorna o valor do erro. 
+        /**
+         * @brief Retorna o valor do erro.
+         * 
+         * @return Erro computado na última iteração.
+         */
         float getErr();
     private:
         float kp, ki, kd;

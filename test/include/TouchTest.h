@@ -11,7 +11,7 @@ class TouchTest{
         //! Função loop() para verificação do funcionamento da classe Touch.
         void loop();
         //! Apresenta no Monitor Serial os valores brutos da touchscreen nas direções X e Y.
-        void getRawValues();
+        void showRawValues();
     private:
         Touch touch;
 };

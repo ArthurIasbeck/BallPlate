@@ -8,12 +8,12 @@ void TouchTest::setup()
 
 void TouchTest::loop()
 {
-    getRawValues();
+    showRawValues();
+    delay(100);
 }
 
-void TouchTest::getRawValues()
+void TouchTest::showRawValues()
 {
     Serial.print("getRawX" + String(touch.getRawX) + "\t");
     Serial.println("getRawY" + String(touch.getRawY));
-    delay(100);
 }

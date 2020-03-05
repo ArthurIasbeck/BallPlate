@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "glpst",
-  1: "pt",
-  2: "gls"
+  0: "cglmpst",
+  1: "mpt",
+  2: "cglmps"
 };
 
 var indexSectionNames =

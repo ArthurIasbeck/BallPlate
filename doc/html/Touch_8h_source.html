@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ball and Plate: /home/iasbeck/Área de Trabalho/ballPlate/ballPlate/include/Touch.h Source File</title>
+<title>Ball and Plate: /home/iasbeck/Área de Trabalho/ballPlate/include/Touch.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,27 +75,24 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Pinos da touch screen </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define TOUCH_1 A1 // Fio preto</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define TOUCH_2 A2 </span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define TOUCH_3 A0</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define TOUCH_4 A3</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classTouch.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTouch.html">Touch</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">getRawX</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">getRawY</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">int</span> xRaw;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">int</span> yRaw;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classTouch.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTouch.html">Touch</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="classTouch.html">Touch</a>(<span class="keywordtype">int</span> touchPin1, <span class="keywordtype">int</span> touchPin2, <span class="keywordtype">int</span> touchPin3, <span class="keywordtype">int</span> touchPin4);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">getRawX</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">getRawY</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">float</span> getCmX();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">float</span> getCmY();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> NO_BALL = -999;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> touchPin1, touchPin2, touchPin3, touchPin4;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassTouch_html_adef1e84e216d347900a36c5b8c30a888"><div class="ttname"><a href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a></div><div class="ttdeci">int getRawY()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00016">Touch.cpp:16</a></div></div>
-<div class="ttc" id="aclassTouch_html"><div class="ttname"><a href="classTouch.html">Touch</a></div><div class="ttdoc">Realiza leitura da touchscreen.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8h_source.html#l00013">Touch.h:13</a></div></div>
-<div class="ttc" id="aclassTouch_html_aade4096a1f33ce849f0e2464e11549c2"><div class="ttname"><a href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a></div><div class="ttdeci">int getRawX()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00003">Touch.cpp:3</a></div></div>
+<div class="ttc" id="aclassTouch_html_adef1e84e216d347900a36c5b8c30a888"><div class="ttname"><a href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a></div><div class="ttdeci">int getRawY()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00025">Touch.cpp:25</a></div></div>
+<div class="ttc" id="aclassTouch_html"><div class="ttname"><a href="classTouch.html">Touch</a></div><div class="ttdoc">Realiza leitura da touchscreen.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8h_source.html#l00007">Touch.h:7</a></div></div>
+<div class="ttc" id="aclassTouch_html_aade4096a1f33ce849f0e2464e11549c2"><div class="ttname"><a href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a></div><div class="ttdeci">int getRawX()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00011">Touch.cpp:11</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

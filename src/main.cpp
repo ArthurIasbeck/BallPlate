@@ -1,21 +1,22 @@
 #include <Arduino.h>
 #include "PidBp.h"
-#include "TouchTest.h"
-#include "MotorTest.h"
+// #include "TouchTest.h"
+// #include "MotorTest.h"
 
 PidBp pidBp;
-TouchTest testTouch;
-MotorTest motorTest;
+// TouchTest testTouch;
+// MotorTest motorTest;
 
 void setup() {
-    motorTest.setup();
+    // motorTest.setup();
 }
 
 void loop() {
-    motorTest.loop();
+    // motorTest.loop();
 }
 
 /**
+ * TODO: RESOLVER CONSTRUTORES DEFAULT()!!!
  * TODO: Implementar função para retornar posição da esfera em centímetros
  * TODO: Testar a classe Motor
  * TODO: Testar a classe Touch

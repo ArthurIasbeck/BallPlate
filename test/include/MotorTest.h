@@ -2,11 +2,7 @@
 #define MotorTest_h
 
 #include "Motor.h"
-
-#define POT_A A4
-#define POT_B A5
-#define MOT_A 5
-#define MOT_B 3
+#include "Pin.h"
 
 //! Verifica o funcionamento da classe Motor
 class MotorTest{

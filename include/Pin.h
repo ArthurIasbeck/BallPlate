@@ -1,9 +1,15 @@
+/**
+ * @brief Arquivo criado para definição das conexões físicas do arduino e de 
+ * outras variáveis de vital importância ao funcionamento dos códigos contidos 
+ * no projeto.
+ */
+
 #ifndef Pin_h
 #define Pin_h
 
 #include "Arduino.h"
 
-static const int TOUCH_1 = A1; 
+static const int TOUCH_1 = A1; // Fio preto
 static const int TOUCH_2 = A2; 
 static const int TOUCH_3 = A0; 
 static const int TOUCH_4 = A3; 

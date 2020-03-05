@@ -7,6 +7,7 @@ void PidBp::setup()
     filterY = MovingAverage(FILTER_SIZE);
     motorA = Motor(MOT_A, 90, -90, 90);
     motorB = Motor(MOT_B, 90, -90, 90);
+
     Serial.begin(9600);
     while(!Serial);
 }

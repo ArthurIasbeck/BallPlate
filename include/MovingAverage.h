@@ -5,10 +5,22 @@
 
 #define MAX_SIZE 20
 
+//! Implementa um filtro de médias móveis.
 class MovingAverage
 {
     public:
+        /**
+         * @brief Constrói um objeto MovingAverage.
+         * 
+         * @param filterSize Número de dados considerado na computação da média.
+         */
         MovingAverage(int filterSize);
+        /**
+         * @brief Retorna o dado filtrado (saída do filtro)
+         * 
+         * @param input último valor bruto lido.
+         * @return Dado filtrado
+         */
         float compute(float input);
     private:
         int filterSize;

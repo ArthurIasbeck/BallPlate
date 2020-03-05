@@ -3,12 +3,6 @@
 
 #include "Arduino.h"
 
-// Pinos da touchscreen 
-// touchPin1 A1 // Fio preto
-// touchPin2 A2 
-// touchPin3 A0
-// touchPin4 A3
-
 //! Realiza leitura da touchscreen.
 class Touch
 {

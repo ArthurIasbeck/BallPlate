@@ -14,4 +14,6 @@ static const int MOT_B = 3;
 static const int POT_A = A4;
 static const int POT_B = A5;
 
+static const int FILTER_SIZE = 5;
+
 #endif

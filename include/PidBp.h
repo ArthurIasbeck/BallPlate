@@ -5,6 +5,7 @@
 #include "Touch.h"
 #include "Motor.h"
 #include "Pin.h"
+#include "MovingAverage.h"
 
 //! Implementa o controle do Ball and Plate utilizano PID. 
 class PidBp
@@ -16,6 +17,8 @@ class PidBp
         void loop();
     private:
         Touch touch;
+        MovingAverage filterX;
+        MovingAverage filterY;
         Motor motorA;
         Motor motorB;
 };

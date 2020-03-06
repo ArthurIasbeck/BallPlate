@@ -3,8 +3,8 @@
 #include "Pin.h"
 #include "Motor.h"
 
-Motor motorA(MOT_A, 0, 0, 180);
-Motor motorB(MOT_B, 0, 0, 180);
+Motor motorA(MOT_A, -50, 50);
+Motor motorB(MOT_B, -50, 50);
 
 int readPotA, readPotB;
 int posA, posB;
@@ -22,8 +22,8 @@ void loopRoot()
     readPotA = analogRead(POT_A);
     readPotB = analogRead(POT_B);
 
-    posA = map(readPotA, 0, 1023, 0, 180);
-    posB = map(readPotB, 0, 1023, 0, 180);
+    posA = map(readPotA, 0, 1023, -90, 90);
+    posB = map(readPotB, 0, 1023, -90, 90);
 
     motorA.setPos(posA);
     motorB.setPos(posB);

@@ -15,7 +15,6 @@ MovingAverage::MovingAverage(int filterSize)
         filterSize = 20;
     }
     this->filterSize = filterSize;
-    Serial.println("filterSize = " + String(filterSize)); // DEBUG
 }
 
 MovingAverage::MovingAverage()

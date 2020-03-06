@@ -11,8 +11,8 @@ void PidBp::setup()
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     filterX = MovingAverage(FILTER_SIZE);
     filterY = MovingAverage(FILTER_SIZE);
-    motorA = Motor(MOT_A, 90, -90, 90);
-    motorB = Motor(MOT_B, 90, -90, 90);
+    motorA = Motor(MOT_A, -90, 90);
+    motorB = Motor(MOT_B, -90, 90);
 
     // Configurações do controlador PID (eixo x)
     pidX = Pid(1, 0, 0, 10);

@@ -12,11 +12,10 @@ class Motor
          * @brief Constrói um objeto Motor.
          * 
          * @param controlPin Controle PWM do motor.
-         * @param zeroPos Posição em que será definido o zero (0 - 180).
-         * @param infLim Limite inferior para a posição real do motor (0 - 180).
-         * @param supLim Limite superior para a posição real do motor (0 - 180).
+         * @param infLim Limite inferior para a posição do motor (-90 - 0).
+         * @param supLim Limite superior para a posição do motor (0 - 90).
          */
-        Motor(int controlPin, int zeroPos, int infLim, int supLim); 
+        Motor(int controlPin, int infLimit, int supLimit); 
         /**
          * @brief Constrói um objeto Motor padrão.
          */
@@ -31,6 +30,12 @@ class Motor
          * @param pos Posição para a qual é enviada o motor.
          */
         void setPos(int pos);
+        /**
+         * @brief Define o zero do motor (igual a 90 por padrão).
+         * 
+         * @param zeroPos Posição considerada como zero do motor (0 - 180). 
+         */
+        void setZero(int zeroPos);
         /**
          * @brief Envia o motor para a posição 0.
          */

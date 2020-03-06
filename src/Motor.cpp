@@ -1,11 +1,16 @@
 #include "Motor.h"
 
-Motor::Motor(int controlPin, int zeroPos, int infLim, int supLim)
+Motor::Motor(int controlPin, int infLimit, int supLimit)
 {
+    if(infLimit < -90) infLimit = -90;
+    if(infLimit > 0) infLimit = 0;
+    if(supLimit < 0) supLimit = 0;
+    if(supLimit > 90) supLimit = 90;
+
     this->controlPin = controlPin;
-    this->zeroPos = zeroPos;
     this->infLimit = infLimit;
     this->supLimit = supLimit;
+    zeroPos = 90;
 }
 
 Motor::Motor()
@@ -20,11 +25,14 @@ void Motor::setupMotor()
 
 void Motor::setPos(int pos)
 {
-    float realPos;
-    realPos = pos + zeroPos;
-    if(realPos < infLimit) realPos = infLimit;
-    if(realPos > supLimit) realPos = supLimit;
-    servo.write(realPos);
+    if(pos < infLimit) pos = infLimit;
+    if(pos > supLimit) pos = supLimit;
+    servo.write(pos + zeroPos);
+}
+
+void Motor::setZero(int zeroPos)
+{
+    this->zeroPos = zeroPos;
 }
 
 void Motor::goZero()

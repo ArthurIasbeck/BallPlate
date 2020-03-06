@@ -80,6 +80,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a35891a4511bcf990a51b5509f7679f75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPid.html#a35891a4511bcf990a51b5509f7679f75">Pid</a> (float kp, float ki, float kd, float T)</td></tr>
 <tr class="memdesc:a35891a4511bcf990a51b5509f7679f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói um objeto PID.  <a href="classPid.html#a35891a4511bcf990a51b5509f7679f75">More...</a><br /></td></tr>
 <tr class="separator:a35891a4511bcf990a51b5509f7679f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bcea8fa5b4f855f796ef55c6bc169ae"><td class="memItemLeft" align="right" valign="top"><a id="a8bcea8fa5b4f855f796ef55c6bc169ae"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPid.html#a8bcea8fa5b4f855f796ef55c6bc169ae">Pid</a> ()</td></tr>
+<tr class="memdesc:a8bcea8fa5b4f855f796ef55c6bc169ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói um objeto PID padrão. <br /></td></tr>
+<tr class="separator:a8bcea8fa5b4f855f796ef55c6bc169ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6692082b66b4b61563213545cf1cfa2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPid.html#ab6692082b66b4b61563213545cf1cfa2">compute</a> (float out)</td></tr>
 <tr class="memdesc:ab6692082b66b4b61563213545cf1cfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computa a ação de controle.  <a href="classPid.html#ab6692082b66b4b61563213545cf1cfa2">More...</a><br /></td></tr>
 <tr class="separator:ab6692082b66b4b61563213545cf1cfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,13 +151,13 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00003">3</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    this-&gt;kp = kp;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    this-&gt;ki = ki;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    this-&gt;kd = kd;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    this-&gt;T = T;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00008">8</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    this-&gt;kp = kp;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;ki = ki;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;kd = kd;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;T = T;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -183,20 +187,22 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Ação de controle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00021">21</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span> control; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">float</span> ie, de;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    err = ref - out;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    de = (errPrev - err)/T;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ie = ie + err*T;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Zero o integrador para evitar overshoots muito altos</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span>(err*errPrev &lt; 0) ie = 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    control = kp*err + ki*ie + kd*de;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00026">26</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">float</span> control; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">float</span> ie=0, de;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    err = ref - out;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    de = (errPrev - err)/T;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ie = ie + err*T;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Zero o integrador para amenizar o overshoot</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(err*errPrev &lt; 0) ie = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    control = kp*err + ki*ie + kd*de;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> control;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -218,10 +224,10 @@ Public Member Functions</h2></td></tr>
 <p>Retorna o valor do erro. </p>
 <dl class="section return"><dt>Returns</dt><dd>Erro computado na última iteração. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00016">16</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> err;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00021">21</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> err;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -286,10 +292,10 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00011">11</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;ref = ref;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Pid_8cpp_source.html#l00016">16</a> of file <a class="el" href="Pid_8cpp_source.html">Pid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;ref = ref;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

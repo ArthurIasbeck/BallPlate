@@ -72,7 +72,7 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;Touch.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;Touch::Touch(<span class="keywordtype">int</span> touchPin1, <span class="keywordtype">int</span> touchPin2, <span class="keywordtype">int</span> touchPin3, <span class="keywordtype">int</span> touchPin4)</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classTouch.html#a783d54a50c80a2ba26f5709cf1b257be">    3</a></span>&#160;<a class="code" href="classTouch.html#a5de15620894cc276f2c0844fa0507246">Touch::Touch</a>(<span class="keywordtype">int</span> touchPin1, <span class="keywordtype">int</span> touchPin2, <span class="keywordtype">int</span> touchPin3, <span class="keywordtype">int</span> touchPin4)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    this-&gt;touchPin1 = touchPin1;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    this-&gt;touchPin2 = touchPin2;</div>
@@ -108,7 +108,7 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    yRaw = analogRead(touchPin2);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">float</span> Touch::getCmX()</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">   39</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a>()</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">float</span> xRaw, xCm;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    xRaw = <a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">getRawX</a>();</div>
@@ -122,7 +122,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">float</span> Touch::getCmY()</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">   53</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">Touch::getCmY</a>()</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> yRaw, yCm;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    yRaw = <a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">getRawY</a>();</div>
@@ -137,6 +137,9 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassTouch_html_adef1e84e216d347900a36c5b8c30a888"><div class="ttname"><a href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a></div><div class="ttdeci">int getRawY()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00025">Touch.cpp:25</a></div></div>
+<div class="ttc" id="aclassTouch_html_a5de15620894cc276f2c0844fa0507246"><div class="ttname"><a href="classTouch.html#a5de15620894cc276f2c0844fa0507246">Touch::Touch</a></div><div class="ttdeci">Touch()</div><div class="ttdoc">Constrói um objeto Touch padrão.</div></div>
+<div class="ttc" id="aclassTouch_html_a54a50de35fd6f5c8b52ae33f7d8bb473"><div class="ttname"><a href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">Touch::getCmY</a></div><div class="ttdeci">float getCmY()</div><div class="ttdoc">Retorna a posição do toque em cm no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00053">Touch.cpp:53</a></div></div>
+<div class="ttc" id="aclassTouch_html_a273f44de152e01e8d04cb4eecf704ef0"><div class="ttname"><a href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a></div><div class="ttdeci">float getCmX()</div><div class="ttdoc">Retorna a posição do toque em cm no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00039">Touch.cpp:39</a></div></div>
 <div class="ttc" id="aclassTouch_html_aade4096a1f33ce849f0e2464e11549c2"><div class="ttname"><a href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a></div><div class="ttdeci">int getRawX()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00011">Touch.cpp:11</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

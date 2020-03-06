@@ -80,6 +80,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9a2e3e979a996b25e3cfd3781d6fb52a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#a9a2e3e979a996b25e3cfd3781d6fb52a">Motor</a> (int controlPin, int zeroPos, int infLim, int supLim)</td></tr>
 <tr class="memdesc:a9a2e3e979a996b25e3cfd3781d6fb52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói um objeto <a class="el" href="classMotor.html" title="Implementa funções para controle dos servomotores.">Motor</a>.  <a href="classMotor.html#a9a2e3e979a996b25e3cfd3781d6fb52a">More...</a><br /></td></tr>
 <tr class="separator:a9a2e3e979a996b25e3cfd3781d6fb52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6106b4c506411265c5face762b6c004"><td class="memItemLeft" align="right" valign="top"><a id="af6106b4c506411265c5face762b6c004"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#af6106b4c506411265c5face762b6c004">Motor</a> ()</td></tr>
+<tr class="memdesc:af6106b4c506411265c5face762b6c004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrói um objeto <a class="el" href="classMotor.html" title="Implementa funções para controle dos servomotores.">Motor</a> padrão. <br /></td></tr>
+<tr class="separator:af6106b4c506411265c5face762b6c004"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72fd6780dc8333a294725385177bc4eb"><td class="memItemLeft" align="right" valign="top"><a id="a72fd6780dc8333a294725385177bc4eb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#a72fd6780dc8333a294725385177bc4eb">setupMotor</a> ()</td></tr>
 <tr class="memdesc:a72fd6780dc8333a294725385177bc4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza configurações iniciais do motor. <br /></td></tr>
@@ -181,12 +185,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Motor_8cpp_source.html#l00016">16</a> of file <a class="el" href="Motor_8cpp_source.html">Motor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span>(pos &lt; infLimit) pos = infLimit;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span>(pos &gt; supLimit) pos = supLimit;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    servo.write(pos + zeroPos);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Motor_8cpp_source.html#l00021">21</a> of file <a class="el" href="Motor_8cpp_source.html">Motor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span>(pos &lt; infLimit) pos = infLimit;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span>(pos &gt; supLimit) pos = supLimit;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    servo.write(pos + zeroPos);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

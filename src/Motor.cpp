@@ -8,6 +8,11 @@ Motor::Motor(int controlPin, int zeroPos, int infLim, int supLim)
     this->supLimit = supLimit;
 }
 
+Motor::Motor()
+{
+    
+}
+
 void Motor::setupMotor()
 {
     servo.attach(controlPin);

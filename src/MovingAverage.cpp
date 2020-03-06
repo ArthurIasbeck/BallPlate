@@ -17,6 +17,11 @@ MovingAverage::MovingAverage(int stepsPast)
     this->filterSize = filterSize;
 }
 
+MovingAverage::MovingAverage()
+{
+    
+}
+
 float MovingAverage::compute(float input)
 {
     float output = 0;

@@ -17,7 +17,13 @@ class Motor
          * @param supLim Limite superior para a posição do motor (-90 - 90).
          */
         Motor(int controlPin, int zeroPos, int infLim, int supLim); 
-        //! Realiza configurações iniciais do motor.
+        /**
+         * @brief Constrói um objeto Motor padrão.
+         */
+        Motor();
+        /**
+         * @brief Realiza configurações iniciais do motor.
+         */
         void setupMotor();
         /**
          * @brief Envia o motor para uma dada posição.
@@ -25,7 +31,9 @@ class Motor
          * @param pos Posição para a qual é enviada o motor.
          */
         void setPos(int pos);
-        //! Envia o motor para a posição 0.
+        /**
+         * @brief Envia o motor para a posição 0.
+         */
         void goZero();
     private:
         int controlPin;

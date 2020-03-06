@@ -16,6 +16,9 @@ class Pid
          * @param T Tempo de amostragem (em milissegundos).
          */
         Pid(float kp, float ki, float kd, float T);
+        /**
+         * @brief Constrói um objeto PID padrão.
+         */
         Pid();
         /**
          * @brief Computa a ação de controle.

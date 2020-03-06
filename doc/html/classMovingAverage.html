@@ -158,26 +158,26 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Dado filtrado </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MovingAverage_8cpp_source.html#l00020">20</a> of file <a class="el" href="MovingAverage_8cpp_source.html">MovingAverage.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span> output = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Atualizando o vetor que armazena os dados passados</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = MAX_SIZE - 1; i &gt; 0; i--)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        lastInputs[i] = lastInputs[i-1];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    lastInputs[0] = input;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Calculando o valor de saída do filtro</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; filterSize; i++)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        output += lastInputs[i];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    output /= filterSize;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> output;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MovingAverage_8cpp_source.html#l00025">25</a> of file <a class="el" href="MovingAverage_8cpp_source.html">MovingAverage.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">float</span> output = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// Atualizando o vetor que armazena os dados passados</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = MAX_SIZE - 1; i &gt; 0; i--)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        lastInputs[i] = lastInputs[i-1];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    lastInputs[0] = input;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Calculando o valor de saída do filtro</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; filterSize; i++)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        output += lastInputs[i];</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    output /= filterSize;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> output;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

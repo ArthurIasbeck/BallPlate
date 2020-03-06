@@ -11,6 +11,7 @@ Motor::Motor(int controlPin, int infLimit, int supLimit)
     this->infLimit = infLimit;
     this->supLimit = supLimit;
     zeroPos = 90;
+    direction = 1;
 }
 
 Motor::Motor()
@@ -25,6 +26,7 @@ void Motor::setupMotor()
 
 void Motor::setPos(int pos)
 {
+    pos *= direction;
     if(pos < infLimit) pos = infLimit;
     if(pos > supLimit) pos = supLimit;
     servo.write(pos + zeroPos);
@@ -38,4 +40,9 @@ void Motor::setZero(int zeroPos)
 void Motor::goZero()
 {
     setPos(0);
+}
+
+void Motor::invertMotor()
+{
+    direction = -1;
 }

@@ -40,10 +40,15 @@ class Motor
          * @brief Envia o motor para a posição 0.
          */
         void goZero();
+        /**
+         * @brief Inverte a direção do giro dos motores quando chamada.
+         */
+        void invertMotor();
     private:
         int controlPin;
         int zeroPos;
         int infLimit, supLimit;
+        int direction;
         Servo servo;
 };
 

@@ -12,9 +12,9 @@ class Motor
          * @brief Constrói um objeto Motor.
          * 
          * @param controlPin Controle PWM do motor.
-         * @param zeroPos Posição (0 - 180) em que será definido o zero.
-         * @param infLim Limite inferior para a posição do motor (-90 - 90).
-         * @param supLim Limite superior para a posição do motor (-90 - 90).
+         * @param zeroPos Posição em que será definido o zero (0 - 180).
+         * @param infLim Limite inferior para a posição real do motor (0 - 180).
+         * @param supLim Limite superior para a posição real do motor (0 - 180).
          */
         Motor(int controlPin, int zeroPos, int infLim, int supLim); 
         /**

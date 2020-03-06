@@ -1,4 +1,4 @@
-#include "../main/mainMovingAverage.h"
+#include "../main/mainMotor.h"
 
 void setup()
 {
@@ -11,6 +11,6 @@ void loop()
 }
 
 /**
+ * TODO: Testar a classe de motores
  * TODO: Testar o controle PID
- * TODO: Testar a classe MovingAverage
  */

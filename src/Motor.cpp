@@ -20,9 +20,11 @@ void Motor::setupMotor()
 
 void Motor::setPos(int pos)
 {
-    if(pos < infLimit) pos = infLimit;
-    if(pos > supLimit) pos = supLimit;
-    servo.write(pos + zeroPos);
+    float realPos;
+    realPos = pos + zeroPos;
+    if(realPos < infLimit) realPos = infLimit;
+    if(realPos > supLimit) realPos = supLimit;
+    servo.write(realPos);
 }
 
 void Motor::goZero()

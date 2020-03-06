@@ -10,7 +10,7 @@ Touch::Touch(int touchPin1, int touchPin2, int touchPin3, int touchPin4)
 
 int Touch::getRawX()
 {
-    float xRaw;
+    int xRaw;
     pinMode(touchPin3, INPUT);
     pinMode(touchPin1, INPUT);
     digitalWrite(touchPin1, LOW);
@@ -20,11 +20,12 @@ int Touch::getRawX()
     digitalWrite(touchPin4, HIGH);
     delay(3);
     xRaw = analogRead(touchPin3);
+    return xRaw;
 }
 
 int Touch::getRawY()
 {
-    float yRaw;
+    int yRaw;
     pinMode(touchPin3, OUTPUT);
     digitalWrite(touchPin3, HIGH);
     pinMode(touchPin1, OUTPUT);
@@ -34,32 +35,27 @@ int Touch::getRawY()
     digitalWrite(touchPin4, LOW);
     delay(3);
     yRaw = analogRead(touchPin2);
+    return yRaw;
 }
 
 float Touch::getCmX()
 {
-    float xRaw, xCm;
+    float xRaw, xCm = NO_BALL;
     xRaw = getRawX();
-    if(xRaw <= 10)
-    {
-        xCm = NO_BALL;
-    }
-    else
+    if(xRaw > 10)
     {
         xCm = -20.2769 + 0.043315402*xRaw;
     }
+    return xCm;
 }
 
 float Touch::getCmY()
 {
-    float yRaw, yCm;
+    float yRaw, yCm = NO_BALL;
     yRaw = getRawY();
-    if(yRaw <= 10)
-    {
-        yCm = NO_BALL;
-    }
-    else
+    if(yRaw > 10)
     {
         yCm = -20.2769 + 0.043315402*yRaw;
     }
+    return yCm;
 }

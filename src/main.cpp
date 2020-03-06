@@ -1,4 +1,4 @@
-#include "../main/mainTouch.h"
+#include "../main/mainMovingAverage.h"
 
 void setup()
 {
@@ -11,8 +11,6 @@ void loop()
 }
 
 /**
- * TODO: Implementar função para retornar posição da esfera em centímetros
- * TODO: Testar a classe Touch
- * TODO: Implementar o controle PID
+ * TODO: Testar o controle PID
  * TODO: Testar a classe MovingAverage
  */

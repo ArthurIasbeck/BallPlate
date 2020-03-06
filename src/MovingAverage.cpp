@@ -1,6 +1,6 @@
 #include "MovingAverage.h"
 
-MovingAverage::MovingAverage(int stepsPast)
+MovingAverage::MovingAverage(int filterSize)
 {
     // Inicializando o vetor que armazena os dados passados
     for(int i = 0; i < 20; i++)
@@ -15,6 +15,7 @@ MovingAverage::MovingAverage(int stepsPast)
         filterSize = 20;
     }
     this->filterSize = filterSize;
+    Serial.println("filterSize = " + String(filterSize)); // DEBUG
 }
 
 MovingAverage::MovingAverage()
@@ -38,6 +39,7 @@ float MovingAverage::compute(float input)
     {
         output += lastInputs[i];
     }
+
     output /= filterSize;
 
     return output;

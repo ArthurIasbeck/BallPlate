@@ -44,7 +44,7 @@ float Touch::getCmX()
     xRaw = getRawX();
     if(xRaw > 10)
     {
-        xCm = -20.2769 + 0.043315402*xRaw;
+        xCm = 0.0409*xRaw - 19.642;
     }
     return xCm;
 }
@@ -55,7 +55,7 @@ float Touch::getCmY()
     yRaw = getRawY();
     if(yRaw > 10)
     {
-        yCm = -20.2769 + 0.043315402*yRaw;
+        yCm = 0.0354*yRaw - 16.612;
     }
     return yCm;
 }

@@ -19,5 +19,5 @@ void loopRoot() {
     y = touch.getCmY();
     Serial.print(String(xRaw) + "\t" + String(yRaw) + "\t");
     Serial.println(String(x) + "\t" + String(y));
-    delay(100);   
+    delay(2000);   
 }

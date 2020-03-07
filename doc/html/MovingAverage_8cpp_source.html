@@ -72,7 +72,7 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;MovingAverage.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classMovingAverage.html#af279499768c6221aed920f7d5250ddcf">    3</a></span>&#160;<a class="code" href="classMovingAverage.html#af279499768c6221aed920f7d5250ddcf">MovingAverage::MovingAverage</a>(<span class="keywordtype">int</span> stepsPast)</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classMovingAverage.html#af279499768c6221aed920f7d5250ddcf">    3</a></span>&#160;<a class="code" href="classMovingAverage.html#af279499768c6221aed920f7d5250ddcf">MovingAverage::MovingAverage</a>(<span class="keywordtype">int</span> filterSize)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="comment">// Inicializando o vetor que armazena os dados passados</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 20; i++)</div>
@@ -110,10 +110,11 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        output += lastInputs[i];</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    output /= filterSize;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> output;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    output /= filterSize;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> output;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassMovingAverage_html_af279499768c6221aed920f7d5250ddcf"><div class="ttname"><a href="classMovingAverage.html#af279499768c6221aed920f7d5250ddcf">MovingAverage::MovingAverage</a></div><div class="ttdeci">MovingAverage(int filterSize)</div><div class="ttdoc">Constrói um objeto MovingAverage.</div><div class="ttdef"><b>Definition:</b> <a href="MovingAverage_8cpp_source.html#l00003">MovingAverage.cpp:3</a></div></div>
 <div class="ttc" id="aclassMovingAverage_html_a7247bd0a4b8c62b36356a0e32be496e2"><div class="ttname"><a href="classMovingAverage.html#a7247bd0a4b8c62b36356a0e32be496e2">MovingAverage::compute</a></div><div class="ttdeci">float compute(float input)</div><div class="ttdoc">Retorna o dado filtrado (saída do filtro)</div><div class="ttdef"><b>Definition:</b> <a href="MovingAverage_8cpp_source.html#l00025">MovingAverage.cpp:25</a></div></div>

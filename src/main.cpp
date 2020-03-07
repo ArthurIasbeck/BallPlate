@@ -11,6 +11,5 @@ void loop()
 }
 
 /**
- * TODO: Testar a classe de motores
  * TODO: Testar o controle PID
  */

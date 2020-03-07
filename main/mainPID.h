@@ -28,11 +28,12 @@ void updatePosXY();
 void controlStop();
 void checkBall();
 void applyControl();
+void showData();
 void waitSampleTime();
 
 void setupRoot()
 {
-    Tm = 10;
+    Tm = 100;
     T = Tm*1000;
 
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
@@ -40,6 +41,10 @@ void setupRoot()
     filterY = MovingAverage(FILTER_SIZE);
     motorA = Motor(MOT_A, -75, 75);
     motorB = Motor(MOT_B, -55, 75);
+
+    // Configuração dos motores
+    motorA.setupMotor();
+    motorB.setupMotor();
 
     // Configurações do controlador PID (eixo x)
     pidX = Pid(1, 0, 0, 10);
@@ -65,6 +70,7 @@ void setupRoot()
     Serial.println("2"); delay(1000);
     Serial.println("1"); delay(1000);
 
+    dt = -1;
     t0 = micros();
 }
 
@@ -73,6 +79,7 @@ void loopRoot()
     updatePosXY();
     checkBall();
     applyControl();
+    showData();
     waitSampleTime();
 }
 
@@ -120,6 +127,16 @@ void applyControl()
     motorB.setPos(controlY);
 }
 
+void showData()
+{
+    Serial.print("x = " + String(x) + "|");
+    Serial.print("y = " + String(y) + "|");
+    Serial.print("controlX = " + String(controlX) + "|");
+    Serial.print("controlY = " + String(controlY) + "|");
+    Serial.print("dt = " + String(dt) + "|");
+    Serial.print("\n");
+}
+
 void waitSampleTime()
 {
     while(1)
@@ -128,4 +145,5 @@ void waitSampleTime()
         dt = tf - t0;
         if(dt > T) break;
     }
+    t0 = micros();
 }

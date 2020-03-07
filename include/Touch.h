@@ -46,9 +46,12 @@ class Touch
          * @return Posição no eixo Y. 
          */
         float getCmY();
-        static const int NO_BALL = -999;
+        bool isTouching();
     private:
         int touchPin1, touchPin2, touchPin3, touchPin4;
+        float xRaw, yRaw;
+        float xCm, yCm;
+        bool touching;
 };
 
 #endif

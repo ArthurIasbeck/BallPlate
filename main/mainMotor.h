@@ -3,8 +3,8 @@
 #include "Pin.h"
 #include "Motor.h"
 
-Motor motorA(MOT_A, -50, 50);
-Motor motorB(MOT_B, -50, 50);
+Motor motorA(MOT_A, -90, 90);
+Motor motorB(MOT_B, -90, 90);
 
 int readPotA, readPotB;
 int posA, posB;

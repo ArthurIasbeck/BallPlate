@@ -38,8 +38,8 @@ void setupRoot()
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     filterX = MovingAverage(FILTER_SIZE);
     filterY = MovingAverage(FILTER_SIZE);
-    motorA = Motor(MOT_A, -90, 90);
-    motorB = Motor(MOT_B, -90, 90);
+    motorA = Motor(MOT_A, -75, 75);
+    motorB = Motor(MOT_B, -55, 75);
 
     // Configurações do controlador PID (eixo x)
     pidX = Pid(1, 0, 0, 10);
@@ -56,6 +56,14 @@ void setupRoot()
 
     Serial.begin(9600);
     while(!Serial);
+
+    motorA.goZero();
+    motorB.goZero();
+
+    Serial.println("Inicialização do código...");
+    Serial.println("3"); delay(1000);
+    Serial.println("2"); delay(1000);
+    Serial.println("1"); delay(1000);
 
     t0 = micros();
 }

@@ -92,10 +92,7 @@ void updatePosXY()
     x = filterX.compute(touch.getCmX());
     y = filterY.compute(touch.getCmY());
 
-    if(x == Touch::NO_BALL) countNoBall += 1;
-    else countNoBall = 0;
-
-    if(countNoBall == 5) stopControl = true; 
+    if(!touch.isTouching()) stopControl = true;
 }
 
 /**
@@ -108,9 +105,9 @@ void checkBall()
     {
         motorA.goZero();
         motorB.goZero();
-        while(x == Touch::NO_BALL)
+        while(!touch.isTouching())
         {
-            x = touch.getCmX();
+            touch.getCmX();
         }
     }
 }

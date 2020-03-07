@@ -3,11 +3,12 @@
 #include "Touch.h"
 #include "Pin.h"
 
-Touch touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
+Touch touch;
 int xRaw, yRaw;
 float x, y;
 
 void setupRoot() {
+    touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     Serial.begin(9600);
     while(!Serial);
 }

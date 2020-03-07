@@ -1,9 +1,9 @@
 #include <Arduino.h>
-#include "Touch.h"
 #include "Motor.h"
 #include "Pid.h"
 #include "Pin.h"
 #include "MovingAverage.h"
+#include "Touch.h"
 
 Touch touch;
 MovingAverage filterX;

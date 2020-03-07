@@ -8,6 +8,11 @@ Touch::Touch(int touchPin1, int touchPin2, int touchPin3, int touchPin4)
     this->touchPin4 = touchPin4;
 }
 
+Touch::Touch()
+{
+    
+}
+
 int Touch::getRawX()
 {
     int xRaw;

@@ -1,10 +1,5 @@
 #include "Pid.h"
 
-Pid::Pid()
-{
-
-}
-
 Pid::Pid(float kp, float ki, float kd, float T)
 {
     this->kp = kp;
@@ -13,14 +8,9 @@ Pid::Pid(float kp, float ki, float kd, float T)
     this->T = T;
 }
 
-void Pid::setRef(float ref)
+Pid::Pid()
 {
-    this->ref = ref;
-}
 
-float Pid::getErr()
-{
-    return err;
 }
 
 float Pid::compute(float out)
@@ -38,4 +28,20 @@ float Pid::compute(float out)
     control = kp*err + ki*ie + kd*de;
 
     return control;
+}
+
+void Pid::setLimits(float infLim, float supLim)
+{
+    this->infLim = infLim;
+    this->supLim = supLim;
+}
+
+void Pid::setRef(float ref)
+{
+    this->ref = ref;
+}
+
+float Pid::getErr()
+{
+    return err;
 }

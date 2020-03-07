@@ -51,6 +51,7 @@ class Pid
         float ref;
         float err, errPrev;
         float T; 
+        float infLim, supLim;
 };
 
 #endif

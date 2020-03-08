@@ -103,11 +103,13 @@ void checkBall()
 {
     if(stopControl)
     {
+        Serial.println("Bola removida!");
         motorA.goZero();
         motorB.goZero();
         while(!touch.isTouching())
         {
-            touch.getCmX();
+            x = touch.getCmX();
+            Serial.println(x);
         }
     }
 }

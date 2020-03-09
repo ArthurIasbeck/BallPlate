@@ -56,6 +56,7 @@ float Touch::getCmX()
     {
         touching = false;
     }
+    
     return xCm;
 }
 
@@ -71,10 +72,11 @@ float Touch::getCmY()
     {
         touching = false; 
     }
+
     return yCm;
 }
 
-bool Touch::isTouching()
+boolean Touch::isTouching()
 {
     return touching;
 }

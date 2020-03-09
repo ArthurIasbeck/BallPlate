@@ -39,20 +39,22 @@ void setupRoot()
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     filterX = MovingAverage(FILTER_SIZE);
     filterY = MovingAverage(FILTER_SIZE);
-    motorA = Motor(MOT_A, -75, 75);
     motorB = Motor(MOT_B, -55, 75);
+    motorA = Motor(MOT_A, -75, 75);
 
     // Configuração dos motores
     motorA.setupMotor();
     motorB.setupMotor();
 
+    motorB.invertMotor();
+
     // Configurações do controlador PID (eixo x)
-    pidX = Pid(1, 0, 0, 10);
+    pidX = Pid(2.5, 0, 1, 10);
     pidX.setLimits(-20, 20);
     pidX.setRef(0);
 
     // Configurações do controlador PID (eixo y)
-    pidY = Pid(1, 0, 0, 10);
+    pidY = Pid(3.5, 0, 1, 10);
     pidY.setLimits(-20, 20);
     pidY.setRef(0);
 
@@ -109,8 +111,8 @@ void checkBall()
         while(!touch.isTouching())
         {
             x = touch.getCmX();
-            Serial.println(x);
         }
+        stopControl = false;
     }
 }
 
@@ -130,8 +132,8 @@ void showData()
 {
     Serial.print("x = " + String(x) + "|");
     Serial.print("y = " + String(y) + "|");
-    Serial.print("controlX = " + String(controlX) + "|");
-    Serial.print("controlY = " + String(controlY) + "|");
+    Serial.print("uX = " + String(controlX) + "|");
+    Serial.print("uY = " + String(controlY) + "|");
     Serial.print("dt = " + String(dt) + "|");
     Serial.print("\n");
 }

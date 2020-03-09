@@ -46,12 +46,12 @@ class Touch
          * @return Posição no eixo Y. 
          */
         float getCmY();
-        bool isTouching();
+        boolean isTouching();
     private:
         int touchPin1, touchPin2, touchPin3, touchPin4;
         float xRaw, yRaw;
         float xCm, yCm;
-        bool touching;
+        boolean touching;
 };
 
 #endif

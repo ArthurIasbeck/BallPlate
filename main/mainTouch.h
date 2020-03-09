@@ -9,7 +9,7 @@ float x, y;
 
 void setupRoot() {
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
-    Serial.begin(9600);
+    Serial.begin(BAUD_RATE);
     while(!Serial);
 }
 

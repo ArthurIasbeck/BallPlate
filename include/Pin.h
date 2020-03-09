@@ -22,4 +22,6 @@
 
 #define FILTER_SIZE 5
 
+#define BAUD_RATE 2000000
+
 #endif

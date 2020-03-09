@@ -1,4 +1,4 @@
-#include <Arduino.h>
+#include "Arduino.h"
 #include "Motor.h"
 #include "Pid.h"
 #include "Pin.h"
@@ -21,8 +21,8 @@ float controlY;
 long dt;
 long t0;
 long tf; 
-int Tm; 
-int T;
+long Tm; 
+long T;
 
 void updatePosXY();
 void controlStop();
@@ -33,7 +33,7 @@ void waitSampleTime();
 
 void setupRoot()
 {
-    Tm = 100;
+    Tm = 10;
     T = Tm*1000;
 
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
@@ -49,28 +49,26 @@ void setupRoot()
     motorB.invertMotor();
 
     // Configurações do controlador PID para o motor A (eixo x)
-    pidX = Pid(5, 0, 10, Tm);
+    pidX = Pid(5, 0, 5, Tm);
     pidX.setLimits(-75, 75);
     pidX.setRef(0);
 
     // Configurações do controlador PID para o motor B (eixo y)
-    pidY = Pid(5, 0, 10, Tm);
+    pidY = Pid(5, 0, 5, Tm);
     pidY.setLimits(-55, 75);
     pidY.setRef(0);
 
     countNoBall = 0;
     stopControl = false;
 
-    Serial.begin(9600);
+    Serial.begin(BAUD_RATE);
     while(!Serial);
 
     motorA.goZero();
     motorB.goZero();
 
     Serial.println("Inicialização do código...");
-    Serial.println("3"); delay(1000);
-    Serial.println("2"); delay(1000);
-    Serial.println("1"); delay(1000);
+    delay(1);
 
     dt = -1;
     t0 = micros();
@@ -91,8 +89,11 @@ void loopRoot()
  */
 void updatePosXY()
 {
-    x = filterX.compute(touch.getCmX());
-    y = filterY.compute(touch.getCmY());
+    // x = filterX.compute(touch.getCmX()); // DEBUG
+    // y = filterY.compute(touch.getCmY()); // DEBUG
+
+    x = touch.getCmX(); // DEBUG
+    y = touch.getCmY(); // DEBUG
 
     if(!touch.isTouching()) stopControl = true;
 }
@@ -144,7 +145,7 @@ void waitSampleTime()
     {
         tf = micros();
         dt = tf - t0;
-        if(dt > T) break;
+        if(dt > T) break;   
     }
     t0 = micros();
 }

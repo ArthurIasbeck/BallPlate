@@ -1,0 +1,219 @@
+\hypertarget{classPid}{}\doxysection{Pid Class Reference}
+\label{classPid}\index{Pid@{Pid}}
+
+
+Classe que representa o controlador P\+ID.  
+
+
+
+
+{\ttfamily \#include $<$Pid.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPid_a35891a4511bcf990a51b5509f7679f75}{Pid}} (float kp, float ki, float kd, float T)
+\begin{DoxyCompactList}\small\item\em Constrói um objeto P\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPid_a8bcea8fa5b4f855f796ef55c6bc169ae}\label{classPid_a8bcea8fa5b4f855f796ef55c6bc169ae}} 
+\mbox{\hyperlink{classPid_a8bcea8fa5b4f855f796ef55c6bc169ae}{Pid}} ()
+\begin{DoxyCompactList}\small\item\em Constrói um objeto P\+ID padrão. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPid_ab6692082b66b4b61563213545cf1cfa2}{compute}} (float out)
+\begin{DoxyCompactList}\small\item\em Computa a ação de controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPid_a3bb5c749ee0e12036b53c9fc2c600bfb}{set\+Limits}} (float inf\+Lim, float sup\+Lim)
+\begin{DoxyCompactList}\small\item\em Define os limites da ação de controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPid_a2fee3455db5fc1c1b5b9a7a50cbc75a0}{set\+Ref}} (float ref)
+\begin{DoxyCompactList}\small\item\em Define a referência. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPid_a32e459d7eb1b7f0c3464f52d14ab1e71}{get\+Err}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor do erro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe que representa o controlador P\+ID. 
+
+Definition at line 7 of file Pid.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPid_a35891a4511bcf990a51b5509f7679f75}\label{classPid_a35891a4511bcf990a51b5509f7679f75}} 
+\index{Pid@{Pid}!Pid@{Pid}}
+\index{Pid@{Pid}!Pid@{Pid}}
+\doxysubsubsection{\texorpdfstring{Pid()}{Pid()}}
+{\footnotesize\ttfamily Pid\+::\+Pid (\begin{DoxyParamCaption}\item[{float}]{kp,  }\item[{float}]{ki,  }\item[{float}]{kd,  }\item[{float}]{T }\end{DoxyParamCaption})}
+
+
+
+Constrói um objeto P\+ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & Constante proporcional. \\
+\hline
+{\em ki} & Constante integral. \\
+\hline
+{\em kd} & Constante derivativa. \\
+\hline
+{\em T} & Tempo de amostragem (em milissegundos). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Pid.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     this-\/>kp = kp;}
+\DoxyCodeLine{6     this-\/>ki = ki;}
+\DoxyCodeLine{7     this-\/>kd = kd;}
+\DoxyCodeLine{8     this-\/>T = T;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     ie = 0;}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPid_ab6692082b66b4b61563213545cf1cfa2}\label{classPid_ab6692082b66b4b61563213545cf1cfa2}} 
+\index{Pid@{Pid}!compute@{compute}}
+\index{compute@{compute}!Pid@{Pid}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily float Pid\+::compute (\begin{DoxyParamCaption}\item[{float}]{out }\end{DoxyParamCaption})}
+
+
+
+Computa a ação de controle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Saída do sistema (valor advindo do sensor). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ação de controle. 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file Pid.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keywordtype}{float} control; }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     err = ref -\/ out;}
+\DoxyCodeLine{23     de = (err -\/ errPrev);}
+\DoxyCodeLine{24     ie = ie + err;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{// Zero o integrador para amenizar o overshoot}}
+\DoxyCodeLine{27     \textcolor{keywordflow}{if}(err*errPrev < 0) ie = 0;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     control = kp*err + ki*ie + kd*de;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     Serial.println(\textcolor{stringliteral}{"output = "} + String(out));}
+\DoxyCodeLine{32     Serial.println(\textcolor{stringliteral}{"err = "} + String(err));}
+\DoxyCodeLine{33     Serial.println(\textcolor{stringliteral}{"de = "} + String(de));}
+\DoxyCodeLine{34     Serial.println(\textcolor{stringliteral}{"ie = "} + String(ie));}
+\DoxyCodeLine{35     Serial.println(\textcolor{stringliteral}{"kp*err = "} + String(kp*err));}
+\DoxyCodeLine{36     Serial.println(\textcolor{stringliteral}{"ki*ie = "} + String(ki*ie));}
+\DoxyCodeLine{37     Serial.println(\textcolor{stringliteral}{"kd*de = "} + String(kd*de));}
+\DoxyCodeLine{38     Serial.println(\textcolor{stringliteral}{"control = "} + String(control));}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(control < infLim) control = infLim;}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if}(control > supLim) control = supLim;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     Serial.println(\textcolor{stringliteral}{"control = "} + String(control));}
+\DoxyCodeLine{44     Serial.println(\textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"});}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     errPrev = err;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordflow}{return} control;}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPid_a32e459d7eb1b7f0c3464f52d14ab1e71}\label{classPid_a32e459d7eb1b7f0c3464f52d14ab1e71}} 
+\index{Pid@{Pid}!getErr@{getErr}}
+\index{getErr@{getErr}!Pid@{Pid}}
+\doxysubsubsection{\texorpdfstring{getErr()}{getErr()}}
+{\footnotesize\ttfamily float Pid\+::get\+Err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o valor do erro. 
+
+\begin{DoxyReturn}{Returns}
+Erro computado na última iteração. 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Pid.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} err;}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPid_a3bb5c749ee0e12036b53c9fc2c600bfb}\label{classPid_a3bb5c749ee0e12036b53c9fc2c600bfb}} 
+\index{Pid@{Pid}!setLimits@{setLimits}}
+\index{setLimits@{setLimits}!Pid@{Pid}}
+\doxysubsubsection{\texorpdfstring{setLimits()}{setLimits()}}
+{\footnotesize\ttfamily void Pid\+::set\+Limits (\begin{DoxyParamCaption}\item[{float}]{inf\+Lim,  }\item[{float}]{sup\+Lim }\end{DoxyParamCaption})}
+
+
+
+Define os limites da ação de controle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inf\+Lim} & Limite inferior da ação de controle. \\
+\hline
+{\em sup\+Lim} & Limite superior da ação de controle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Pid.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53     this-\/>infLim = infLim;}
+\DoxyCodeLine{54     this-\/>supLim = supLim;}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPid_a2fee3455db5fc1c1b5b9a7a50cbc75a0}\label{classPid_a2fee3455db5fc1c1b5b9a7a50cbc75a0}} 
+\index{Pid@{Pid}!setRef@{setRef}}
+\index{setRef@{setRef}!Pid@{Pid}}
+\doxysubsubsection{\texorpdfstring{setRef()}{setRef()}}
+{\footnotesize\ttfamily void Pid\+::set\+Ref (\begin{DoxyParamCaption}\item[{float}]{ref }\end{DoxyParamCaption})}
+
+
+
+Define a referência. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref} & Referência (valor desejado para a saída). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Pid.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     this-\/>ref = ref;}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/iasbeck/Área de Trabalho/ball\+Plate/include/Pid.\+h\item 
+/home/iasbeck/Área de Trabalho/ball\+Plate/src/Pid.\+cpp\end{DoxyCompactItemize}

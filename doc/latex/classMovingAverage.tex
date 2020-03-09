@@ -1,0 +1,121 @@
+\hypertarget{classMovingAverage}{}\doxysection{Moving\+Average Class Reference}
+\label{classMovingAverage}\index{MovingAverage@{MovingAverage}}
+
+
+Implementa um filtro de médias móveis.  
+
+
+
+
+{\ttfamily \#include $<$Moving\+Average.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMovingAverage_af279499768c6221aed920f7d5250ddcf}{Moving\+Average}} (int filter\+Size)
+\begin{DoxyCompactList}\small\item\em Constrói um objeto \mbox{\hyperlink{classMovingAverage}{Moving\+Average}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classMovingAverage_a7247bd0a4b8c62b36356a0e32be496e2}{compute}} (float input)
+\begin{DoxyCompactList}\small\item\em Retorna o dado filtrado (saída do filtro) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementa um filtro de médias móveis. 
+
+Definition at line 9 of file Moving\+Average.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMovingAverage_af279499768c6221aed920f7d5250ddcf}\label{classMovingAverage_af279499768c6221aed920f7d5250ddcf}} 
+\index{MovingAverage@{MovingAverage}!MovingAverage@{MovingAverage}}
+\index{MovingAverage@{MovingAverage}!MovingAverage@{MovingAverage}}
+\doxysubsubsection{\texorpdfstring{MovingAverage()}{MovingAverage()}}
+{\footnotesize\ttfamily Moving\+Average\+::\+Moving\+Average (\begin{DoxyParamCaption}\item[{int}]{filter\+Size }\end{DoxyParamCaption})}
+
+
+
+Constrói um objeto \mbox{\hyperlink{classMovingAverage}{Moving\+Average}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter\+Size} & Número de dados considerado na computação da média. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Moving\+Average.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{comment}{// Inicializando o vetor que armazena os dados passados}}
+\DoxyCodeLine{6     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 20; i++)}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         lastInputs[i] = 0;}
+\DoxyCodeLine{9     \}}
+\DoxyCodeLine{10     }
+\DoxyCodeLine{11     \textcolor{comment}{// Verificando a dimensão do filtro}}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if} (filterSize > 20) }
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         Serial.println(\textcolor{stringliteral}{"filterSize deve ser menor ou igual a 20!"});}
+\DoxyCodeLine{15         filterSize = 20;}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17     this-\/>filterSize = filterSize;}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMovingAverage_a7247bd0a4b8c62b36356a0e32be496e2}\label{classMovingAverage_a7247bd0a4b8c62b36356a0e32be496e2}} 
+\index{MovingAverage@{MovingAverage}!compute@{compute}}
+\index{compute@{compute}!MovingAverage@{MovingAverage}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily float Moving\+Average\+::compute (\begin{DoxyParamCaption}\item[{float}]{input }\end{DoxyParamCaption})}
+
+
+
+Retorna o dado filtrado (saída do filtro) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & último valor bruto lido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dado filtrado 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file Moving\+Average.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keywordtype}{float} output = 0;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{// Atualizando o vetor que armazena os dados passados}}
+\DoxyCodeLine{30     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = MAX\_SIZE -\/ 1; i > 0; i-\/-\/)}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         lastInputs[i] = lastInputs[i-\/1];}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34     lastInputs[0] = input;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{comment}{// Calculando o valor de saída do filtro}}
+\DoxyCodeLine{37     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < filterSize; i++)}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39         output += lastInputs[i];}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     output /= filterSize;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/iasbeck/Área de Trabalho/ball\+Plate/include/Moving\+Average.\+h\item 
+/home/iasbeck/Área de Trabalho/ball\+Plate/src/Moving\+Average.\+cpp\end{DoxyCompactItemize}

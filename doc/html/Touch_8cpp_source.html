@@ -78,65 +78,86 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    this-&gt;touchPin2 = touchPin2;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    this-&gt;touchPin3 = touchPin3;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    this-&gt;touchPin4 = touchPin4;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">   11</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a>()</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> xRaw;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    pinMode(touchPin3, INPUT);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    pinMode(touchPin1, INPUT);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    digitalWrite(touchPin1, LOW);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    pinMode(touchPin2, OUTPUT);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    digitalWrite(touchPin2, LOW);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    pinMode(touchPin4, OUTPUT);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    digitalWrite(touchPin4, HIGH);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    delay(3);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    xRaw = analogRead(touchPin3);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> xRaw;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">   26</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a>()</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> yRaw;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    pinMode(touchPin3, OUTPUT);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    digitalWrite(touchPin3, HIGH);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    pinMode(touchPin1, OUTPUT);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    digitalWrite(touchPin1, LOW);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    pinMode(touchPin2, INPUT);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    pinMode(touchPin4, INPUT);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    digitalWrite(touchPin4, LOW);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    delay(3);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    yRaw = analogRead(touchPin2);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> yRaw;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">   41</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a>()</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">float</span> xRaw, xCm = NO_BALL;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    xRaw = <a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">getRawX</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span>(xRaw &gt; 10)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        xCm = 0.0409*xRaw - 19.642;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> xCm;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">   52</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">Touch::getCmY</a>()</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> yRaw, yCm = NO_BALL;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    yRaw = <a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">getRawY</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(yRaw &gt; 10)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        yCm = 0.0354*yRaw - 16.612;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> yCm;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    xRaw = yRaw = xCm = yCm = 0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    touching = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classTouch.html#a5de15620894cc276f2c0844fa0507246">   14</a></span>&#160;<a class="code" href="classTouch.html#a5de15620894cc276f2c0844fa0507246">Touch::Touch</a>()</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">   19</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a>()</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    pinMode(touchPin3, INPUT);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    pinMode(touchPin1, INPUT);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    digitalWrite(touchPin1, LOW);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    pinMode(touchPin2, OUTPUT);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    digitalWrite(touchPin2, LOW);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    pinMode(touchPin4, OUTPUT);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    digitalWrite(touchPin4, HIGH);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    delay(3);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    xRaw = analogRead(touchPin3);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> xRaw;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">   33</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    pinMode(touchPin3, OUTPUT);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    digitalWrite(touchPin3, HIGH);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    pinMode(touchPin1, OUTPUT);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    digitalWrite(touchPin1, LOW);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    pinMode(touchPin2, INPUT);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    pinMode(touchPin4, INPUT);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    digitalWrite(touchPin4, LOW);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    delay(3);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    yRaw = analogRead(touchPin2);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> yRaw;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">   47</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a>()</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    xRaw = <a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">getRawX</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span>(xRaw &gt; 10)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        touching = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        xCm = 0.0409*xRaw - 19.642;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        touching = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> xCm;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">   63</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">Touch::getCmY</a>()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    yRaw = <a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">getRawY</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span>(yRaw &gt; 10)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        touching = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        yCm = 0.0354*yRaw - 16.612;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        touching = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> yCm;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">boolean</span> Touch::isTouching()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> touching;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassTouch_html_adef1e84e216d347900a36c5b8c30a888"><div class="ttname"><a href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a></div><div class="ttdeci">int getRawY()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00026">Touch.cpp:26</a></div></div>
-<div class="ttc" id="aclassTouch_html_a5de15620894cc276f2c0844fa0507246"><div class="ttname"><a href="classTouch.html#a5de15620894cc276f2c0844fa0507246">Touch::Touch</a></div><div class="ttdeci">Touch()</div><div class="ttdoc">Constrói um objeto Touch padrão.</div></div>
-<div class="ttc" id="aclassTouch_html_a54a50de35fd6f5c8b52ae33f7d8bb473"><div class="ttname"><a href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">Touch::getCmY</a></div><div class="ttdeci">float getCmY()</div><div class="ttdoc">Retorna a posição do toque em cm no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00052">Touch.cpp:52</a></div></div>
-<div class="ttc" id="aclassTouch_html_a273f44de152e01e8d04cb4eecf704ef0"><div class="ttname"><a href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a></div><div class="ttdeci">float getCmX()</div><div class="ttdoc">Retorna a posição do toque em cm no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00041">Touch.cpp:41</a></div></div>
-<div class="ttc" id="aclassTouch_html_aade4096a1f33ce849f0e2464e11549c2"><div class="ttname"><a href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a></div><div class="ttdeci">int getRawX()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00011">Touch.cpp:11</a></div></div>
+<div class="ttc" id="aclassTouch_html_adef1e84e216d347900a36c5b8c30a888"><div class="ttname"><a href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a></div><div class="ttdeci">int getRawY()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00033">Touch.cpp:33</a></div></div>
+<div class="ttc" id="aclassTouch_html_a5de15620894cc276f2c0844fa0507246"><div class="ttname"><a href="classTouch.html#a5de15620894cc276f2c0844fa0507246">Touch::Touch</a></div><div class="ttdeci">Touch()</div><div class="ttdoc">Constrói um objeto Touch padrão.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00014">Touch.cpp:14</a></div></div>
+<div class="ttc" id="aclassTouch_html_a54a50de35fd6f5c8b52ae33f7d8bb473"><div class="ttname"><a href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">Touch::getCmY</a></div><div class="ttdeci">float getCmY()</div><div class="ttdoc">Retorna a posição do toque em cm no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00063">Touch.cpp:63</a></div></div>
+<div class="ttc" id="aclassTouch_html_a273f44de152e01e8d04cb4eecf704ef0"><div class="ttname"><a href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a></div><div class="ttdeci">float getCmX()</div><div class="ttdoc">Retorna a posição do toque em cm no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00047">Touch.cpp:47</a></div></div>
+<div class="ttc" id="aclassTouch_html_aade4096a1f33ce849f0e2464e11549c2"><div class="ttname"><a href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a></div><div class="ttdeci">int getRawX()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00019">Touch.cpp:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

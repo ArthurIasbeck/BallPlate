@@ -1,0 +1,145 @@
+\hypertarget{classMotor}{}\doxysection{Motor Class Reference}
+\label{classMotor}\index{Motor@{Motor}}
+
+
+Implementa funções para controle dos servomotores.  
+
+
+
+
+{\ttfamily \#include $<$Motor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMotor_a31ca2c2d6779e7a29a48b6efe0c323e1}{Motor}} (int control\+Pin, int inf\+Limit, int sup\+Limit)
+\begin{DoxyCompactList}\small\item\em Constrói um objeto \mbox{\hyperlink{classMotor}{Motor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMotor_af6106b4c506411265c5face762b6c004}\label{classMotor_af6106b4c506411265c5face762b6c004}} 
+\mbox{\hyperlink{classMotor_af6106b4c506411265c5face762b6c004}{Motor}} ()
+\begin{DoxyCompactList}\small\item\em Constrói um objeto \mbox{\hyperlink{classMotor}{Motor}} padrão. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMotor_a72fd6780dc8333a294725385177bc4eb}\label{classMotor_a72fd6780dc8333a294725385177bc4eb}} 
+void \mbox{\hyperlink{classMotor_a72fd6780dc8333a294725385177bc4eb}{setup\+Motor}} ()
+\begin{DoxyCompactList}\small\item\em Realiza configurações iniciais do motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMotor_ae6f2c3c9a4397d9f2c95796903559918}{set\+Pos}} (int pos)
+\begin{DoxyCompactList}\small\item\em Envia o motor para uma dada posição. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMotor_af5b6660996ea030c706b051d32e671f9}{set\+Zero}} (int zero\+Pos)
+\begin{DoxyCompactList}\small\item\em Define o zero do motor (igual a 90 por padrão). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMotor_aa33f89ca0051d53454b8a4cf4bb6d7c1}\label{classMotor_aa33f89ca0051d53454b8a4cf4bb6d7c1}} 
+void \mbox{\hyperlink{classMotor_aa33f89ca0051d53454b8a4cf4bb6d7c1}{go\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Envia o motor para a posição 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMotor_a8ccaa9779238c00e11bb7cba7edcc071}\label{classMotor_a8ccaa9779238c00e11bb7cba7edcc071}} 
+void \mbox{\hyperlink{classMotor_a8ccaa9779238c00e11bb7cba7edcc071}{invert\+Motor}} ()
+\begin{DoxyCompactList}\small\item\em Inverte a direção do giro dos motores quando chamada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementa funções para controle dos servomotores. 
+
+Definition at line 8 of file Motor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMotor_a31ca2c2d6779e7a29a48b6efe0c323e1}\label{classMotor_a31ca2c2d6779e7a29a48b6efe0c323e1}} 
+\index{Motor@{Motor}!Motor@{Motor}}
+\index{Motor@{Motor}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{Motor()}{Motor()}}
+{\footnotesize\ttfamily Motor\+::\+Motor (\begin{DoxyParamCaption}\item[{int}]{control\+Pin,  }\item[{int}]{inf\+Limit,  }\item[{int}]{sup\+Limit }\end{DoxyParamCaption})}
+
+
+
+Constrói um objeto \mbox{\hyperlink{classMotor}{Motor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em control\+Pin} & Controle P\+WM do motor. \\
+\hline
+{\em inf\+Lim} & Limite inferior para a posição do motor (-\/90 -\/ 0). \\
+\hline
+{\em sup\+Lim} & Limite superior para a posição do motor (0 -\/ 90). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Motor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{if}(infLimit < -\/90) infLimit = -\/90;}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(infLimit > 0) infLimit = 0;}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if}(supLimit < 0) supLimit = 0;}
+\DoxyCodeLine{8     \textcolor{keywordflow}{if}(supLimit > 90) supLimit = 90;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     this-\/>controlPin = controlPin;}
+\DoxyCodeLine{11     this-\/>infLimit = infLimit;}
+\DoxyCodeLine{12     this-\/>supLimit = supLimit;}
+\DoxyCodeLine{13     zeroPos = 90;}
+\DoxyCodeLine{14     direction = 1;}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMotor_ae6f2c3c9a4397d9f2c95796903559918}\label{classMotor_ae6f2c3c9a4397d9f2c95796903559918}} 
+\index{Motor@{Motor}!setPos@{setPos}}
+\index{setPos@{setPos}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily void Motor\+::set\+Pos (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Envia o motor para uma dada posição. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Posição para a qual é enviada o motor. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Motor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     pos *= direction;}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if}(pos < infLimit) pos = infLimit;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{if}(pos > supLimit) pos = supLimit;}
+\DoxyCodeLine{32     servo.write(pos + zeroPos);}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMotor_af5b6660996ea030c706b051d32e671f9}\label{classMotor_af5b6660996ea030c706b051d32e671f9}} 
+\index{Motor@{Motor}!setZero@{setZero}}
+\index{setZero@{setZero}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{setZero()}{setZero()}}
+{\footnotesize\ttfamily void Motor\+::set\+Zero (\begin{DoxyParamCaption}\item[{int}]{zero\+Pos }\end{DoxyParamCaption})}
+
+
+
+Define o zero do motor (igual a 90 por padrão). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zero\+Pos} & Posição considerada como zero do motor (0 -\/ 180). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Motor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     this-\/>zeroPos = zeroPos;}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/iasbeck/Área de Trabalho/ball\+Plate/include/Motor.\+h\item 
+/home/iasbeck/Área de Trabalho/ball\+Plate/src/Motor.\+cpp\end{DoxyCompactItemize}

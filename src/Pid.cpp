@@ -27,6 +27,9 @@ float Pid::compute(float out)
 
     control = kp*err + ki*ie + kd*de;
 
+    if(control < infLim) control = infLim;
+    if(control > supLim) control = supLim;
+
     return control;
 }
 

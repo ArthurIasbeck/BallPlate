@@ -39,23 +39,23 @@ void setupRoot()
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     filterX = MovingAverage(FILTER_SIZE);
     filterY = MovingAverage(FILTER_SIZE);
-    motorB = Motor(MOT_B, -55, 75);
     motorA = Motor(MOT_A, -75, 75);
-
+    motorB = Motor(MOT_B, -55, 75);
+    
     // Configuração dos motores
     motorA.setupMotor();
     motorB.setupMotor();
 
     motorB.invertMotor();
 
-    // Configurações do controlador PID (eixo x)
-    pidX = Pid(2.5, 0, 1, 10);
-    pidX.setLimits(-20, 20);
+    // Configurações do controlador PID para o motor A (eixo x)
+    pidX = Pid(5, 0, 10, Tm);
+    pidX.setLimits(-75, 75);
     pidX.setRef(0);
 
-    // Configurações do controlador PID (eixo y)
-    pidY = Pid(3.5, 0, 1, 10);
-    pidY.setLimits(-20, 20);
+    // Configurações do controlador PID para o motor B (eixo y)
+    pidY = Pid(5, 0, 10, Tm);
+    pidY.setLimits(-55, 75);
     pidY.setRef(0);
 
     countNoBall = 0;

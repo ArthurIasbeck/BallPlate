@@ -14,8 +14,8 @@
 #define TOUCH_3 A0
 #define TOUCH_4 A3
 
-#define MOT_A 5
-#define MOT_B 3
+#define MOT_A 3
+#define MOT_B 5
 
 #define POT_A A4
 #define POT_B A5

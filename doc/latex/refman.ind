@@ -1,0 +1,59 @@
+\begin{theindex}
+
+  \item {compute}
+    \subitem {MovingAverage}, \hyperpage{6}
+    \subitem {Pid}, \hyperpage{8}
+
+  \indexspace
+
+  \item {getCmX}
+    \subitem {Touch}, \hyperpage{11}
+  \item {getCmY}
+    \subitem {Touch}, \hyperpage{11}
+  \item {getErr}
+    \subitem {Pid}, \hyperpage{9}
+  \item {getRawX}
+    \subitem {Touch}, \hyperpage{12}
+  \item {getRawY}
+    \subitem {Touch}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Motor}, \hyperpage{3}
+    \subitem {Motor}, \hyperpage{3}
+    \subitem {setPos}, \hyperpage{4}
+    \subitem {setZero}, \hyperpage{4}
+  \item {MovingAverage}, \hyperpage{5}
+    \subitem {compute}, \hyperpage{6}
+    \subitem {MovingAverage}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Pid}, \hyperpage{7}
+    \subitem {compute}, \hyperpage{8}
+    \subitem {getErr}, \hyperpage{9}
+    \subitem {Pid}, \hyperpage{7}
+    \subitem {setLimits}, \hyperpage{9}
+    \subitem {setRef}, \hyperpage{9}
+
+  \indexspace
+
+  \item {setLimits}
+    \subitem {Pid}, \hyperpage{9}
+  \item {setPos}
+    \subitem {Motor}, \hyperpage{4}
+  \item {setRef}
+    \subitem {Pid}, \hyperpage{9}
+  \item {setZero}
+    \subitem {Motor}, \hyperpage{4}
+
+  \indexspace
+
+  \item {Touch}, \hyperpage{10}
+    \subitem {getCmX}, \hyperpage{11}
+    \subitem {getCmY}, \hyperpage{11}
+    \subitem {getRawX}, \hyperpage{12}
+    \subitem {getRawY}, \hyperpage{12}
+    \subitem {Touch}, \hyperpage{10}
+
+\end{theindex}

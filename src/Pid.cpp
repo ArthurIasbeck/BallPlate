@@ -29,17 +29,17 @@ float Pid::compute(float out)
 
     control = kp*err + ki*ie + kd*de;
 
-    Serial.println(debug);
+    debug = 1; // DEBUG
     if(debug) // DEBUG
     { 
-        Serial.println("output = " + String(out));
-        Serial.println("err = " + String(err));
-        Serial.println("de = " + String(de));
-        Serial.println("ie = " + String(ie));
-        Serial.println("kp*err = " + String(kp*err));
-        Serial.println("ki*ie = " + String(ki*ie));
-        Serial.println("kd*de = " + String(kd*de));
-        Serial.println("control = " + String(control));  
+        Serial.print(String(out) + " ");
+        Serial.print(String(err) + " ");
+        Serial.print(String(de) + " ");
+        Serial.print(String(ie) + " ");
+        Serial.print(String(kp*err) + " ");
+        Serial.print(String(ki*ie) + " ");
+        Serial.print(String(kd*de) + " ");
+        Serial.print(String(control) + " ");  
     }
 
     if(control < infLim) control = infLim;
@@ -47,8 +47,7 @@ float Pid::compute(float out)
 
     if(debug) // DEBUG
     {
-        Serial.println("control = " + String(control));
-        Serial.println("---------------------------------------------");
+        Serial.println(String(control));
     }
     
     errPrev = err;

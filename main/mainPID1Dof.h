@@ -7,22 +7,18 @@
 
 Touch touch;
 MovingAverage filterX;
-MovingAverage filterY;
 Motor motorA;
-Motor motorB;
 Pid pidX;
-Pid pidY;
 float x; 
-float y;
 int countNoBall;
 bool stopControl;
 float controlX;
-float controlY;
 long dt;
 long t0;
 long tf; 
 long Tm; 
 long T;
+int countStop;
 
 void updatePosXY();
 void controlStop();
@@ -36,43 +32,30 @@ void setupRoot()
     Serial.begin(BAUD_RATE);
     while(!Serial);
 
+    dt = -1;
     Tm = 10;
     T = Tm*1000;
-
-    touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
-    filterX = MovingAverage(FILTER_SIZE);
-    filterY = MovingAverage(FILTER_SIZE);
-    motorA = Motor(MOT_A, -70, 70);
-    motorB = Motor(MOT_B, -75, 80);
-    
-    // Configuração dos motores
-    motorA.setupMotor();
-    motorB.setupMotor();
-
-    motorB.invertMotor();
-
-    // Configurações do controlador PID para o motor A (eixo x)
-    pidX = Pid(1, 0.01, 1, Tm);
-    pidX.setLimits(-75, 75);
-    pidX.setRef(0);
-    pidX.debug = 1; // DEBUG
-
-    // Configurações do controlador PID para o motor B (eixo y)
-    pidY = Pid(1, 0.01, 1, Tm);
-    pidY.setLimits(-55, 75);
-    pidY.setRef(0);
-    pidY.debug = 0; // DEBUG
-
+    countStop = 0;
     countNoBall = 0;
     stopControl = false;
 
+    touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
+    filterX = MovingAverage(FILTER_SIZE);
+    motorA = Motor(MOT_A, -70, 70);
+    
+    // Configuração dos motores
+    motorA.setupMotor();
+
+    // Configurações do controlador PID para o motor A (eixo x)
+    pidX = Pid(1, 0, 0, Tm);
+    pidX.setLimits(-75, 75);
+    pidX.setRef(0);
+
     motorA.goZero();
-    motorB.goZero();
 
     Serial.println("Inicialização do código...");
     delay(1);
 
-    dt = -1;
     t0 = micros();
 }
 
@@ -91,13 +74,17 @@ void loopRoot()
  */
 void updatePosXY()
 {
-    // x = filterX.compute(touch.getCmX()); // DEBUG
-    // y = filterY.compute(touch.getCmY()); // DEBUG
+    x = touch.getCmX(); 
 
-    x = touch.getCmX(); // DEBUG
-    y = touch.getCmY(); // DEBUG
-
-    if(!touch.isTouching()) stopControl = true;
+    if(!touch.isTouching())
+    {
+        countStop++;
+    } 
+    else 
+    {
+        countStop = 0;
+    }
+    if(countStop == 3)  stopControl = true;
 }
 
 /**
@@ -110,12 +97,12 @@ void checkBall()
     {
         Serial.println("Bola removida!");
         motorA.goZero();
-        motorB.goZero();
         while(!touch.isTouching())
         {
             x = touch.getCmX();
         }
         stopControl = false;
+        countStop = 0;
     }
 }
 
@@ -125,18 +112,14 @@ void checkBall()
 void applyControl()
 {
     controlX = pidX.compute(x);
-    controlY = pidY.compute(y);
 
     motorA.setPos(controlX);
-    motorB.setPos(controlY);
 }
 
 void showData()
 {
     Serial.print("x = " + String(x) + "|");
-    Serial.print("y = " + String(y) + "|");
     Serial.print("uX = " + String(controlX) + "|");
-    Serial.print("uY = " + String(controlY) + "|");
     Serial.print("dt = " + String(dt) + "|");
     Serial.print("\n");
 }

@@ -1,4 +1,4 @@
-#include "../main/mainPID.h"
+#include "../main/mainModel1Dof.h"
 
 void setup()
 {
@@ -9,7 +9,3 @@ void loop()
 {
     loopRoot();
 }
-
-/**
- * TODO: Testar o controle PID
- */

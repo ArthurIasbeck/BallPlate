@@ -13,6 +13,7 @@ void setupRoot()
 {
     motorA.setupMotor();
     motorB.setupMotor();
+    motorB.invertMotor();
     Serial.begin(BAUD_RATE);
     while(!Serial);
 }

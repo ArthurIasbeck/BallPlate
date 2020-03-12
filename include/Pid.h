@@ -46,6 +46,8 @@ class Pid
          * @return Erro computado na última iteração.
          */
         float getErr();
+
+        int debug; // DEBUG
     private:
         float kp, ki, kd;
         float ref;

@@ -8,6 +8,7 @@ Pid::Pid(float kp, float ki, float kd, float T)
     this->T = T;
 
     ie = 0;
+    errPrev = 0;
 }
 
 Pid::Pid()
@@ -20,29 +21,36 @@ float Pid::compute(float out)
     float control; 
 
     err = ref - out;
-    de = (err - errPrev);
-    ie = ie + err;
+    de = (err - errPrev)/T;
+    ie = ie + err*T;
 
     // Zero o integrador para amenizar o overshoot
     if(err*errPrev < 0) ie = 0;
 
     control = kp*err + ki*ie + kd*de;
 
-    Serial.println("output = " + String(out));
-    Serial.println("err = " + String(err));
-    Serial.println("de = " + String(de));
-    Serial.println("ie = " + String(ie));
-    Serial.println("kp*err = " + String(kp*err));
-    Serial.println("ki*ie = " + String(ki*ie));
-    Serial.println("kd*de = " + String(kd*de));
-    Serial.println("control = " + String(control));
+    Serial.println(debug);
+    if(debug) // DEBUG
+    { 
+        Serial.println("output = " + String(out));
+        Serial.println("err = " + String(err));
+        Serial.println("de = " + String(de));
+        Serial.println("ie = " + String(ie));
+        Serial.println("kp*err = " + String(kp*err));
+        Serial.println("ki*ie = " + String(ki*ie));
+        Serial.println("kd*de = " + String(kd*de));
+        Serial.println("control = " + String(control));  
+    }
 
     if(control < infLim) control = infLim;
     if(control > supLim) control = supLim;
 
-    Serial.println("control = " + String(control));
-    Serial.println("---------------------------------------------");
-
+    if(debug) // DEBUG
+    {
+        Serial.println("control = " + String(control));
+        Serial.println("---------------------------------------------");
+    }
+    
     errPrev = err;
 
     return control;

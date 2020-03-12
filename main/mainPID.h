@@ -33,14 +33,17 @@ void waitSampleTime();
 
 void setupRoot()
 {
+    Serial.begin(BAUD_RATE);
+    while(!Serial);
+
     Tm = 10;
     T = Tm*1000;
 
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     filterX = MovingAverage(FILTER_SIZE);
     filterY = MovingAverage(FILTER_SIZE);
-    motorA = Motor(MOT_A, -75, 75);
-    motorB = Motor(MOT_B, -55, 75);
+    motorA = Motor(MOT_A, -70, 70);
+    motorB = Motor(MOT_B, -75, 80);
     
     // Configuração dos motores
     motorA.setupMotor();
@@ -49,20 +52,19 @@ void setupRoot()
     motorB.invertMotor();
 
     // Configurações do controlador PID para o motor A (eixo x)
-    pidX = Pid(5, 0, 5, Tm);
+    pidX = Pid(1, 1, 1, Tm);
     pidX.setLimits(-75, 75);
     pidX.setRef(0);
+    pidX.debug = 1; // DEBUG
 
     // Configurações do controlador PID para o motor B (eixo y)
-    pidY = Pid(5, 0, 5, Tm);
+    pidY = Pid(1, 1, 1, Tm);
     pidY.setLimits(-55, 75);
     pidY.setRef(0);
+    pidY.debug = 0; // DEBUG
 
     countNoBall = 0;
     stopControl = false;
-
-    Serial.begin(BAUD_RATE);
-    while(!Serial);
 
     motorA.goZero();
     motorB.goZero();
@@ -79,7 +81,7 @@ void loopRoot()
     updatePosXY();
     checkBall();
     applyControl();
-    showData();
+    // showData();
     waitSampleTime();
 }
 

@@ -1,4 +1,4 @@
-#include "../main/mainModel1Dof.h"
+#include "../main/mainStep.h"
 
 void setup()
 {

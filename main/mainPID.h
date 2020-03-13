@@ -55,13 +55,11 @@ void setupRoot()
     pidX = Pid(1, 0.01, 1, Tm);
     pidX.setLimits(-75, 75);
     pidX.setRef(0);
-    pidX.debug = 1; // DEBUG
 
     // Configurações do controlador PID para o motor B (eixo y)
     pidY = Pid(1, 0.01, 1, Tm);
     pidY.setLimits(-55, 75);
     pidY.setRef(0);
-    pidY.debug = 0; // DEBUG
 
     countNoBall = 0;
     stopControl = false;

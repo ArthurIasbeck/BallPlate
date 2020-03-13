@@ -5,7 +5,6 @@
 #include "Touch.h"
 #include "MovingAverage.h"
 
-MovingAverage filter;
 Touch touch; 
 Motor motorA;
 int readPotA;
@@ -21,17 +20,16 @@ void setupRoot()
     Serial.begin(BAUD_RATE);
     while(!Serial);
 
-    filter = MovingAverage(3);
     motorA = Motor(MOT_A, -90, 90);
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     motorA.setupMotor();
 
-    simTime = 10;
-    stepTime = 0.5;
-    stepAmp = 10;
+    simTime = 2;
+    stepTime = 3;
+    stepAmp = 15;
     countStep = countLoops = 0;
     stepDir = -1;
-    nStep = round(1/0.01);
+    nStep = round(stepTime/0.01);
 
     Serial.println("Iniciando coleta...");
     motorA.goZero();
@@ -44,7 +42,7 @@ void setupRoot()
 void loopRoot()
 {   
     motorA.setPos(stepAmp*stepDir);
-    x = filter.compute(touch.getCmX());
+    x = touch.getCmX();
 
     countStep++;
 

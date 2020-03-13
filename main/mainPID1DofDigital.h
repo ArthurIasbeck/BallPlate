@@ -1,13 +1,14 @@
 #include "Arduino.h"
 #include "Motor.h"
-#include "Pid.h"
+#include "PidDigital.h"
 #include "Pin.h"
 #include "MovingAverage.h"
 #include "Touch.h"
 
 Touch touch;
+MovingAverage filterX;
 Motor motorA;
-Pid pidX;
+PidDigital pidX;
 float x; 
 int countNoBall;
 bool stopControl;
@@ -39,13 +40,15 @@ void setupRoot()
     stopControl = false;
 
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
+    filterX = MovingAverage(FILTER_SIZE);
     motorA = Motor(MOT_A, -70, 70);
     
     // Configuração dos motores
     motorA.setupMotor();
+    motorA.invertMotor();
 
     // Configurações do controlador PID para o motor A (eixo x)
-    pidX = Pid(2, 0.0001, 1000, Tm);
+    pidX = PidDigital(0.6357, 0.3643, 191, -380.22, 189.1, 10);
     pidX.setLimits(-75, 75);
     pidX.setRef(0);
 

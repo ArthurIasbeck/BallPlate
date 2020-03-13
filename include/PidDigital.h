@@ -1,10 +1,9 @@
-#ifndef Pid_h
-#define Pid_h
+#ifndef PidDigital_h
+#define PidDigital_h
 
 #include "Arduino.h"
 
-//! Classe que representa o controlador PID. 
-class Pid
+class PidDigital
 {
     public:
         /**
@@ -15,11 +14,11 @@ class Pid
          * @param kd Constante derivativa.
          * @param T Tempo de amostragem (em milissegundos).
          */
-        Pid(float kp, float ki, float kd, float T);
+        PidDigital(float A, float B, float C, float D, float E, float T);
         /**
          * @brief Constrói um objeto PID padrão.
          */
-        Pid();
+        PidDigital();
         /**
          * @brief Computa a ação de controle.
          * 
@@ -46,10 +45,13 @@ class Pid
          * @return Erro computado na última iteração.
          */
         float getErr();
+
+        int debug; // DEBUG
     private:
-        float kp, ki, kd;
+        float A, B, C, D, E;
         float ref;
-        float err, errPrev;
+        float u, u1, u2;
+        float e, e1, e2;
         float T; 
         float ie, de;
         float infLim, supLim;

@@ -1,4 +1,4 @@
-#include "../main/mainPID.h"
+#include "../main/mainPID1Dof.h"
 
 void setup()
 {

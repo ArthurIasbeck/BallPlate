@@ -39,14 +39,14 @@ void setupRoot()
     stopControl = false;
 
     touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
-    motorA = Motor(MOT_A, -70, 70);
+    motorA = Motor(MOT_A, -30, 30);
     
     // Configuração dos motores
     motorA.setupMotor();
 
     // Configurações do controlador PID para o motor A (eixo x)
     pidX = Pid(2, 0.0001, 1000, Tm);
-    pidX.setLimits(-75, 75);
+    pidX.setLimits(-30, 30);
     pidX.setRef(0);
 
     motorA.goZero();
@@ -62,7 +62,7 @@ void loopRoot()
     updatePosXY();
     checkBall();
     applyControl();
-    // showData();
+    showData();
     waitSampleTime();
 }
 

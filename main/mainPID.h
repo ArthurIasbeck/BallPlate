@@ -52,12 +52,12 @@ void setupRoot()
     motorB.invertMotor();
 
     // Configurações do controlador PID para o motor A (eixo x)
-    pidX = Pid(1, 0.01, 1, Tm);
+    pidX = Pid(2, 0.0001, 1000, Tm);
     pidX.setLimits(-75, 75);
     pidX.setRef(0);
 
     // Configurações do controlador PID para o motor B (eixo y)
-    pidY = Pid(1, 0.01, 1, Tm);
+    pidY = Pid(2, 0.0001, 1000, Tm);
     pidY.setLimits(-55, 75);
     pidY.setRef(0);
 
@@ -79,7 +79,7 @@ void loopRoot()
     updatePosXY();
     checkBall();
     applyControl();
-    // showData();
+    showData();
     waitSampleTime();
 }
 
@@ -89,11 +89,8 @@ void loopRoot()
  */
 void updatePosXY()
 {
-    // x = filterX.compute(touch.getCmX()); // DEBUG
-    // y = filterY.compute(touch.getCmY()); // DEBUG
-
-    x = touch.getCmX(); // DEBUG
-    y = touch.getCmY(); // DEBUG
+    x = touch.getCmX(); 
+    y = touch.getCmY(); 
 
     if(!touch.isTouching()) stopControl = true;
 }

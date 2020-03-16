@@ -29,10 +29,10 @@ float Pid::compute(float out)
 
     control = kp*err + ki*ie + kd*de;
 
-    Serial.print(String(kp*err) + " ");
-    Serial.print(String(ki*ie) + " ");
-    Serial.print(String(kd*de) + " ");
-    Serial.print("\n");
+    // Serial.print(String(kp*err) + " ");
+    // Serial.print(String(ki*ie) + " ");
+    // Serial.print(String(kd*de) + " ");
+    // Serial.print("\n");
 
     if(control < infLim) control = infLim;
     if(control > supLim) control = supLim;

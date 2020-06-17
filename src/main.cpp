@@ -9,7 +9,7 @@
  * 
  */
 
-#include "../main/mainComm.h"
+#include "../main/mainMatrix.h"
 
 /**
  * @brief Função setup() principal.

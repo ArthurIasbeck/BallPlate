@@ -1,9 +1,20 @@
+/**
+ * @file Pid.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Cabeçalho da classe Pid.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef Pid_h
 #define Pid_h
 
 #include "Arduino.h"
 
-//! Classe que representa o controlador PID. 
+//! Classe que implementa um controlador PID. 
 class Pid
 {
     public:

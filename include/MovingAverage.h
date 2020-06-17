@@ -1,3 +1,14 @@
+/**
+ * @file MovingAverage.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Cabeçalho da classe MovingAverage.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef MovingAverage_h
 #define MovingAverage_h
 

@@ -1,6 +1,17 @@
+/**
+ * @file Motor.cpp
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Implementação da classe Motor.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include "Motor.h"
 
-Motor::Motor(int controlPin, int infLimit, int supLimit)
+void Motor::setupMotor(int controlPin, int infLimit, int supLimit)
 {
     if(infLimit < -90) infLimit = -90;
     if(infLimit > 0) infLimit = 0;
@@ -12,15 +23,7 @@ Motor::Motor(int controlPin, int infLimit, int supLimit)
     this->supLimit = supLimit;
     zeroPos = 90;
     direction = 1;
-}
 
-Motor::Motor()
-{
-    
-}
-
-void Motor::setupMotor()
-{
     servo.attach(controlPin);
 }
 
@@ -44,5 +47,5 @@ void Motor::goZero()
 
 void Motor::invertMotor()
 {
-    direction = -1;
+    direction *= -1;
 }

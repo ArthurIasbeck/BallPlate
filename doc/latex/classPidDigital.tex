@@ -1,0 +1,212 @@
+\hypertarget{classPidDigital}{}\doxysection{Referência à classe Pid\+Digital}
+\label{classPidDigital}\index{PidDigital@{PidDigital}}
+
+
+Classe que implementa um controlador P\+ID digital.  
+
+
+
+
+{\ttfamily \#include $<$Pid\+Digital.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPidDigital_a9c4a8bbd0e0363a1ffbc1e62af18140c}{Pid\+Digital}} (float A, float B, float C, float D, float E, float T)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classPid}{Pid}} Digital object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPidDigital_a69a9c49d30991f80615adc2b08557827}\label{classPidDigital_a69a9c49d30991f80615adc2b08557827}} 
+\mbox{\hyperlink{classPidDigital_a69a9c49d30991f80615adc2b08557827}{Pid\+Digital}} ()
+\begin{DoxyCompactList}\small\item\em Constrói um objeto P\+ID padrão. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPidDigital_a485a0de4bab30ac3981c8c86c0582181}{compute}} (float out)
+\begin{DoxyCompactList}\small\item\em Computa a ação de controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPidDigital_ad8a40bea6c4b95052337cc3a9ad312a6}{set\+Limits}} (float inf\+Lim, float sup\+Lim)
+\begin{DoxyCompactList}\small\item\em Define os limites da ação de controle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPidDigital_ade58899c272f1a82e798a3bfe22f3f04}{set\+Ref}} (float ref)
+\begin{DoxyCompactList}\small\item\em Define a referência. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPidDigital_a146043930234143688aaaebd6efb58bb}{get\+Err}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor do erro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPidDigital_ad91fd564218e19e4aef1cdb71c08672d}\label{classPidDigital_ad91fd564218e19e4aef1cdb71c08672d}} 
+int {\bfseries debug}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Classe que implementa um controlador P\+ID digital. 
+
+Definido na linha 18 do ficheiro Pid\+Digital.\+h.
+
+
+
+\doxysubsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classPidDigital_a9c4a8bbd0e0363a1ffbc1e62af18140c}\label{classPidDigital_a9c4a8bbd0e0363a1ffbc1e62af18140c}} 
+\index{PidDigital@{PidDigital}!PidDigital@{PidDigital}}
+\index{PidDigital@{PidDigital}!PidDigital@{PidDigital}}
+\doxysubsubsection{\texorpdfstring{PidDigital()}{PidDigital()}}
+{\footnotesize\ttfamily Pid\+Digital\+::\+Pid\+Digital (\begin{DoxyParamCaption}\item[{float}]{A,  }\item[{float}]{B,  }\item[{float}]{C,  }\item[{float}]{D,  }\item[{float}]{E,  }\item[{float}]{T }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classPid}{Pid}} Digital object. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em A} & Fator que multiplica u(k-\/1) \\
+\hline
+{\em B} & Fator que multiplica u(k-\/2) \\
+\hline
+{\em C} & Fator que multiplica e(k) \\
+\hline
+{\em D} & Fator que multiplica e(k-\/1) \\
+\hline
+{\em E} & Fator que multiplica e(k-\/2) \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 14 do ficheiro Pid\+Digital.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     this-\/>A = A;}
+\DoxyCodeLine{17     this-\/>B = B;}
+\DoxyCodeLine{18     this-\/>C = C;}
+\DoxyCodeLine{19     this-\/>D = D;}
+\DoxyCodeLine{20     this-\/>E = E;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     u2 = u1 = u = e2 = e1 = e = 0;}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação dos métodos}
+\mbox{\Hypertarget{classPidDigital_a485a0de4bab30ac3981c8c86c0582181}\label{classPidDigital_a485a0de4bab30ac3981c8c86c0582181}} 
+\index{PidDigital@{PidDigital}!compute@{compute}}
+\index{compute@{compute}!PidDigital@{PidDigital}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily float Pid\+Digital\+::compute (\begin{DoxyParamCaption}\item[{float}]{out }\end{DoxyParamCaption})}
+
+
+
+Computa a ação de controle. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em out} & Saída do sistema (valor advindo do sensor). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ação de controle. 
+\end{DoxyReturn}
+
+
+Definido na linha 30 do ficheiro Pid\+Digital.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     e = ref -\/ out;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     u = A*u1 + B*u2 + C*e + D*e1 + E*e2;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{if}(u < infLim) u = infLim;}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if}(u > supLim) u = supLim;}
+\DoxyCodeLine{38     }
+\DoxyCodeLine{39     u2 = u1;}
+\DoxyCodeLine{40     u1 = u;}
+\DoxyCodeLine{41     e2 = e1;}
+\DoxyCodeLine{42     e1 = e;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} u;}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPidDigital_a146043930234143688aaaebd6efb58bb}\label{classPidDigital_a146043930234143688aaaebd6efb58bb}} 
+\index{PidDigital@{PidDigital}!getErr@{getErr}}
+\index{getErr@{getErr}!PidDigital@{PidDigital}}
+\doxysubsubsection{\texorpdfstring{getErr()}{getErr()}}
+{\footnotesize\ttfamily float Pid\+Digital\+::get\+Err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o valor do erro. 
+
+\begin{DoxyReturn}{Retorna}
+Erro computado na última iteração. 
+\end{DoxyReturn}
+
+
+Definido na linha 58 do ficheiro Pid\+Digital.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} e;}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPidDigital_ad8a40bea6c4b95052337cc3a9ad312a6}\label{classPidDigital_ad8a40bea6c4b95052337cc3a9ad312a6}} 
+\index{PidDigital@{PidDigital}!setLimits@{setLimits}}
+\index{setLimits@{setLimits}!PidDigital@{PidDigital}}
+\doxysubsubsection{\texorpdfstring{setLimits()}{setLimits()}}
+{\footnotesize\ttfamily void Pid\+Digital\+::set\+Limits (\begin{DoxyParamCaption}\item[{float}]{inf\+Lim,  }\item[{float}]{sup\+Lim }\end{DoxyParamCaption})}
+
+
+
+Define os limites da ação de controle. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em inf\+Lim} & Limite inferior da ação de controle. \\
+\hline
+{\em sup\+Lim} & Limite superior da ação de controle. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 47 do ficheiro Pid\+Digital.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     this-\/>infLim = infLim;}
+\DoxyCodeLine{50     this-\/>supLim = supLim;}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPidDigital_ade58899c272f1a82e798a3bfe22f3f04}\label{classPidDigital_ade58899c272f1a82e798a3bfe22f3f04}} 
+\index{PidDigital@{PidDigital}!setRef@{setRef}}
+\index{setRef@{setRef}!PidDigital@{PidDigital}}
+\doxysubsubsection{\texorpdfstring{setRef()}{setRef()}}
+{\footnotesize\ttfamily void Pid\+Digital\+::set\+Ref (\begin{DoxyParamCaption}\item[{float}]{ref }\end{DoxyParamCaption})}
+
+
+
+Define a referência. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em ref} & Referência (valor desejado para a saída). \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 53 do ficheiro Pid\+Digital.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     this-\/>ref = ref;}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/include/\mbox{\hyperlink{PidDigital_8h}{Pid\+Digital.\+h}}\item 
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/src/\mbox{\hyperlink{PidDigital_8cpp}{Pid\+Digital.\+cpp}}\end{DoxyCompactItemize}

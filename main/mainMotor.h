@@ -1,18 +1,31 @@
+/**
+ * @file mainMotor.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Teste da classe Motor. 
+ * @details Neste arquivo estão definidas as funções utilizadas no teste da classe 
+ * Motor. Basicamente a posição dos motores é determinada a partir da leitura dos 
+ * potênciômetros A e B, que são controlados pelo usuário. 
+ * @version 0.1
+ * @date 2020-06-14
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include <Arduino.h>
 
 #include "Pin.h"
 #include "Motor.h"
 
-Motor motorA(MOT_A, -90, 90);
-Motor motorB(MOT_B, -90, 90);
-
 int readPotA, readPotB;
 int posA, posB;
+Motor motorA, motorB;
 
 void setupRoot()
 {
-    motorA.setupMotor();
-    motorB.setupMotor();
+    motorA.setupMotor(MOT_A, -90, 90);
+    motorB.setupMotor(MOT_B, -90, 90);
+    motorA.invertMotor();
     motorB.invertMotor();
     Serial.begin(BAUD_RATE);
     while(!Serial);

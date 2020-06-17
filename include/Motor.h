@@ -1,3 +1,14 @@
+/**
+ * @file Motor.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Cabeçalho da classe Motor.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef Motor_h
 #define Motor_h
 
@@ -9,17 +20,13 @@ class Motor
 {
     public:
         /**
-         * @brief Constrói um objeto Motor.
+         * @brief Inicializa o objeto Motor.
          * 
-         * @param controlPin Controle PWM do motor.
+         * @param controlPin Pino de controle (PWM) do motor.
          * @param infLim Limite inferior para a posição do motor (-90 - 0).
          * @param supLim Limite superior para a posição do motor (0 - 90).
          */
-        Motor(int controlPin, int infLimit, int supLimit); 
-        /**
-         * @brief Constrói um objeto Motor padrão.
-         */
-        Motor();
+        void setupMotor(int controlPin, int infLimit, int supLimit); 
         /**
          * @brief Realiza configurações iniciais do motor.
          */

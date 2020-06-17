@@ -1,6 +1,17 @@
+/**
+ * @file Touch.cpp
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Implementação da classe Touch.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include "Touch.h"
 
-Touch::Touch(int touchPin1, int touchPin2, int touchPin3, int touchPin4)
+void Touch::setupTouch(int touchPin1, int touchPin2, int touchPin3, int touchPin4)
 {
     this->touchPin1 = touchPin1;
     this->touchPin2 = touchPin2;
@@ -9,11 +20,6 @@ Touch::Touch(int touchPin1, int touchPin2, int touchPin3, int touchPin4)
 
     xRaw = yRaw = xCm = yCm = 0;
     touching = false; 
-}
-
-Touch::Touch()
-{
-    
 }
 
 int Touch::getRawX()
@@ -74,6 +80,16 @@ float Touch::getCmY()
     }
 
     return yCm;
+}
+
+float Touch::getX()
+{
+    return 0.01*getCmX();
+}
+
+float Touch::getY()
+{
+    return 0.01*getCmY();
 }
 
 boolean Touch::isTouching()

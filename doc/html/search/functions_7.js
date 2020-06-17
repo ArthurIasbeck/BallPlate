@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['touch_43',['Touch',['../classTouch.html#a783d54a50c80a2ba26f5709cf1b257be',1,'Touch::Touch(int touchPin1, int touchPin2, int touchPin3, int touchPin4)'],['../classTouch.html#a5de15620894cc276f2c0844fa0507246',1,'Touch::Touch()']]]
+  ['pid_111',['Pid',['../classPid.html#a35891a4511bcf990a51b5509f7679f75',1,'Pid::Pid(float kp, float ki, float kd, float T)'],['../classPid.html#a8bcea8fa5b4f855f796ef55c6bc169ae',1,'Pid::Pid()']]],
+  ['piddigital_112',['PidDigital',['../classPidDigital.html#a9c4a8bbd0e0363a1ffbc1e62af18140c',1,'PidDigital::PidDigital(float A, float B, float C, float D, float E, float T)'],['../classPidDigital.html#a69a9c49d30991f80615adc2b08557827',1,'PidDigital::PidDigital()']]]
 ];

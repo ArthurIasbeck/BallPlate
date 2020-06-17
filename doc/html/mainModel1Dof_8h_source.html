@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ball and Plate: Código-Fonte de /home/iasbeck/MEGASync/Mestrado/2020-1/ballPlate/main/mainModel1Dof.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ball and Plate
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mainModel1Dof.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mainModel1Dof_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Pin_8h.html">Pin.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Motor_8h.html">Motor.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Touch_8h.html">Touch.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="classTouch.html">Touch</a> touch; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="classMotor.html">Motor</a> motorA;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> readPotA;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">int</span> posA;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">long</span> t0, tf, dt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">float</span> x; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">long</span> countLoops;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mainComm_8h.html#a4b446e2334d1cdbf64d4b180ed1e04f1">setupRoot</a>()</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    countLoops = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    motorA = <a class="code" href="classMotor.html">Motor</a>(MOT_A, -90, 90);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    touch = <a class="code" href="classTouch.html">Touch</a>(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    motorA.<a class="code" href="classMotor.html#a74a46ad078664fb39729f88749b38184">setupMotor</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Serial.begin(BAUD_RATE);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">while</span>(!Serial);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    t0 = micros();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mainComm_8h.html#af359279fbda8fe082aa3fe8ea83c3174">loopRoot</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{   </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    readPotA = analogRead(POT_A);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    posA = map(readPotA, 0, 1023, -90, 90);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    x = touch.<a class="code" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">getCmX</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    motorA.<a class="code" href="classMotor.html#ae6f2c3c9a4397d9f2c95796903559918">setPos</a>(posA);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Serial.print(String(posA) + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Serial.print(String(x) + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Serial.print(String(dt));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    Serial.print(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">while</span>(1)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        tf = micros();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        dt = tf - t0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span>(dt &gt; 10000) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    t0 = micros();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    countLoops++;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(countLoops == 6000)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Serial.println(<span class="stringliteral">&quot;Fim do teste&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">while</span>(1);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="amainComm_8h_html_af359279fbda8fe082aa3fe8ea83c3174"><div class="ttname"><a href="mainComm_8h.html#af359279fbda8fe082aa3fe8ea83c3174">loopRoot</a></div><div class="ttdeci">void loopRoot()</div><div class="ttdoc">Função loop() principal.</div><div class="ttdef"><b>Definition:</b> <a href="mainComm_8h_source.html#l00052">mainComm.h:52</a></div></div>
+<div class="ttc" id="aclassMotor_html_ae6f2c3c9a4397d9f2c95796903559918"><div class="ttname"><a href="classMotor.html#ae6f2c3c9a4397d9f2c95796903559918">Motor::setPos</a></div><div class="ttdeci">void setPos(int pos)</div><div class="ttdoc">Envia o motor para uma dada posição.</div><div class="ttdef"><b>Definition:</b> <a href="Motor_8cpp_source.html#l00030">Motor.cpp:30</a></div></div>
+<div class="ttc" id="aPin_8h_html"><div class="ttname"><a href="Pin_8h.html">Pin.h</a></div><div class="ttdoc">Arquivo de configurações.</div></div>
+<div class="ttc" id="aclassTouch_html"><div class="ttname"><a href="classTouch.html">Touch</a></div><div class="ttdoc">Realiza a leitura da touchscreen.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8h_source.html#l00020">Touch.h:20</a></div></div>
+<div class="ttc" id="aTouch_8h_html"><div class="ttname"><a href="Touch_8h.html">Touch.h</a></div><div class="ttdoc">Cabeçalho da classe Touch.</div></div>
+<div class="ttc" id="aMotor_8h_html"><div class="ttname"><a href="Motor_8h.html">Motor.h</a></div><div class="ttdoc">Cabeçalho da classe Motor.</div></div>
+<div class="ttc" id="aclassMotor_html_a74a46ad078664fb39729f88749b38184"><div class="ttname"><a href="classMotor.html#a74a46ad078664fb39729f88749b38184">Motor::setupMotor</a></div><div class="ttdeci">void setupMotor(int controlPin, int infLimit, int supLimit)</div><div class="ttdoc">Inicializa o objeto Motor.</div><div class="ttdef"><b>Definition:</b> <a href="Motor_8cpp_source.html#l00014">Motor.cpp:14</a></div></div>
+<div class="ttc" id="amainComm_8h_html_a4b446e2334d1cdbf64d4b180ed1e04f1"><div class="ttname"><a href="mainComm_8h.html#a4b446e2334d1cdbf64d4b180ed1e04f1">setupRoot</a></div><div class="ttdeci">void setupRoot()</div><div class="ttdoc">Função setup() principal.</div><div class="ttdef"><b>Definition:</b> <a href="mainComm_8h_source.html#l00042">mainComm.h:42</a></div></div>
+<div class="ttc" id="aclassTouch_html_a273f44de152e01e8d04cb4eecf704ef0"><div class="ttname"><a href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a></div><div class="ttdeci">float getCmX()</div><div class="ttdoc">Retorna a posição do toque em cm no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00053">Touch.cpp:53</a></div></div>
+<div class="ttc" id="aclassMotor_html"><div class="ttname"><a href="classMotor.html">Motor</a></div><div class="ttdoc">Implementa funções para controle dos servomotores.</div><div class="ttdef"><b>Definition:</b> <a href="Motor_8h_source.html#l00019">Motor.h:19</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

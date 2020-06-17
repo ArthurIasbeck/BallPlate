@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ball and Plate: Referência ao ficheiro /home/iasbeck/MEGASync/Mestrado/2020-1/ballPlate/main/mainPID.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ball and Plate
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro mainPID.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação do controle PID nas direções x e y.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;Arduino.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Motor_8h_source.html">Motor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Pid_8h_source.html">Pid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Pin_8h_source.html">Pin.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MovingAverage_8h_source.html">MovingAverage.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Touch_8h_source.html">Touch.h</a>&quot;</code><br />
+</div>
+<p><a href="mainPID_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a60178903328491eab0a5688c39fabe57"><td class="memItemLeft" align="right" valign="top"><a id="a60178903328491eab0a5688c39fabe57"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainPID_8h.html#a60178903328491eab0a5688c39fabe57">updatePosXY</a> ()</td></tr>
+<tr class="memdesc:a60178903328491eab0a5688c39fabe57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a leitura da touchscreen e atualização das variáveis x e y que ditam a posição da esfera. <br  />
+ <br /></td></tr>
+<tr class="separator:a60178903328491eab0a5688c39fabe57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63be78c7dfd884029f7a94c6d5acb509"><td class="memItemLeft" align="right" valign="top"><a id="a63be78c7dfd884029f7a94c6d5acb509"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>controlStop</b> ()</td></tr>
+<tr class="separator:a63be78c7dfd884029f7a94c6d5acb509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe47b62ba95a0d35011f5d311633daf"><td class="memItemLeft" align="right" valign="top"><a id="adfe47b62ba95a0d35011f5d311633daf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainPID_8h.html#adfe47b62ba95a0d35011f5d311633daf">checkBall</a> ()</td></tr>
+<tr class="memdesc:adfe47b62ba95a0d35011f5d311633daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica a presença da esfera sobre a mesa e interrompe a atuação do controlador PID caso a esfera tenha sido removida. <br /></td></tr>
+<tr class="separator:adfe47b62ba95a0d35011f5d311633daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9efa0560459f02fc6aba6ef5902edf6"><td class="memItemLeft" align="right" valign="top"><a id="aa9efa0560459f02fc6aba6ef5902edf6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainPID_8h.html#aa9efa0560459f02fc6aba6ef5902edf6">applyControl</a> ()</td></tr>
+<tr class="memdesc:aa9efa0560459f02fc6aba6ef5902edf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a computação da ação de controle. <br /></td></tr>
+<tr class="separator:aa9efa0560459f02fc6aba6ef5902edf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545c05c684d102261343607bbdc3699a"><td class="memItemLeft" align="right" valign="top"><a id="a545c05c684d102261343607bbdc3699a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>showData</b> ()</td></tr>
+<tr class="separator:a545c05c684d102261343607bbdc3699a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260d53ced9105a2541ae9473a215c94a"><td class="memItemLeft" align="right" valign="top"><a id="a260d53ced9105a2541ae9473a215c94a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>waitSampleTime</b> ()</td></tr>
+<tr class="separator:a260d53ced9105a2541ae9473a215c94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b446e2334d1cdbf64d4b180ed1e04f1"><td class="memItemLeft" align="right" valign="top"><a id="a4b446e2334d1cdbf64d4b180ed1e04f1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setupRoot</b> ()</td></tr>
+<tr class="separator:a4b446e2334d1cdbf64d4b180ed1e04f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af359279fbda8fe082aa3fe8ea83c3174"><td class="memItemLeft" align="right" valign="top"><a id="af359279fbda8fe082aa3fe8ea83c3174"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>loopRoot</b> ()</td></tr>
+<tr class="separator:af359279fbda8fe082aa3fe8ea83c3174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a88badc5df94bbf568dd4d7064248a5f3"><td class="memItemLeft" align="right" valign="top"><a id="a88badc5df94bbf568dd4d7064248a5f3"></a>
+<a class="el" href="classTouch.html">Touch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>touch</b></td></tr>
+<tr class="separator:a88badc5df94bbf568dd4d7064248a5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8214fa686194b1f61fb66d1cdd61b5c"><td class="memItemLeft" align="right" valign="top"><a id="ac8214fa686194b1f61fb66d1cdd61b5c"></a>
+<a class="el" href="classMovingAverage.html">MovingAverage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>filterX</b></td></tr>
+<tr class="separator:ac8214fa686194b1f61fb66d1cdd61b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a041323ec9063db7d1102de66233afee4"><td class="memItemLeft" align="right" valign="top"><a id="a041323ec9063db7d1102de66233afee4"></a>
+<a class="el" href="classMovingAverage.html">MovingAverage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>filterY</b></td></tr>
+<tr class="separator:a041323ec9063db7d1102de66233afee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40fe08a194dff2da8cb6e162001f912"><td class="memItemLeft" align="right" valign="top"><a id="ad40fe08a194dff2da8cb6e162001f912"></a>
+<a class="el" href="classMotor.html">Motor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>motorA</b></td></tr>
+<tr class="separator:ad40fe08a194dff2da8cb6e162001f912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7884fc6e64dc629634dc0e429cd4ffdb"><td class="memItemLeft" align="right" valign="top"><a id="a7884fc6e64dc629634dc0e429cd4ffdb"></a>
+<a class="el" href="classMotor.html">Motor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>motorB</b></td></tr>
+<tr class="separator:a7884fc6e64dc629634dc0e429cd4ffdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9733e6c683606e11da3f01f77c23e2"><td class="memItemLeft" align="right" valign="top"><a id="aef9733e6c683606e11da3f01f77c23e2"></a>
+<a class="el" href="classPid.html">Pid</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pidX</b></td></tr>
+<tr class="separator:aef9733e6c683606e11da3f01f77c23e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc0d6cd58913e19b83a6c760cf83818"><td class="memItemLeft" align="right" valign="top"><a id="accc0d6cd58913e19b83a6c760cf83818"></a>
+<a class="el" href="classPid.html">Pid</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pidY</b></td></tr>
+<tr class="separator:accc0d6cd58913e19b83a6c760cf83818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0da36b2558901e21e7a30f6c227a45e"><td class="memItemLeft" align="right" valign="top"><a id="ad0da36b2558901e21e7a30f6c227a45e"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
+<tr class="separator:ad0da36b2558901e21e7a30f6c227a45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f0d3eebc3c443f9be81bf48561a217"><td class="memItemLeft" align="right" valign="top"><a id="aa4f0d3eebc3c443f9be81bf48561a217"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+<tr class="separator:aa4f0d3eebc3c443f9be81bf48561a217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bc6be6a7a8a9cf841e826b5df9feb8"><td class="memItemLeft" align="right" valign="top"><a id="a16bc6be6a7a8a9cf841e826b5df9feb8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>countNoBall</b></td></tr>
+<tr class="separator:a16bc6be6a7a8a9cf841e826b5df9feb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fd9c21bced0f3b20299714c88bbca9e"><td class="memItemLeft" align="right" valign="top"><a id="a7fd9c21bced0f3b20299714c88bbca9e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>stopControl</b></td></tr>
+<tr class="separator:a7fd9c21bced0f3b20299714c88bbca9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc94bd99746dab889498f274a2678e9c"><td class="memItemLeft" align="right" valign="top"><a id="adc94bd99746dab889498f274a2678e9c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>controlX</b></td></tr>
+<tr class="separator:adc94bd99746dab889498f274a2678e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ce0e90b94710264de0e1f91430785ce"><td class="memItemLeft" align="right" valign="top"><a id="a6ce0e90b94710264de0e1f91430785ce"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>controlY</b></td></tr>
+<tr class="separator:a6ce0e90b94710264de0e1f91430785ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fad1ff71976effc6b8f0fa1c0802f43"><td class="memItemLeft" align="right" valign="top"><a id="a5fad1ff71976effc6b8f0fa1c0802f43"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>dt</b></td></tr>
+<tr class="separator:a5fad1ff71976effc6b8f0fa1c0802f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a521e476b723cca4aa3de1aa1bc825"><td class="memItemLeft" align="right" valign="top"><a id="a70a521e476b723cca4aa3de1aa1bc825"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>t0</b></td></tr>
+<tr class="separator:a70a521e476b723cca4aa3de1aa1bc825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5320bdf67f3840b56d0fc5566e3c9e7"><td class="memItemLeft" align="right" valign="top"><a id="aa5320bdf67f3840b56d0fc5566e3c9e7"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>tf</b></td></tr>
+<tr class="separator:aa5320bdf67f3840b56d0fc5566e3c9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b26443fa687b4eae37b48d8b2d001e6"><td class="memItemLeft" align="right" valign="top"><a id="a5b26443fa687b4eae37b48d8b2d001e6"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>Tm</b></td></tr>
+<tr class="separator:a5b26443fa687b4eae37b48d8b2d001e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31325b9b017e221b74ddb67907709c3"><td class="memItemLeft" align="right" valign="top"><a id="ae31325b9b017e221b74ddb67907709c3"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>T</b></td></tr>
+<tr class="separator:ae31325b9b017e221b74ddb67907709c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementação do controle PID nas direções x e y. </p>
+<dl class="section author"><dt>Autor</dt><dd>Arthur Iasbeck (<a href="#" onclick="location.href='mai'+'lto:'+'art'+'hu'+'ria'+'sb'+'eck'+'@g'+'mai'+'l.'+'com'; return false;">arthu<span style="display: none;">.nosp@m.</span>rias<span style="display: none;">.nosp@m.</span>beck@<span style="display: none;">.nosp@m.</span>gmai<span style="display: none;">.nosp@m.</span>l.com</a>) </dd></dl>
+<dl class="section version"><dt>Versão</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2020-06-14</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2020 </dd></dl>
+
+<p class="definition">Definido no ficheiro <a class="el" href="mainPID_8h_source.html">mainPID.h</a>.</p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

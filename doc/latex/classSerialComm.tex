@@ -1,0 +1,339 @@
+\hypertarget{classSerialComm}{}\doxysection{Referência à classe Serial\+Comm}
+\label{classSerialComm}\index{SerialComm@{SerialComm}}
+
+
+Implementa funções para comunicação serial.  
+
+
+
+
+{\ttfamily \#include $<$Serial\+Comm.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSerialComm_af27895c3ecb34eec66a963a50c05d1cd}{Serial\+Comm}} ()
+\begin{DoxyCompactList}\small\item\em Constrói um novo objeto \mbox{\hyperlink{classSerialComm}{Serial\+Comm}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialComm_a39c0e8886d315a1d5f1beaf0536d190b}{setup\+Comm}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa a comunicação serial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialComm_a88e4d9798a3a1b9ebaaf42822d00f145}{set\+Precision}} (int precision)
+\begin{DoxyCompactList}\small\item\em Determina o número de casas após a vírgula que será adotado no envio das mensagens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{send\+Data}} (String data)
+\begin{DoxyCompactList}\small\item\em Realiza o envio de mensagens do tipo string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialComm_a7abe942eec1b4019eb2953bfa3bc3458}{send\+Data}} (float data)
+\begin{DoxyCompactList}\small\item\em Realiza o envio de mensagens do tipo float. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialComm_a6d986b5899c339ebc16109083af8605f}{send\+Data}} (float data\mbox{[}$\,$\mbox{]}, int size\+Data)
+\begin{DoxyCompactList}\small\item\em Realiza o envio de mensagens compostas por vários elementos do tipo float. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcv\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Realiza o recebimento de dados do tipo float. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialComm_a41def9bce952551fcd4c285d1493d0bd}{rcv\+Data}} (float $\ast$\mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcv\+Float}}, int size\+Data)
+\begin{DoxyCompactList}\small\item\em Realiza o recebimento de dados compostos por vários elementos do tipo float. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}{data\+Received}} ()
+\begin{DoxyCompactList}\small\item\em Retorna uma flag que indica se a chamada da função \mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcv\+Data()}} resultou na leitura de algum dado, ou seja, se algum dado foi de fato recebido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Implementa funções para comunicação serial. 
+
+Definido na linha 21 do ficheiro Serial\+Comm.\+h.
+
+
+
+\doxysubsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classSerialComm_af27895c3ecb34eec66a963a50c05d1cd}\label{classSerialComm_af27895c3ecb34eec66a963a50c05d1cd}} 
+\index{SerialComm@{SerialComm}!SerialComm@{SerialComm}}
+\index{SerialComm@{SerialComm}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{SerialComm()}{SerialComm()}}
+{\footnotesize\ttfamily Serial\+Comm\+::\+Serial\+Comm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constrói um novo objeto \mbox{\hyperlink{classSerialComm}{Serial\+Comm}}. 
+
+
+
+Definido na linha 14 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     precision = 5;}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação dos métodos}
+\mbox{\Hypertarget{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}\label{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}} 
+\index{SerialComm@{SerialComm}!dataReceived@{dataReceived}}
+\index{dataReceived@{dataReceived}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{dataReceived()}{dataReceived()}}
+{\footnotesize\ttfamily bool Serial\+Comm\+::data\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna uma flag que indica se a chamada da função \mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcv\+Data()}} resultou na leitura de algum dado, ou seja, se algum dado foi de fato recebido. 
+
+\begin{DoxyReturn}{Retorna}
+true -\/ Houve recebimento de dados. 
+
+false -\/ Não havia dados a serem lidos. 
+\end{DoxyReturn}
+
+
+Definido na linha 111 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112 \{}
+\DoxyCodeLine{113     \textcolor{keywordflow}{return} received;}
+\DoxyCodeLine{114 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}\label{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}} 
+\index{SerialComm@{SerialComm}!rcvData@{rcvData}}
+\index{rcvData@{rcvData}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{rcvData()}{rcvData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Serial\+Comm\+::rcv\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza o recebimento de dados do tipo float. 
+
+\begin{DoxyReturn}{Retorna}
+Dado (float) recebido. 
+\end{DoxyReturn}
+
+
+Definido na linha 47 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     String rcvString; }
+\DoxyCodeLine{50     \textcolor{keywordtype}{float} \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}};}
+\DoxyCodeLine{51     \textcolor{keywordtype}{char} rcvChar;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     received = \textcolor{keyword}{false}; }
+\DoxyCodeLine{54     \textcolor{keywordflow}{if} (Serial.available())}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{57         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{58         \{}
+\DoxyCodeLine{59             rcvChar = Serial.read();}
+\DoxyCodeLine{60             \textcolor{keywordflow}{if} (rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{61             rcvString += rcvChar;}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63         \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}} = rcvString.toFloat();}
+\DoxyCodeLine{64         serialClear();}
+\DoxyCodeLine{65         received = \textcolor{keyword}{true}; }
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67     \textcolor{keywordflow}{return} \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}};}
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_a41def9bce952551fcd4c285d1493d0bd}\label{classSerialComm_a41def9bce952551fcd4c285d1493d0bd}} 
+\index{SerialComm@{SerialComm}!rcvData@{rcvData}}
+\index{rcvData@{rcvData}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{rcvData()}{rcvData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Serial\+Comm\+::rcv\+Data (\begin{DoxyParamCaption}\item[{float $\ast$}]{rcv\+Float,  }\item[{int}]{size\+Data }\end{DoxyParamCaption})}
+
+
+
+Realiza o recebimento de dados compostos por vários elementos do tipo float. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em rcv\+Float} & Endereço da primeira posição do vetor que armazenará, após a chamada da função, os dados (floats) recebidos. \\
+\hline
+{\em size\+Data} & Número de dados a serem recebidos. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 70 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72     String rcvStrings[sizeData];}
+\DoxyCodeLine{73     String rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} rcvStringIndex = 0;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{char} rcvChar;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     received = \textcolor{keyword}{false}; }
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (Serial.available())}
+\DoxyCodeLine{79     \{}
+\DoxyCodeLine{80         rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{81         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{82         \{}
+\DoxyCodeLine{83             rcvChar = Serial.read();}
+\DoxyCodeLine{84             \textcolor{keywordflow}{if}((rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) || (rcvChar == MSG\_BREAK))}
+\DoxyCodeLine{85             \{}
+\DoxyCodeLine{86                 rcvStrings[rcvStringIndex] = rcvString;}
+\DoxyCodeLine{87                 rcvStringIndex++;}
+\DoxyCodeLine{88                 rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90                 \textcolor{keywordflow}{if} (rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) }
+\DoxyCodeLine{91                 \{}
+\DoxyCodeLine{92                     \textcolor{keywordflow}{break}; }
+\DoxyCodeLine{93                 \}}
+\DoxyCodeLine{94             \}}
+\DoxyCodeLine{95             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{96             \{}
+\DoxyCodeLine{97                 rcvString += rcvChar;}
+\DoxyCodeLine{98             \}}
+\DoxyCodeLine{99         \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < sizeData; i++)}
+\DoxyCodeLine{102         \{}
+\DoxyCodeLine{103             \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}}[i] = rcvStrings[i].toFloat();}
+\DoxyCodeLine{104         \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         serialClear();}
+\DoxyCodeLine{107         received = \textcolor{keyword}{true}; }
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_a7abe942eec1b4019eb2953bfa3bc3458}\label{classSerialComm_a7abe942eec1b4019eb2953bfa3bc3458}} 
+\index{SerialComm@{SerialComm}!sendData@{sendData}}
+\index{sendData@{sendData}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{sendData()}{sendData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Serial\+Comm\+::send\+Data (\begin{DoxyParamCaption}\item[{float}]{data }\end{DoxyParamCaption})}
+
+
+
+Realiza o envio de mensagens do tipo float. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em data} & Mensagem (float) a ser enviada. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 30 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     Serial.println(data, precision);}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_a6d986b5899c339ebc16109083af8605f}\label{classSerialComm_a6d986b5899c339ebc16109083af8605f}} 
+\index{SerialComm@{SerialComm}!sendData@{sendData}}
+\index{sendData@{sendData}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{sendData()}{sendData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Serial\+Comm\+::send\+Data (\begin{DoxyParamCaption}\item[{float}]{data\mbox{[}$\,$\mbox{]},  }\item[{int}]{size\+Data }\end{DoxyParamCaption})}
+
+
+
+Realiza o envio de mensagens compostas por vários elementos do tipo float. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em data} & Vetor contendo os dados (float) a serem enviados. \\
+\hline
+{\em size\+Data} & Número de dados a serem enviados. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 35 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     String msg;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     msg = String(data[0], precision); }
+\DoxyCodeLine{40     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < sizeData; i++)}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         msg += MSG\_BREAK + String(data[i], precision);}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44     \mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(msg);}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}\label{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}} 
+\index{SerialComm@{SerialComm}!sendData@{sendData}}
+\index{sendData@{sendData}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{sendData()}{sendData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Serial\+Comm\+::send\+Data (\begin{DoxyParamCaption}\item[{String}]{data }\end{DoxyParamCaption})}
+
+
+
+Realiza o envio de mensagens do tipo string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em data} & Mensagem (string) a ser enviada. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 25 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     Serial.println(data);}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_a88e4d9798a3a1b9ebaaf42822d00f145}\label{classSerialComm_a88e4d9798a3a1b9ebaaf42822d00f145}} 
+\index{SerialComm@{SerialComm}!setPrecision@{setPrecision}}
+\index{setPrecision@{setPrecision}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{setPrecision()}{setPrecision()}}
+{\footnotesize\ttfamily void Serial\+Comm\+::set\+Precision (\begin{DoxyParamCaption}\item[{int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Determina o número de casas após a vírgula que será adotado no envio das mensagens. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em precision} & Número de casas após a vírgula. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 116 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{117 \{}
+\DoxyCodeLine{118     this-\/>precision = precision;}
+\DoxyCodeLine{119 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_a39c0e8886d315a1d5f1beaf0536d190b}\label{classSerialComm_a39c0e8886d315a1d5f1beaf0536d190b}} 
+\index{SerialComm@{SerialComm}!setupComm@{setupComm}}
+\index{setupComm@{setupComm}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{setupComm()}{setupComm()}}
+{\footnotesize\ttfamily void Serial\+Comm\+::setup\+Comm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa a comunicação serial. 
+
+
+
+Definido na linha 19 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     Serial.begin(BAUD\_RATE);}
+\DoxyCodeLine{22     \textcolor{keywordflow}{while} (!Serial);}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/include/\mbox{\hyperlink{SerialComm_8h}{Serial\+Comm.\+h}}\item 
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/src/\mbox{\hyperlink{SerialComm_8cpp}{Serial\+Comm.\+cpp}}\end{DoxyCompactItemize}

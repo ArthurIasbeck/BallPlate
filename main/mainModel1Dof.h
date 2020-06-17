@@ -1,3 +1,19 @@
+/**
+ * @file mainModel1Dof.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Coleta de dados para modelagem no eixo x.
+ * @details Neste arquivo a coleta de dados no eixo x foi realizada 
+ * enquanto a posição do motor A é determinada a partir da leitura 
+ * do potenciômetro A. O objetivo aqui é realizar uma coleta de dados 
+ * finita dos valores de x à medida em que a mesa é controlada pelo 
+ * usuário. 
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include <Arduino.h>
 
 #include "Pin.h"

@@ -1,0 +1,67 @@
+\hypertarget{mainModel1Dof_8h}{}\doxysection{Referência ao ficheiro /home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/main/main\+Model1\+Dof.h}
+\label{mainModel1Dof_8h}\index{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/main/mainModel1Dof.h@{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/main/mainModel1Dof.h}}
+
+
+Coleta de dados para modelagem no eixo x.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Pin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Motor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Touch.\+h\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{mainModel1Dof_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
+void {\bfseries setup\+Root} ()
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{mainModel1Dof_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
+void {\bfseries loop\+Root} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a88badc5df94bbf568dd4d7064248a5f3}\label{mainModel1Dof_8h_a88badc5df94bbf568dd4d7064248a5f3}} 
+\mbox{\hyperlink{classTouch}{Touch}} {\bfseries touch}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_ad40fe08a194dff2da8cb6e162001f912}\label{mainModel1Dof_8h_ad40fe08a194dff2da8cb6e162001f912}} 
+\mbox{\hyperlink{classMotor}{Motor}} {\bfseries motorA}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a4a18c770de97cada4d590c8205eca803}\label{mainModel1Dof_8h_a4a18c770de97cada4d590c8205eca803}} 
+int {\bfseries read\+PotA}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a2b2f0c302b48f81e980832246b5babe0}\label{mainModel1Dof_8h_a2b2f0c302b48f81e980832246b5babe0}} 
+int {\bfseries posA}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a70a521e476b723cca4aa3de1aa1bc825}\label{mainModel1Dof_8h_a70a521e476b723cca4aa3de1aa1bc825}} 
+long {\bfseries t0}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_aa5320bdf67f3840b56d0fc5566e3c9e7}\label{mainModel1Dof_8h_aa5320bdf67f3840b56d0fc5566e3c9e7}} 
+long {\bfseries tf}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a5fad1ff71976effc6b8f0fa1c0802f43}\label{mainModel1Dof_8h_a5fad1ff71976effc6b8f0fa1c0802f43}} 
+long {\bfseries dt}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_ad0da36b2558901e21e7a30f6c227a45e}\label{mainModel1Dof_8h_ad0da36b2558901e21e7a30f6c227a45e}} 
+float {\bfseries x}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_ae7516701ded5167652dcfefc32d42bd4}\label{mainModel1Dof_8h_ae7516701ded5167652dcfefc32d42bd4}} 
+long {\bfseries count\+Loops}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Coleta de dados para modelagem no eixo x. 
+
+\begin{DoxyAuthor}{Autor}
+Arthur Iasbeck (\href{mailto:arthuriasbeck@gmail.com}{\texttt{ arthuriasbeck@gmail.\+com}})
+\end{DoxyAuthor}
+Neste arquivo a coleta de dados no eixo x foi realizada enquanto a posição do motor A é determinada a partir da leitura do potenciômetro A. O objetivo aqui é realizar uma coleta de dados finita dos valores de x à medida em que a mesa é controlada pelo usuário. \begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2020-\/06-\/10
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}

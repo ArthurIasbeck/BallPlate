@@ -1,3 +1,14 @@
+/**
+ * @file mainTouch.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Teste da classe Touch. 
+ * @version 0.1
+ * @date 2020-06-14
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include <Arduino.h>
 
 #include "Touch.h"
@@ -8,7 +19,7 @@ int xRaw, yRaw;
 float x, y;
 
 void setupRoot() {
-    touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
+    touch.setupTouch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
     Serial.begin(BAUD_RATE);
     while(!Serial);
 }

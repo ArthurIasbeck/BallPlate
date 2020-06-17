@@ -1,15 +1,15 @@
-\hypertarget{classPid}{}\doxysection{Pid Class Reference}
+\hypertarget{classPid}{}\doxysection{Referência à classe Pid}
 \label{classPid}\index{Pid@{Pid}}
 
 
-Classe que representa o controlador P\+ID.  
+Classe que implementa um controlador P\+ID.  
 
 
 
 
 {\ttfamily \#include $<$Pid.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classPid_a35891a4511bcf990a51b5509f7679f75}{Pid}} (float kp, float ki, float kd, float T)
@@ -27,14 +27,14 @@ float \mbox{\hyperlink{classPid_a32e459d7eb1b7f0c3464f52d14ab1e71}{get\+Err}} ()
 \begin{DoxyCompactList}\small\item\em Retorna o valor do erro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-Classe que representa o controlador P\+ID. 
+\doxysubsection{Descrição detalhada}
+Classe que implementa um controlador P\+ID. 
 
-Definition at line 7 of file Pid.\+h.
+Definido na linha 18 do ficheiro Pid.\+h.
 
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentação dos Construtores \& Destrutor}
 \mbox{\Hypertarget{classPid_a35891a4511bcf990a51b5509f7679f75}\label{classPid_a35891a4511bcf990a51b5509f7679f75}} 
 \index{Pid@{Pid}!Pid@{Pid}}
 \index{Pid@{Pid}!Pid@{Pid}}
@@ -46,7 +46,7 @@ Definition at line 7 of file Pid.\+h.
 Constrói um objeto P\+ID. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em kp} & Constante proporcional. \\
 \hline
 {\em ki} & Constante integral. \\
@@ -58,23 +58,24 @@ Constrói um objeto P\+ID.
 \end{DoxyParams}
 
 
-Definition at line 3 of file Pid.\+cpp.
+Definido na linha 14 do ficheiro Pid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{4 \{}
-\DoxyCodeLine{5     this-\/>kp = kp;}
-\DoxyCodeLine{6     this-\/>ki = ki;}
-\DoxyCodeLine{7     this-\/>kd = kd;}
-\DoxyCodeLine{8     this-\/>T = T;}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10     ie = 0;}
-\DoxyCodeLine{11 \}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     this-\/>kp = kp;}
+\DoxyCodeLine{17     this-\/>ki = ki;}
+\DoxyCodeLine{18     this-\/>kd = kd;}
+\DoxyCodeLine{19     this-\/>T = T;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     ie = 0;}
+\DoxyCodeLine{22     errPrev = 0;}
+\DoxyCodeLine{23 \}}
 
 \end{DoxyCode}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentação dos métodos}
 \mbox{\Hypertarget{classPid_ab6692082b66b4b61563213545cf1cfa2}\label{classPid_ab6692082b66b4b61563213545cf1cfa2}} 
 \index{Pid@{Pid}!compute@{compute}}
 \index{compute@{compute}!Pid@{Pid}}
@@ -86,50 +87,43 @@ Definition at line 3 of file Pid.\+cpp.
 Computa a ação de controle. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em out} & Saída do sistema (valor advindo do sensor). \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Ação de controle. 
 \end{DoxyReturn}
 
 
-Definition at line 18 of file Pid.\+cpp.
+Definido na linha 30 do ficheiro Pid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{19 \{}
-\DoxyCodeLine{20     \textcolor{keywordtype}{float} control; }
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22     err = ref -\/ out;}
-\DoxyCodeLine{23     de = (err -\/ errPrev);}
-\DoxyCodeLine{24     ie = ie + err;}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26     \textcolor{comment}{// Zero o integrador para amenizar o overshoot}}
-\DoxyCodeLine{27     \textcolor{keywordflow}{if}(err*errPrev < 0) ie = 0;}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29     control = kp*err + ki*ie + kd*de;}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31     Serial.println(\textcolor{stringliteral}{"output = "} + String(out));}
-\DoxyCodeLine{32     Serial.println(\textcolor{stringliteral}{"err = "} + String(err));}
-\DoxyCodeLine{33     Serial.println(\textcolor{stringliteral}{"de = "} + String(de));}
-\DoxyCodeLine{34     Serial.println(\textcolor{stringliteral}{"ie = "} + String(ie));}
-\DoxyCodeLine{35     Serial.println(\textcolor{stringliteral}{"kp*err = "} + String(kp*err));}
-\DoxyCodeLine{36     Serial.println(\textcolor{stringliteral}{"ki*ie = "} + String(ki*ie));}
-\DoxyCodeLine{37     Serial.println(\textcolor{stringliteral}{"kd*de = "} + String(kd*de));}
-\DoxyCodeLine{38     Serial.println(\textcolor{stringliteral}{"control = "} + String(control));}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40     \textcolor{keywordflow}{if}(control < infLim) control = infLim;}
-\DoxyCodeLine{41     \textcolor{keywordflow}{if}(control > supLim) control = supLim;}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     \textcolor{keywordtype}{float} control; }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     err = ref -\/ out;}
+\DoxyCodeLine{35     de = (err -\/ errPrev)/T;}
+\DoxyCodeLine{36     ie = ie + err*T;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{// Zero o integrador para amenizar o overshoot}}
+\DoxyCodeLine{39     \textcolor{comment}{// if(err*errPrev < 0) ie = 0; // DEBUG}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     control = kp*err + ki*ie + kd*de;}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{43     Serial.println(\textcolor{stringliteral}{"control = "} + String(control));}
-\DoxyCodeLine{44     Serial.println(\textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"});}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46     errPrev = err;}
+\DoxyCodeLine{43     \textcolor{comment}{// Serial.print(String(kp*err) + " ");}}
+\DoxyCodeLine{44     \textcolor{comment}{// Serial.print(String(ki*ie) + " ");}}
+\DoxyCodeLine{45     \textcolor{comment}{// Serial.print(String(kd*de) + " ");}}
+\DoxyCodeLine{46     \textcolor{comment}{// Serial.print("\(\backslash\)n");}}
 \DoxyCodeLine{47 }
-\DoxyCodeLine{48     \textcolor{keywordflow}{return} control;}
-\DoxyCodeLine{49 \}}
+\DoxyCodeLine{48     \textcolor{keywordflow}{if}(control < infLim) control = infLim;}
+\DoxyCodeLine{49     \textcolor{keywordflow}{if}(control > supLim) control = supLim;}
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51     errPrev = err;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordflow}{return} control;}
+\DoxyCodeLine{54 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classPid_a32e459d7eb1b7f0c3464f52d14ab1e71}\label{classPid_a32e459d7eb1b7f0c3464f52d14ab1e71}} 
@@ -142,18 +136,18 @@ Definition at line 18 of file Pid.\+cpp.
 
 Retorna o valor do erro. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Erro computado na última iteração. 
 \end{DoxyReturn}
 
 
-Definition at line 62 of file Pid.\+cpp.
+Definido na linha 67 do ficheiro Pid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{63 \{}
-\DoxyCodeLine{64     \textcolor{keywordflow}{return} err;}
-\DoxyCodeLine{65 \}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{return} err;}
+\DoxyCodeLine{70 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classPid_a3bb5c749ee0e12036b53c9fc2c600bfb}\label{classPid_a3bb5c749ee0e12036b53c9fc2c600bfb}} 
@@ -167,7 +161,7 @@ Definition at line 62 of file Pid.\+cpp.
 Define os limites da ação de controle. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em inf\+Lim} & Limite inferior da ação de controle. \\
 \hline
 {\em sup\+Lim} & Limite superior da ação de controle. \\
@@ -175,14 +169,14 @@ Define os limites da ação de controle.
 \end{DoxyParams}
 
 
-Definition at line 51 of file Pid.\+cpp.
+Definido na linha 56 do ficheiro Pid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{52 \{}
-\DoxyCodeLine{53     this-\/>infLim = infLim;}
-\DoxyCodeLine{54     this-\/>supLim = supLim;}
-\DoxyCodeLine{55 \}}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     this-\/>infLim = infLim;}
+\DoxyCodeLine{59     this-\/>supLim = supLim;}
+\DoxyCodeLine{60 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classPid_a2fee3455db5fc1c1b5b9a7a50cbc75a0}\label{classPid_a2fee3455db5fc1c1b5b9a7a50cbc75a0}} 
@@ -196,24 +190,24 @@ Definition at line 51 of file Pid.\+cpp.
 Define a referência. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em ref} & Referência (valor desejado para a saída). \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 57 of file Pid.\+cpp.
+Definido na linha 62 do ficheiro Pid.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{58 \{}
-\DoxyCodeLine{59     this-\/>ref = ref;}
-\DoxyCodeLine{60 \}}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     this-\/>ref = ref;}
+\DoxyCodeLine{65 \}}
 
 \end{DoxyCode}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
 \item 
-/home/iasbeck/Área de Trabalho/ball\+Plate/include/Pid.\+h\item 
-/home/iasbeck/Área de Trabalho/ball\+Plate/src/Pid.\+cpp\end{DoxyCompactItemize}
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/include/\mbox{\hyperlink{Pid_8h}{Pid.\+h}}\item 
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/src/\mbox{\hyperlink{Pid_8cpp}{Pid.\+cpp}}\end{DoxyCompactItemize}

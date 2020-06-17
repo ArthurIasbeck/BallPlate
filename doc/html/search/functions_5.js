@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['setlimits_32',['setLimits',['../classPid.html#a3bb5c749ee0e12036b53c9fc2c600bfb',1,'Pid']]],
-  ['setpos_33',['setPos',['../classMotor.html#ae6f2c3c9a4397d9f2c95796903559918',1,'Motor']]],
-  ['setref_34',['setRef',['../classPid.html#a2fee3455db5fc1c1b5b9a7a50cbc75a0',1,'Pid']]],
-  ['setupmotor_35',['setupMotor',['../classMotor.html#a72fd6780dc8333a294725385177bc4eb',1,'Motor']]],
-  ['setzero_36',['setZero',['../classMotor.html#af5b6660996ea030c706b051d32e671f9',1,'Motor']]]
+  ['loop_103',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]],
+  ['looprcv_104',['loopRcv',['../mainComm_8h.html#a720ce5f07e29ff7661f8259da4f00739',1,'mainComm.h']]],
+  ['looprcvmult_105',['loopRcvMult',['../mainComm_8h.html#a70a0b6eabae357659251e7cbf85cdee6',1,'mainComm.h']]],
+  ['looproot_106',['loopRoot',['../mainComm_8h.html#af359279fbda8fe082aa3fe8ea83c3174',1,'mainComm.h']]],
+  ['loopsend_107',['loopSend',['../mainComm_8h.html#abb80223164d90996a8928228657bbfce',1,'mainComm.h']]],
+  ['loopsendmult_108',['loopSendMult',['../mainComm_8h.html#ae7adbfbe609199c4b11f25f6add014ae',1,'mainComm.h']]],
+  ['loopsendrcv_109',['loopSendRcv',['../mainComm_8h.html#aabbf2c5913b724ba40caae4a8ee56910',1,'mainComm.h']]]
 ];

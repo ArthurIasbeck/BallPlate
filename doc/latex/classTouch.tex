@@ -1,4 +1,4 @@
-\hypertarget{classTouch}{}\doxysection{Touch Class Reference}
+\hypertarget{classTouch}{}\doxysection{Referência à classe Touch}
 \label{classTouch}\index{Touch@{Touch}}
 
 
@@ -9,14 +9,11 @@ Realiza a leitura da touchscreen.
 
 {\ttfamily \#include $<$Touch.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classTouch_a783d54a50c80a2ba26f5709cf1b257be}{Touch}} (int touch\+Pin1, int touch\+Pin2, int touch\+Pin3, int touch\+Pin4)
-\begin{DoxyCompactList}\small\item\em Constrói um objeto \mbox{\hyperlink{classTouch}{Touch}}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classTouch_a5de15620894cc276f2c0844fa0507246}\label{classTouch_a5de15620894cc276f2c0844fa0507246}} 
-\mbox{\hyperlink{classTouch_a5de15620894cc276f2c0844fa0507246}{Touch}} ()
-\begin{DoxyCompactList}\small\item\em Constrói um objeto \mbox{\hyperlink{classTouch}{Touch}} padrão. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTouch_aaf458ff086081e2b19e972e1668549b9}{setup\+Touch}} (int touch\+Pin1, int touch\+Pin2, int touch\+Pin3, int touch\+Pin4)
+\begin{DoxyCompactList}\small\item\em inicializa objeto \mbox{\hyperlink{classTouch}{Touch}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classTouch_aade4096a1f33ce849f0e2464e11549c2}{get\+RawX}} ()
 \begin{DoxyCompactList}\small\item\em Retorna o valor bruto (0-\/1023) lido no eixo X. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classTouch_adef1e84e216d347900a36c5b8c30a888}{get\+RawY}} ()
@@ -25,60 +22,22 @@ float \mbox{\hyperlink{classTouch_a273f44de152e01e8d04cb4eecf704ef0}{get\+CmX}} 
 \begin{DoxyCompactList}\small\item\em Retorna a posição do toque em cm no eixo X. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classTouch_a54a50de35fd6f5c8b52ae33f7d8bb473}{get\+CmY}} ()
 \begin{DoxyCompactList}\small\item\em Retorna a posição do toque em cm no eixo Y. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classTouch_ab4a71e86848de6476a0a03ea15fdbf2b}\label{classTouch_ab4a71e86848de6476a0a03ea15fdbf2b}} 
-boolean {\bfseries is\+Touching} ()
-\end{DoxyCompactItemize}
+float \mbox{\hyperlink{classTouch_aeb606552079900f4bb7d1c0c62b8a18f}{getX}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a posição do toque em m no eixo X. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classTouch_aa3905562fefc948c8afa4b82525aa528}{getY}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a posição do toque em m no eixo Y. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classTouch_ab4a71e86848de6476a0a03ea15fdbf2b}{is\+Touching}} ()
+\begin{DoxyCompactList}\small\item\em Boleano que indica se a tela está sendo pressionada. Esta função deve ser chamada após a utilização de alguma função get(). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Descrição detalhada}
 Realiza a leitura da touchscreen. 
 
-Definition at line 9 of file Touch.\+h.
+Definido na linha 20 do ficheiro Touch.\+h.
 
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classTouch_a783d54a50c80a2ba26f5709cf1b257be}\label{classTouch_a783d54a50c80a2ba26f5709cf1b257be}} 
-\index{Touch@{Touch}!Touch@{Touch}}
-\index{Touch@{Touch}!Touch@{Touch}}
-\doxysubsubsection{\texorpdfstring{Touch()}{Touch()}}
-{\footnotesize\ttfamily Touch\+::\+Touch (\begin{DoxyParamCaption}\item[{int}]{touch\+Pin1,  }\item[{int}]{touch\+Pin2,  }\item[{int}]{touch\+Pin3,  }\item[{int}]{touch\+Pin4 }\end{DoxyParamCaption})}
-
-
-
-Constrói um objeto \mbox{\hyperlink{classTouch}{Touch}}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em touch\+Pin1} & Pino 1 da touchscreen. \\
-\hline
-{\em touch\+Pin2} & Pino 2 da touchscreen. \\
-\hline
-{\em touch\+Pin3} & Pino 3 da touchscreen. \\
-\hline
-{\em touch\+Pin4} & Pino 4 da touchscreen. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 3 of file Touch.\+cpp.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{4 \{}
-\DoxyCodeLine{5     this-\/>touchPin1 = touchPin1;}
-\DoxyCodeLine{6     this-\/>touchPin2 = touchPin2;}
-\DoxyCodeLine{7     this-\/>touchPin3 = touchPin3;}
-\DoxyCodeLine{8     this-\/>touchPin4 = touchPin4;}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10     xRaw = yRaw = xCm = yCm = 0;}
-\DoxyCodeLine{11     touching = \textcolor{keyword}{false}; }
-\DoxyCodeLine{12 \}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentação dos métodos}
 \mbox{\Hypertarget{classTouch_a273f44de152e01e8d04cb4eecf704ef0}\label{classTouch_a273f44de152e01e8d04cb4eecf704ef0}} 
 \index{Touch@{Touch}!getCmX@{getCmX}}
 \index{getCmX@{getCmX}!Touch@{Touch}}
@@ -89,29 +48,29 @@ Definition at line 3 of file Touch.\+cpp.
 
 Retorna a posição do toque em cm no eixo X. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Posição no eixo X. 
 \end{DoxyReturn}
 
 
-Definition at line 47 of file Touch.\+cpp.
+Definido na linha 53 do ficheiro Touch.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{48 \{}
-\DoxyCodeLine{49     xRaw = \mbox{\hyperlink{classTouch_aade4096a1f33ce849f0e2464e11549c2}{getRawX}}();}
-\DoxyCodeLine{50     \textcolor{keywordflow}{if}(xRaw > 10)}
-\DoxyCodeLine{51     \{}
-\DoxyCodeLine{52         touching = \textcolor{keyword}{true};}
-\DoxyCodeLine{53         xCm = 0.0409*xRaw -\/ 19.642;}
-\DoxyCodeLine{54     \}}
-\DoxyCodeLine{55     \textcolor{keywordflow}{else} }
-\DoxyCodeLine{56     \{}
-\DoxyCodeLine{57         touching = \textcolor{keyword}{false};}
-\DoxyCodeLine{58     \}}
-\DoxyCodeLine{59     }
-\DoxyCodeLine{60     \textcolor{keywordflow}{return} xCm;}
-\DoxyCodeLine{61 \}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     xRaw = \mbox{\hyperlink{classTouch_aade4096a1f33ce849f0e2464e11549c2}{getRawX}}();}
+\DoxyCodeLine{56     \textcolor{keywordflow}{if}(xRaw > 10)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         touching = \textcolor{keyword}{true};}
+\DoxyCodeLine{59         xCm = 0.0409*xRaw -\/ 19.642;}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{62     \{}
+\DoxyCodeLine{63         touching = \textcolor{keyword}{false};}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65     }
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} xCm;}
+\DoxyCodeLine{67 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTouch_a54a50de35fd6f5c8b52ae33f7d8bb473}\label{classTouch_a54a50de35fd6f5c8b52ae33f7d8bb473}} 
@@ -124,29 +83,29 @@ Definition at line 47 of file Touch.\+cpp.
 
 Retorna a posição do toque em cm no eixo Y. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Posição no eixo Y. 
 \end{DoxyReturn}
 
 
-Definition at line 63 of file Touch.\+cpp.
+Definido na linha 69 do ficheiro Touch.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{64 \{}
-\DoxyCodeLine{65     yRaw = \mbox{\hyperlink{classTouch_adef1e84e216d347900a36c5b8c30a888}{getRawY}}();}
-\DoxyCodeLine{66     \textcolor{keywordflow}{if}(yRaw > 10)}
-\DoxyCodeLine{67     \{}
-\DoxyCodeLine{68         touching = \textcolor{keyword}{true};}
-\DoxyCodeLine{69         yCm = 0.0354*yRaw -\/ 16.612;}
-\DoxyCodeLine{70     \}}
-\DoxyCodeLine{71     \textcolor{keywordflow}{else} }
-\DoxyCodeLine{72     \{}
-\DoxyCodeLine{73         touching = \textcolor{keyword}{false}; }
-\DoxyCodeLine{74     \}}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76     \textcolor{keywordflow}{return} yCm;}
-\DoxyCodeLine{77 \}}
+\DoxyCodeLine{70 \{}
+\DoxyCodeLine{71     yRaw = \mbox{\hyperlink{classTouch_adef1e84e216d347900a36c5b8c30a888}{getRawY}}();}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if}(yRaw > 10)}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74         touching = \textcolor{keyword}{true};}
+\DoxyCodeLine{75         yCm = 0.0354*yRaw -\/ 16.612;}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79         touching = \textcolor{keyword}{false}; }
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keywordflow}{return} yCm;}
+\DoxyCodeLine{83 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTouch_aade4096a1f33ce849f0e2464e11549c2}\label{classTouch_aade4096a1f33ce849f0e2464e11549c2}} 
@@ -159,27 +118,27 @@ Definition at line 63 of file Touch.\+cpp.
 
 Retorna o valor bruto (0-\/1023) lido no eixo X. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Valor bruto lido no eixo X (0-\/1023) 
 \end{DoxyReturn}
 
 
-Definition at line 19 of file Touch.\+cpp.
+Definido na linha 25 do ficheiro Touch.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{20 \{}
-\DoxyCodeLine{21     pinMode(touchPin3, INPUT);}
-\DoxyCodeLine{22     pinMode(touchPin1, INPUT);}
-\DoxyCodeLine{23     digitalWrite(touchPin1, LOW);}
-\DoxyCodeLine{24     pinMode(touchPin2, OUTPUT);}
-\DoxyCodeLine{25     digitalWrite(touchPin2, LOW);}
-\DoxyCodeLine{26     pinMode(touchPin4, OUTPUT);}
-\DoxyCodeLine{27     digitalWrite(touchPin4, HIGH);}
-\DoxyCodeLine{28     delay(3);}
-\DoxyCodeLine{29     xRaw = analogRead(touchPin3);}
-\DoxyCodeLine{30     \textcolor{keywordflow}{return} xRaw;}
-\DoxyCodeLine{31 \}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     pinMode(touchPin3, INPUT);}
+\DoxyCodeLine{28     pinMode(touchPin1, INPUT);}
+\DoxyCodeLine{29     digitalWrite(touchPin1, LOW);}
+\DoxyCodeLine{30     pinMode(touchPin2, OUTPUT);}
+\DoxyCodeLine{31     digitalWrite(touchPin2, LOW);}
+\DoxyCodeLine{32     pinMode(touchPin4, OUTPUT);}
+\DoxyCodeLine{33     digitalWrite(touchPin4, HIGH);}
+\DoxyCodeLine{34     delay(3);}
+\DoxyCodeLine{35     xRaw = analogRead(touchPin3);}
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} xRaw;}
+\DoxyCodeLine{37 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTouch_adef1e84e216d347900a36c5b8c30a888}\label{classTouch_adef1e84e216d347900a36c5b8c30a888}} 
@@ -192,32 +151,143 @@ Definition at line 19 of file Touch.\+cpp.
 
 Retorna o valor bruto (0-\/1023) lido no eixo Y. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Valor bruto lido no eixo YS (0-\/1023) 
 \end{DoxyReturn}
 
 
-Definition at line 33 of file Touch.\+cpp.
+Definido na linha 39 do ficheiro Touch.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{34 \{}
-\DoxyCodeLine{35     pinMode(touchPin3, OUTPUT);}
-\DoxyCodeLine{36     digitalWrite(touchPin3, HIGH);}
-\DoxyCodeLine{37     pinMode(touchPin1, OUTPUT);}
-\DoxyCodeLine{38     digitalWrite(touchPin1, LOW);}
-\DoxyCodeLine{39     pinMode(touchPin2, INPUT);}
-\DoxyCodeLine{40     pinMode(touchPin4, INPUT);}
-\DoxyCodeLine{41     digitalWrite(touchPin4, LOW);}
-\DoxyCodeLine{42     delay(3);}
-\DoxyCodeLine{43     yRaw = analogRead(touchPin2);}
-\DoxyCodeLine{44     \textcolor{keywordflow}{return} yRaw;}
-\DoxyCodeLine{45 \}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     pinMode(touchPin3, OUTPUT);}
+\DoxyCodeLine{42     digitalWrite(touchPin3, HIGH);}
+\DoxyCodeLine{43     pinMode(touchPin1, OUTPUT);}
+\DoxyCodeLine{44     digitalWrite(touchPin1, LOW);}
+\DoxyCodeLine{45     pinMode(touchPin2, INPUT);}
+\DoxyCodeLine{46     pinMode(touchPin4, INPUT);}
+\DoxyCodeLine{47     digitalWrite(touchPin4, LOW);}
+\DoxyCodeLine{48     delay(3);}
+\DoxyCodeLine{49     yRaw = analogRead(touchPin2);}
+\DoxyCodeLine{50     \textcolor{keywordflow}{return} yRaw;}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTouch_aeb606552079900f4bb7d1c0c62b8a18f}\label{classTouch_aeb606552079900f4bb7d1c0c62b8a18f}} 
+\index{Touch@{Touch}!getX@{getX}}
+\index{getX@{getX}!Touch@{Touch}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily float Touch\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a posição do toque em m no eixo X. 
+
+\begin{DoxyReturn}{Retorna}
+Posição no eixo X. 
+\end{DoxyReturn}
+
+
+Definido na linha 85 do ficheiro Touch.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86 \{}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} 0.01*\mbox{\hyperlink{classTouch_a273f44de152e01e8d04cb4eecf704ef0}{getCmX}}();}
+\DoxyCodeLine{88 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTouch_aa3905562fefc948c8afa4b82525aa528}\label{classTouch_aa3905562fefc948c8afa4b82525aa528}} 
+\index{Touch@{Touch}!getY@{getY}}
+\index{getY@{getY}!Touch@{Touch}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily float Touch\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a posição do toque em m no eixo Y. 
+
+\begin{DoxyReturn}{Retorna}
+Posição no eixo Y. 
+\end{DoxyReturn}
+
+
+Definido na linha 90 do ficheiro Touch.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91 \{}
+\DoxyCodeLine{92     \textcolor{keywordflow}{return} 0.01*\mbox{\hyperlink{classTouch_a54a50de35fd6f5c8b52ae33f7d8bb473}{getCmY}}();}
+\DoxyCodeLine{93 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTouch_ab4a71e86848de6476a0a03ea15fdbf2b}\label{classTouch_ab4a71e86848de6476a0a03ea15fdbf2b}} 
+\index{Touch@{Touch}!isTouching@{isTouching}}
+\index{isTouching@{isTouching}!Touch@{Touch}}
+\doxysubsubsection{\texorpdfstring{isTouching()}{isTouching()}}
+{\footnotesize\ttfamily boolean Touch\+::is\+Touching (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Boleano que indica se a tela está sendo pressionada. Esta função deve ser chamada após a utilização de alguma função get(). 
+
+\begin{DoxyReturn}{Retorna}
+true se a tela estiver sendo tocada. ~\newline
+ 
+\end{DoxyReturn}
+
+
+Definido na linha 95 do ficheiro Touch.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96 \{}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} touching;}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTouch_aaf458ff086081e2b19e972e1668549b9}\label{classTouch_aaf458ff086081e2b19e972e1668549b9}} 
+\index{Touch@{Touch}!setupTouch@{setupTouch}}
+\index{setupTouch@{setupTouch}!Touch@{Touch}}
+\doxysubsubsection{\texorpdfstring{setupTouch()}{setupTouch()}}
+{\footnotesize\ttfamily void Touch\+::setup\+Touch (\begin{DoxyParamCaption}\item[{int}]{touch\+Pin1,  }\item[{int}]{touch\+Pin2,  }\item[{int}]{touch\+Pin3,  }\item[{int}]{touch\+Pin4 }\end{DoxyParamCaption})}
+
+
+
+inicializa objeto \mbox{\hyperlink{classTouch}{Touch}}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em touch\+Pin1} & Pino 1 da touchscreen. \\
+\hline
+{\em touch\+Pin2} & Pino 2 da touchscreen. \\
+\hline
+{\em touch\+Pin3} & Pino 3 da touchscreen. \\
+\hline
+{\em touch\+Pin4} & Pino 4 da touchscreen. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 14 do ficheiro Touch.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     this-\/>touchPin1 = touchPin1;}
+\DoxyCodeLine{17     this-\/>touchPin2 = touchPin2;}
+\DoxyCodeLine{18     this-\/>touchPin3 = touchPin3;}
+\DoxyCodeLine{19     this-\/>touchPin4 = touchPin4;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     xRaw = yRaw = xCm = yCm = 0;}
+\DoxyCodeLine{22     touching = \textcolor{keyword}{false}; }
+\DoxyCodeLine{23 \}}
 
 \end{DoxyCode}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
 \item 
-/home/iasbeck/Área de Trabalho/ball\+Plate/include/Touch.\+h\item 
-/home/iasbeck/Área de Trabalho/ball\+Plate/src/Touch.\+cpp\end{DoxyCompactItemize}
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/include/\mbox{\hyperlink{Touch_8h}{Touch.\+h}}\item 
+/home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/src/\mbox{\hyperlink{Touch_8cpp}{Touch.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pid_31',['Pid',['../classPid.html#a35891a4511bcf990a51b5509f7679f75',1,'Pid::Pid(float kp, float ki, float kd, float T)'],['../classPid.html#a8bcea8fa5b4f855f796ef55c6bc169ae',1,'Pid::Pid()']]]
+  ['invertmotor_101',['invertMotor',['../classMotor.html#a8ccaa9779238c00e11bb7cba7edcc071',1,'Motor']]],
+  ['istouching_102',['isTouching',['../classTouch.html#ab4a71e86848de6476a0a03ea15fdbf2b',1,'Touch']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invertmotor_28',['invertMotor',['../classMotor.html#a8ccaa9779238c00e11bb7cba7edcc071',1,'Motor']]]
+  ['datareceived_92',['dataReceived',['../classSerialComm.html#ae89794915224cd70f6a9e9a6f40fe5a6',1,'SerialComm']]]
 ];

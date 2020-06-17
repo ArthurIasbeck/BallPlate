@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ball and Plate: Código-Fonte de /home/iasbeck/MEGASync/Mestrado/2020-1/ballPlate/include/PidDigital.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ball and Plate
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PidDigital.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="PidDigital_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef PidDigital_h</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define PidDigital_h</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPidDigital.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPidDigital.html">PidDigital</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classPidDigital.html#a69a9c49d30991f80615adc2b08557827">PidDigital</a>(<span class="keywordtype">float</span> A, <span class="keywordtype">float</span> B, <span class="keywordtype">float</span> C, <span class="keywordtype">float</span> D, <span class="keywordtype">float</span> E, <span class="keywordtype">float</span> T);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classPidDigital.html#a69a9c49d30991f80615adc2b08557827">PidDigital</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classPidDigital.html#a485a0de4bab30ac3981c8c86c0582181">compute</a>(<span class="keywordtype">float</span> out); </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPidDigital.html#ad8a40bea6c4b95052337cc3a9ad312a6">setLimits</a>(<span class="keywordtype">float</span> infLim, <span class="keywordtype">float</span> supLim);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classPidDigital.html#ade58899c272f1a82e798a3bfe22f3f04">setRef</a>(<span class="keywordtype">float</span> ref);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classPidDigital.html#a146043930234143688aaaebd6efb58bb">getErr</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">int</span> debug; <span class="comment">// DEBUG</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">float</span> A, B, C, D, E;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">float</span> ref;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">float</span> u, u1, u2;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">float</span> e, e1, e2;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">float</span> ie, de;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">float</span> infLim, supLim;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassPidDigital_html_ade58899c272f1a82e798a3bfe22f3f04"><div class="ttname"><a href="classPidDigital.html#ade58899c272f1a82e798a3bfe22f3f04">PidDigital::setRef</a></div><div class="ttdeci">void setRef(float ref)</div><div class="ttdoc">Define a referência.</div><div class="ttdef"><b>Definition:</b> <a href="PidDigital_8cpp_source.html#l00053">PidDigital.cpp:53</a></div></div>
+<div class="ttc" id="aclassPidDigital_html_a485a0de4bab30ac3981c8c86c0582181"><div class="ttname"><a href="classPidDigital.html#a485a0de4bab30ac3981c8c86c0582181">PidDigital::compute</a></div><div class="ttdeci">float compute(float out)</div><div class="ttdoc">Computa a ação de controle.</div><div class="ttdef"><b>Definition:</b> <a href="PidDigital_8cpp_source.html#l00030">PidDigital.cpp:30</a></div></div>
+<div class="ttc" id="aclassPidDigital_html_a69a9c49d30991f80615adc2b08557827"><div class="ttname"><a href="classPidDigital.html#a69a9c49d30991f80615adc2b08557827">PidDigital::PidDigital</a></div><div class="ttdeci">PidDigital()</div><div class="ttdoc">Constrói um objeto PID padrão.</div><div class="ttdef"><b>Definition:</b> <a href="PidDigital_8cpp_source.html#l00025">PidDigital.cpp:25</a></div></div>
+<div class="ttc" id="aclassPidDigital_html_a146043930234143688aaaebd6efb58bb"><div class="ttname"><a href="classPidDigital.html#a146043930234143688aaaebd6efb58bb">PidDigital::getErr</a></div><div class="ttdeci">float getErr()</div><div class="ttdoc">Retorna o valor do erro.</div><div class="ttdef"><b>Definition:</b> <a href="PidDigital_8cpp_source.html#l00058">PidDigital.cpp:58</a></div></div>
+<div class="ttc" id="aclassPidDigital_html"><div class="ttname"><a href="classPidDigital.html">PidDigital</a></div><div class="ttdoc">Classe que implementa um controlador PID digital.</div><div class="ttdef"><b>Definition:</b> <a href="PidDigital_8h_source.html#l00018">PidDigital.h:18</a></div></div>
+<div class="ttc" id="aclassPidDigital_html_ad8a40bea6c4b95052337cc3a9ad312a6"><div class="ttname"><a href="classPidDigital.html#ad8a40bea6c4b95052337cc3a9ad312a6">PidDigital::setLimits</a></div><div class="ttdeci">void setLimits(float infLim, float supLim)</div><div class="ttdoc">Define os limites da ação de controle.</div><div class="ttdef"><b>Definition:</b> <a href="PidDigital_8cpp_source.html#l00047">PidDigital.cpp:47</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

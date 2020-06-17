@@ -1,7 +1,15 @@
 /**
- * @brief Arquivo criado para definição das conexões físicas do arduino e de 
- * outras variáveis de vital importância ao funcionamento dos códigos contidos 
- * no projeto.
+ * @file Pin.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Arquivo de configurações.
+ * @details Neste arquivo estão definidas diversas constantes essenciais ao
+ * funcionamento do restante do código, como os pinos em que estão conectados
+ * os principais componentes, por exemplo. 
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
  */
 
 #ifndef Pin_h
@@ -23,5 +31,7 @@
 #define FILTER_SIZE 5
 
 #define BAUD_RATE 2000000
+
+#define T_S 40 // ms
 
 #endif

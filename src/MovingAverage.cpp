@@ -1,3 +1,14 @@
+/**
+ * @file MovingAverage.cpp
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Implementação da classe MovingAverage.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include "MovingAverage.h"
 
 MovingAverage::MovingAverage(int filterSize)

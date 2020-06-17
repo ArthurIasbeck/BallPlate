@@ -1,3 +1,14 @@
+/**
+ * @file mainPID.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Implementação do controle PID nas direções x e y. 
+ * @version 0.1
+ * @date 2020-06-14
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include "Arduino.h"
 #include "Motor.h"
 #include "Pid.h"

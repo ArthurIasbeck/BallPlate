@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['getcmx_22',['getCmX',['../classTouch.html#a273f44de152e01e8d04cb4eecf704ef0',1,'Touch']]],
-  ['getcmy_23',['getCmY',['../classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473',1,'Touch']]],
-  ['geterr_24',['getErr',['../classPid.html#a32e459d7eb1b7f0c3464f52d14ab1e71',1,'Pid']]],
-  ['getrawx_25',['getRawX',['../classTouch.html#aade4096a1f33ce849f0e2464e11549c2',1,'Touch']]],
-  ['getrawy_26',['getRawY',['../classTouch.html#adef1e84e216d347900a36c5b8c30a888',1,'Touch']]],
-  ['gozero_27',['goZero',['../classMotor.html#aa33f89ca0051d53454b8a4cf4bb6d7c1',1,'Motor']]]
+  ['checkball_90',['checkBall',['../mainPID_8h.html#adfe47b62ba95a0d35011f5d311633daf',1,'mainPID.h']]],
+  ['compute_91',['compute',['../classMovingAverage.html#a7247bd0a4b8c62b36356a0e32be496e2',1,'MovingAverage::compute()'],['../classPid.html#ab6692082b66b4b61563213545cf1cfa2',1,'Pid::compute()'],['../classPidDigital.html#a485a0de4bab30ac3981c8c86c0582181',1,'PidDigital::compute()']]]
 ];

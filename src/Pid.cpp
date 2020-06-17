@@ -1,3 +1,14 @@
+/**
+ * @file Pid.cpp
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Implementação da classe Pid.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include "Pid.h"
 
 Pid::Pid(float kp, float ki, float kd, float T)

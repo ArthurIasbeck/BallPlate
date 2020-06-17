@@ -1,18 +1,31 @@
+/**
+ * @file PidDigital.h
+ * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
+ * @brief Cabeçalho da classe PidDigital.
+ * @version 0.1
+ * @date 2020-06-10
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef PidDigital_h
 #define PidDigital_h
 
 #include "Arduino.h"
 
+//! Classe que implementa um controlador PID digital.
 class PidDigital
 {
     public:
         /**
-         * @brief Constrói um objeto PID.
+         * @brief Construct a new Pid Digital object
          * 
-         * @param kp Constante proporcional.
-         * @param ki Constante integral.
-         * @param kd Constante derivativa.
-         * @param T Tempo de amostragem (em milissegundos).
+         * @param A Fator que multiplica u(k-1)
+         * @param B Fator que multiplica u(k-2)
+         * @param C Fator que multiplica e(k)
+         * @param D Fator que multiplica e(k-1)
+         * @param E Fator que multiplica e(k-2)
          */
         PidDigital(float A, float B, float C, float D, float E, float T);
         /**
@@ -52,7 +65,6 @@ class PidDigital
         float ref;
         float u, u1, u2;
         float e, e1, e2;
-        float T; 
         float ie, de;
         float infLim, supLim;
 };

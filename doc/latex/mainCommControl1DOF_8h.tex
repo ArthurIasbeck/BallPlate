@@ -1,0 +1,62 @@
+\hypertarget{mainCommControl1DOF_8h}{}\doxysection{Referência ao ficheiro /home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/main/main\+Comm\+Control1\+D\+OF.h}
+\label{mainCommControl1DOF_8h}\index{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/main/mainCommControl1DOF.h@{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/main/mainCommControl1DOF.h}}
+
+
+Implementação do controle 1D\+OF baseado na comunicação com o Matlab.  
+
+
+{\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Touch.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Motor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Serial\+Comm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pin.\+h\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{mainCommControl1DOF_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
+void {\bfseries setup\+Root} ()
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{mainCommControl1DOF_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
+void {\bfseries loop\+Root} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_a88badc5df94bbf568dd4d7064248a5f3}\label{mainCommControl1DOF_8h_a88badc5df94bbf568dd4d7064248a5f3}} 
+\mbox{\hyperlink{classTouch}{Touch}} {\bfseries touch}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_a38a9e2b17828513a712ddf73cf82d984}\label{mainCommControl1DOF_8h_a38a9e2b17828513a712ddf73cf82d984}} 
+\mbox{\hyperlink{classMotor}{Motor}} {\bfseries motor}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_a1bd356d672609d3321969c1431903e05}\label{mainCommControl1DOF_8h_a1bd356d672609d3321969c1431903e05}} 
+\mbox{\hyperlink{classSerialComm}{Serial\+Comm}} {\bfseries serial\+Comm}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_ad0da36b2558901e21e7a30f6c227a45e}\label{mainCommControl1DOF_8h_ad0da36b2558901e21e7a30f6c227a45e}} 
+float {\bfseries x}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_a55831f7eab5ed2917a0191e858852f42}\label{mainCommControl1DOF_8h_a55831f7eab5ed2917a0191e858852f42}} 
+float {\bfseries u}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_a11764cc96bb263d1f257bcc01205a787}\label{mainCommControl1DOF_8h_a11764cc96bb263d1f257bcc01205a787}} 
+char {\bfseries flag}
+\item 
+\mbox{\Hypertarget{mainCommControl1DOF_8h_acc697802f6268204a543b6e6755163f7}\label{mainCommControl1DOF_8h_acc697802f6268204a543b6e6755163f7}} 
+long {\bfseries start\+Loop\+Time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Implementação do controle 1D\+OF baseado na comunicação com o Matlab. 
+
+\begin{DoxyAuthor}{Autor}
+Arthur Iasbeck (\href{mailto:arthuriasbeck@gmail.com}{\texttt{ arthuriasbeck@gmail.\+com}})
+\end{DoxyAuthor}
+Neste arquivo estão definidas as funções utilizadas na implementação de um controlador genérico considerando apenas a direção x do Ball and Plate. Observe que aqui a leitura da tela é realizada, o valor é enviado ao Matlab, a ação de controle é recebida e aplicada aos motores. A lei de controle implementada no Matlab não interefere no funcionamento deste código. O que importa é que o Matlab computará o valor da ação de controle e enviará ao Arduino. de estados. \begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2020-\/06-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}

@@ -3,19 +3,26 @@
   \item {compute}
     \subitem {MovingAverage}, \hyperpage{6}
     \subitem {Pid}, \hyperpage{8}
+    \subitem {PidDigital}, \hyperpage{11}
+
+  \indexspace
+
+  \item {dataReceived}
+    \subitem {SerialComm}, \hyperpage{14}
 
   \indexspace
 
   \item {getCmX}
-    \subitem {Touch}, \hyperpage{11}
+    \subitem {Touch}, \hyperpage{19}
   \item {getCmY}
-    \subitem {Touch}, \hyperpage{11}
+    \subitem {Touch}, \hyperpage{20}
   \item {getErr}
-    \subitem {Pid}, \hyperpage{9}
+    \subitem {Pid}, \hyperpage{8}
+    \subitem {PidDigital}, \hyperpage{11}
   \item {getRawX}
-    \subitem {Touch}, \hyperpage{12}
+    \subitem {Touch}, \hyperpage{20}
   \item {getRawY}
-    \subitem {Touch}, \hyperpage{12}
+    \subitem {Touch}, \hyperpage{20}
 
   \indexspace
 
@@ -31,29 +38,55 @@
 
   \item {Pid}, \hyperpage{7}
     \subitem {compute}, \hyperpage{8}
-    \subitem {getErr}, \hyperpage{9}
+    \subitem {getErr}, \hyperpage{8}
     \subitem {Pid}, \hyperpage{7}
     \subitem {setLimits}, \hyperpage{9}
     \subitem {setRef}, \hyperpage{9}
+  \item {PidDigital}, \hyperpage{10}
+    \subitem {compute}, \hyperpage{11}
+    \subitem {getErr}, \hyperpage{11}
+    \subitem {PidDigital}, \hyperpage{10}
+    \subitem {setLimits}, \hyperpage{12}
+    \subitem {setRef}, \hyperpage{12}
 
   \indexspace
 
+  \item {rcvData}
+    \subitem {SerialComm}, \hyperpage{14}
+
+  \indexspace
+
+  \item {sendData}
+    \subitem {SerialComm}, \hyperpage{15, 16}
+  \item {SerialComm}, \hyperpage{13}
+    \subitem {dataReceived}, \hyperpage{14}
+    \subitem {rcvData}, \hyperpage{14}
+    \subitem {sendData}, \hyperpage{15, 16}
+    \subitem {SerialComm}, \hyperpage{13}
+    \subitem {setPrecision}, \hyperpage{16}
+    \subitem {setupComm}, \hyperpage{18}
   \item {setLimits}
     \subitem {Pid}, \hyperpage{9}
+    \subitem {PidDigital}, \hyperpage{12}
   \item {setPos}
     \subitem {Motor}, \hyperpage{4}
+  \item {setPrecision}
+    \subitem {SerialComm}, \hyperpage{16}
   \item {setRef}
     \subitem {Pid}, \hyperpage{9}
+    \subitem {PidDigital}, \hyperpage{12}
+  \item {setupComm}
+    \subitem {SerialComm}, \hyperpage{18}
   \item {setZero}
     \subitem {Motor}, \hyperpage{4}
 
   \indexspace
 
-  \item {Touch}, \hyperpage{10}
-    \subitem {getCmX}, \hyperpage{11}
-    \subitem {getCmY}, \hyperpage{11}
-    \subitem {getRawX}, \hyperpage{12}
-    \subitem {getRawY}, \hyperpage{12}
-    \subitem {Touch}, \hyperpage{10}
+  \item {Touch}, \hyperpage{18}
+    \subitem {getCmX}, \hyperpage{19}
+    \subitem {getCmY}, \hyperpage{20}
+    \subitem {getRawX}, \hyperpage{20}
+    \subitem {getRawY}, \hyperpage{20}
+    \subitem {Touch}, \hyperpage{19}
 
 \end{theindex}

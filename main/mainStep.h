@@ -20,9 +20,8 @@ void setupRoot()
     Serial.begin(BAUD_RATE);
     while(!Serial);
 
-    motorA = Motor(MOT_A, -90, 90);
-    touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
-    motorA.setupMotor();
+    motorA.setupMotor(MOT_A, -90, 90);
+    touch.setupTouch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
 
     simTime = 2;
     stepTime = 3;

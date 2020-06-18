@@ -9,7 +9,7 @@
  * 
  */
 
-#include "../main/mainMatrix.h"
+#include "../main/mainMotor.h"
 
 /**
  * @brief Função setup() principal.
@@ -18,7 +18,6 @@
  * que esta função realiza a chamada da função setupRoot(), que se 
  * comportará de acordo com a classe incluida ao início deste arquivo. 
  */
-
 void setup()
 {
     setupRoot();

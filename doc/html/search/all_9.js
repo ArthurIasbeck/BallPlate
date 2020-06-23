@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['rcvdata_42',['rcvData',['../classSerialComm.html#aefc139f96dd64a1167134e7a4c35237a',1,'SerialComm::rcvData()'],['../classSerialComm.html#a41def9bce952551fcd4c285d1493d0bd',1,'SerialComm::rcvData(float *rcvFloat, int sizeData)']]],
-  ['rcvfloat_43',['rcvFloat',['../mainComm_8h.html#a74c273fa73dd2b04a9fd3a2cabf3bdea',1,'mainComm.h']]]
+  ['testcomm_2eh_44',['testComm.h',['../testComm_8h.html',1,'']]],
+  ['testmotor_2eh_45',['testMotor.h',['../testMotor_8h.html',1,'']]],
+  ['testmovingaverage_2eh_46',['testMovingAverage.h',['../testMovingAverage_8h.html',1,'']]],
+  ['testtouch_2eh_47',['testTouch.h',['../testTouch_8h.html',1,'']]],
+  ['touch_48',['Touch',['../classTouch.html',1,'']]],
+  ['touch_2ecpp_49',['Touch.cpp',['../Touch_8cpp.html',1,'']]],
+  ['touch_2eh_50',['Touch.h',['../Touch_8h.html',1,'']]]
 ];

@@ -1,0 +1,119 @@
+\hypertarget{testMotor_8h}{}\doxysection{Referência ao ficheiro /home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/test/test\+Motor.h}
+\label{testMotor_8h}\index{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/test/testMotor.h@{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/test/testMotor.h}}
+
+
+Teste da classe \mbox{\hyperlink{classMotor}{Motor}}.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Pin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Motor.\+h\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{testMotor_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}{setup\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testMotor_8h_af359279fbda8fe082aa3fe8ea83c3174}{loop\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{testMotor_8h_a4a18c770de97cada4d590c8205eca803}\label{testMotor_8h_a4a18c770de97cada4d590c8205eca803}} 
+int {\bfseries read\+PotA}
+\item 
+\mbox{\Hypertarget{testMotor_8h_af8d6793559bd245758dcd0ac0dbd76fb}\label{testMotor_8h_af8d6793559bd245758dcd0ac0dbd76fb}} 
+int {\bfseries read\+PotB}
+\item 
+\mbox{\Hypertarget{testMotor_8h_a2b2f0c302b48f81e980832246b5babe0}\label{testMotor_8h_a2b2f0c302b48f81e980832246b5babe0}} 
+int {\bfseries posA}
+\item 
+\mbox{\Hypertarget{testMotor_8h_a3db643926cafcbd1b383f344088d26d7}\label{testMotor_8h_a3db643926cafcbd1b383f344088d26d7}} 
+int {\bfseries posB}
+\item 
+\mbox{\Hypertarget{testMotor_8h_ad40fe08a194dff2da8cb6e162001f912}\label{testMotor_8h_ad40fe08a194dff2da8cb6e162001f912}} 
+\mbox{\hyperlink{classMotor}{Motor}} {\bfseries motorA}
+\item 
+\mbox{\Hypertarget{testMotor_8h_a7884fc6e64dc629634dc0e429cd4ffdb}\label{testMotor_8h_a7884fc6e64dc629634dc0e429cd4ffdb}} 
+\mbox{\hyperlink{classMotor}{Motor}} {\bfseries motorB}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Teste da classe \mbox{\hyperlink{classMotor}{Motor}}. 
+
+\begin{DoxyAuthor}{Autor}
+Arthur Iasbeck (\href{mailto:arthuriasbeck@gmail.com}{\texttt{ arthuriasbeck@gmail.\+com}})
+\end{DoxyAuthor}
+Neste arquivo estão definidas as funções utilizadas no teste da classe \mbox{\hyperlink{classMotor}{Motor}}. Basicamente a posição dos motores é determinada a partir da leitura dos potênciômetros A e B, que são controlados pelo usuário. \begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2020-\/06-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{testMotor_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{testMotor_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
+\index{testMotor.h@{testMotor.h}!loopRoot@{loopRoot}}
+\index{loopRoot@{loopRoot}!testMotor.h@{testMotor.h}}
+\doxysubsubsection{\texorpdfstring{loopRoot()}{loopRoot()}}
+{\footnotesize\ttfamily void loop\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} principal. 
+
+
+
+Definido na linha 42 do ficheiro test\+Motor.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     readPotA = analogRead(POT\_A);}
+\DoxyCodeLine{45     readPotB = analogRead(POT\_B);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     posA = map(readPotA, 0, 1023, -\/90, 90);}
+\DoxyCodeLine{48     posB = map(readPotB, 0, 1023, -\/90, 90);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     motorA.\mbox{\hyperlink{classMotor_a5223cc533ad2d069ec67197d09b41fb5}{setPos}}(posA);}
+\DoxyCodeLine{51     motorB.\mbox{\hyperlink{classMotor_a5223cc533ad2d069ec67197d09b41fb5}{setPos}}(posB);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     Serial.print(\textcolor{stringliteral}{"readPotA = "} + String(readPotA) + \textcolor{stringliteral}{"\(\backslash\)t"});}
+\DoxyCodeLine{54     Serial.print(\textcolor{stringliteral}{"angServoA = "} + String(posA) + \textcolor{stringliteral}{"   |   "});}
+\DoxyCodeLine{55     Serial.print(\textcolor{stringliteral}{"readPotB = "} + String(readPotB) + \textcolor{stringliteral}{"\(\backslash\)t"});}
+\DoxyCodeLine{56     Serial.println(\textcolor{stringliteral}{"angServoB = "} + String(posB));}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     delay(100);}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testMotor_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{testMotor_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
+\index{testMotor.h@{testMotor.h}!setupRoot@{setupRoot}}
+\index{setupRoot@{setupRoot}!testMotor.h@{testMotor.h}}
+\doxysubsubsection{\texorpdfstring{setupRoot()}{setupRoot()}}
+{\footnotesize\ttfamily void setup\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. 
+
+
+
+Definido na linha 28 do ficheiro test\+Motor.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     motorA.\mbox{\hyperlink{classMotor_a74a46ad078664fb39729f88749b38184}{setupMotor}}(MOT\_A, -\/90, 90);}
+\DoxyCodeLine{31     motorB.\mbox{\hyperlink{classMotor_a74a46ad078664fb39729f88749b38184}{setupMotor}}(MOT\_B, -\/90, 90);}
+\DoxyCodeLine{32     motorA.\mbox{\hyperlink{classMotor_a8ccaa9779238c00e11bb7cba7edcc071}{invertMotor}}();}
+\DoxyCodeLine{33     motorB.\mbox{\hyperlink{classMotor_a8ccaa9779238c00e11bb7cba7edcc071}{invertMotor}}();}
+\DoxyCodeLine{34     Serial.begin(BAUD\_RATE);}
+\DoxyCodeLine{35     \textcolor{keywordflow}{while}(!Serial);}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}

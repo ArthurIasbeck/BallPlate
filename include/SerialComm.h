@@ -26,11 +26,13 @@ class SerialComm
          * 
          */
         SerialComm();
+
         /**
          * @brief Inicializa a comunicação serial.
          * 
          */
         void setupComm();
+
         /**
          * @brief Determina o número de casas após a vírgula que será 
          * adotado no envio das mensagens.
@@ -38,18 +40,21 @@ class SerialComm
          * @param precision Número de casas após a vírgula.
          */
         void setPrecision(int precision);
+
         /**
          * @brief Realiza o envio de mensagens do tipo string.
          * 
          * @param data Mensagem (string) a ser enviada.
          */
         void sendData(String data);
+
         /**
          * @brief Realiza o envio de mensagens do tipo float.
          * 
          * @param data Mensagem (float) a ser enviada.
          */
         void sendData(float data);
+
         /**
          * @brief Realiza o envio de mensagens compostas por vários 
          * elementos do tipo float. 
@@ -58,12 +63,22 @@ class SerialComm
          * @param sizeData Número de dados a serem enviados.
          */
         void sendData(float data[], int sizeData);
+
         /**
          * @brief Realiza o recebimento de dados do tipo float. 
          * 
          * @return Dado (float) recebido. 
          */
         float rcvData();
+
+        /**
+         * @brief Realiza o recebimento de dados no formato String.
+         * 
+         * @param str 
+         * @return ado (String) recebido. 
+         */
+        String rcvData(boolean str);
+
         /**
          * @brief Realiza o recebimento de dados compostos por vários
          * elementos do tipo float. 
@@ -74,6 +89,7 @@ class SerialComm
          * @param sizeData Número de dados a serem recebidos.
          */
         void rcvData(float* rcvFloat, int sizeData);
+        
         /**
          * @brief Retorna uma flag que indica se a chamada da função
          * rcvData() resultou na leitura de algum dado, ou seja, se 

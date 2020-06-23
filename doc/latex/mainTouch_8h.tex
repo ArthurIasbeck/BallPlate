@@ -11,12 +11,10 @@ Teste da classe \mbox{\hyperlink{classTouch}{Touch}}.
 \doxysubsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{mainTouch_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{mainTouch_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
-void {\bfseries setup\+Root} ()
-\item 
-\mbox{\Hypertarget{mainTouch_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{mainTouch_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
-void {\bfseries loop\+Root} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{mainTouch_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}{setup\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mainTouch_8h_af359279fbda8fe082aa3fe8ea83c3174}{loop\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variáveis}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,6 +32,9 @@ float {\bfseries x}
 \item 
 \mbox{\Hypertarget{mainTouch_8h_aa4f0d3eebc3c443f9be81bf48561a217}\label{mainTouch_8h_aa4f0d3eebc3c443f9be81bf48561a217}} 
 float {\bfseries y}
+\item 
+\mbox{\Hypertarget{mainTouch_8h_a8c2ddcda5da5b15c941856f105c44411}\label{mainTouch_8h_a8c2ddcda5da5b15c941856f105c44411}} 
+boolean {\bfseries is\+Touching}
 \end{DoxyCompactItemize}
 
 
@@ -52,3 +53,58 @@ Arthur Iasbeck (\href{mailto:arthuriasbeck@gmail.com}{\texttt{ arthuriasbeck@gma
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2020 
 \end{DoxyCopyright}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{mainTouch_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{mainTouch_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
+\index{mainTouch.h@{mainTouch.h}!loopRoot@{loopRoot}}
+\index{loopRoot@{loopRoot}!mainTouch.h@{mainTouch.h}}
+\doxysubsubsection{\texorpdfstring{loopRoot()}{loopRoot()}}
+{\footnotesize\ttfamily void loop\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. 
+
+
+
+Definido na linha 36 do ficheiro main\+Touch.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36                 \{}
+\DoxyCodeLine{37     xRaw = touch.\mbox{\hyperlink{classTouch_aade4096a1f33ce849f0e2464e11549c2}{getRawX}}();}
+\DoxyCodeLine{38     yRaw = touch.\mbox{\hyperlink{classTouch_adef1e84e216d347900a36c5b8c30a888}{getRawY}}();}
+\DoxyCodeLine{39     x = touch.\mbox{\hyperlink{classTouch_a273f44de152e01e8d04cb4eecf704ef0}{getCmX}}();}
+\DoxyCodeLine{40     y = touch.\mbox{\hyperlink{classTouch_a54a50de35fd6f5c8b52ae33f7d8bb473}{getCmY}}();}
+\DoxyCodeLine{41     isTouching = touch.\mbox{\hyperlink{classTouch_ab4a71e86848de6476a0a03ea15fdbf2b}{isTouching}}();}
+\DoxyCodeLine{42     Serial.print(String(xRaw) + \textcolor{stringliteral}{"\(\backslash\)t"} + String(yRaw) + \textcolor{stringliteral}{"\(\backslash\)t"});}
+\DoxyCodeLine{43     Serial.print(String(x) + \textcolor{stringliteral}{"\(\backslash\)t"} + String(y) + \textcolor{stringliteral}{"\(\backslash\)t"});}
+\DoxyCodeLine{44     Serial.println(String(isTouching));}
+\DoxyCodeLine{45     delay(100);   }
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mainTouch_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{mainTouch_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
+\index{mainTouch.h@{mainTouch.h}!setupRoot@{setupRoot}}
+\index{setupRoot@{setupRoot}!mainTouch.h@{mainTouch.h}}
+\doxysubsubsection{\texorpdfstring{setupRoot()}{setupRoot()}}
+{\footnotesize\ttfamily void setup\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. 
+
+
+
+Definido na linha 26 do ficheiro main\+Touch.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26                  \{}
+\DoxyCodeLine{27     touch.\mbox{\hyperlink{classTouch_aaf458ff086081e2b19e972e1668549b9}{setupTouch}}(TOUCH\_1, TOUCH\_2, TOUCH\_3, TOUCH\_4);}
+\DoxyCodeLine{28     Serial.begin(BAUD\_RATE);}
+\DoxyCodeLine{29     \textcolor{keywordflow}{while}(!Serial);}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,323 @@
+\hypertarget{testComm_8h}{}\doxysection{Referência ao ficheiro /home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/test/test\+Comm.h}
+\label{testComm_8h}\index{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/test/testComm.h@{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/test/testComm.h}}
+
+
+Teste da classe \mbox{\hyperlink{classSerialComm}{Serial\+Comm}}.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Serial\+Comm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pin.\+h\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{testComm_8h_aabbf2c5913b724ba40caae4a8ee56910}{loop\+Send\+Rcv}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento e envio simultâneo de mensagens simples (que contém somente um dado). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testComm_8h_a720ce5f07e29ff7661f8259da4f00739}{loop\+Rcv}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento de mensagens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testComm_8h_abb80223164d90996a8928228657bbfce}{loop\+Send}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para envio de mensagens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testComm_8h_ae7adbfbe609199c4b11f25f6add014ae}{loop\+Send\+Mult}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para envio de mensagens compostas (que contém múltiplos dados). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testComm_8h_a70a0b6eabae357659251e7cbf85cdee6}{loop\+Rcv\+Mult}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento de mensagens compostas (que contém múltiplos dados). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testComm_8h_af192134c1d7ac57d1b9ac17328f047c8}{loop\+Send\+Rcv\+Mult}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento e envio simultâneo de mensagens compostas (que contém múltiplos dados). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testComm_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}{setup\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testComm_8h_af359279fbda8fe082aa3fe8ea83c3174}{loop\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{testComm_8h_a1bd356d672609d3321969c1431903e05}\label{testComm_8h_a1bd356d672609d3321969c1431903e05}} 
+\mbox{\hyperlink{classSerialComm}{Serial\+Comm}} {\bfseries serial\+Comm}
+\item 
+\mbox{\Hypertarget{testComm_8h_a11764cc96bb263d1f257bcc01205a787}\label{testComm_8h_a11764cc96bb263d1f257bcc01205a787}} 
+char {\bfseries flag}
+\item 
+\mbox{\Hypertarget{testComm_8h_a8ad49a66e91d8658c5f1f7dbcbcbbd2f}\label{testComm_8h_a8ad49a66e91d8658c5f1f7dbcbcbbd2f}} 
+long {\bfseries start\+Time}
+\item 
+\mbox{\Hypertarget{testComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}\label{testComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}} 
+float {\bfseries rcv\+Float}
+\item 
+\mbox{\Hypertarget{testComm_8h_a55ab6974cde0383217f48446600e7eb6}\label{testComm_8h_a55ab6974cde0383217f48446600e7eb6}} 
+String {\bfseries rcv\+String}
+\item 
+\mbox{\Hypertarget{testComm_8h_a437e3de08a7308860ff3b609419fab8d}\label{testComm_8h_a437e3de08a7308860ff3b609419fab8d}} 
+float {\bfseries send\+Float\+Multi} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{testComm_8h_a53aadeda2dfecc88fd08413e196203b3}\label{testComm_8h_a53aadeda2dfecc88fd08413e196203b3}} 
+float {\bfseries rcv\+Float\+Multi} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Teste da classe \mbox{\hyperlink{classSerialComm}{Serial\+Comm}}. 
+
+\begin{DoxyAuthor}{Autor}
+Arthur Iasbeck (\href{mailto:arthuriasbeck@gmail.com}{\texttt{ arthuriasbeck@gmail.\+com}})
+\end{DoxyAuthor}
+Neste arquivo estão definidas as funções utilizadas para verificação do funcionamento da classe \mbox{\hyperlink{classSerialComm}{Serial\+Comm}}. Há funções para envio e recebimento de mensagens simples, e envio e recebimento de mensagens compostas. Além disso, há uma função que simula o funcionamento do algorítmo de controle e realiza, simultanemente o envio e recebimento de mensagens. \begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2020-\/06-\/10
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{testComm_8h_a720ce5f07e29ff7661f8259da4f00739}\label{testComm_8h_a720ce5f07e29ff7661f8259da4f00739}} 
+\index{testComm.h@{testComm.h}!loopRcv@{loopRcv}}
+\index{loopRcv@{loopRcv}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{loopRcv()}{loopRcv()}}
+{\footnotesize\ttfamily void loop\+Rcv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento de mensagens. 
+
+
+
+Definido na linha 72 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73 \{}
+\DoxyCodeLine{74     startTime = micros();}
+\DoxyCodeLine{75     rcvString = serialComm.\mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcvData}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if}(serialComm.\mbox{\hyperlink{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}{dataReceived}}())}
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78         serialComm.\mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(startTime);}
+\DoxyCodeLine{79         \textcolor{comment}{// while(micros() -\/ startTime < 6000);}}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testComm_8h_a70a0b6eabae357659251e7cbf85cdee6}\label{testComm_8h_a70a0b6eabae357659251e7cbf85cdee6}} 
+\index{testComm.h@{testComm.h}!loopRcvMult@{loopRcvMult}}
+\index{loopRcvMult@{loopRcvMult}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{loopRcvMult()}{loopRcvMult()}}
+{\footnotesize\ttfamily void loop\+Rcv\+Mult (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento de mensagens compostas (que contém múltiplos dados). 
+
+
+
+Definido na linha 143 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144 \{}
+\DoxyCodeLine{145     serialComm.\mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcvData}}(\&rcvFloatMulti[0], 2);}
+\DoxyCodeLine{146     \textcolor{keywordflow}{if}(serialComm.\mbox{\hyperlink{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}{dataReceived}}())}
+\DoxyCodeLine{147     \{}
+\DoxyCodeLine{148         serialComm.\mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(rcvFloatMulti, 2);}
+\DoxyCodeLine{149     \}}
+\DoxyCodeLine{150 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testComm_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{testComm_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
+\index{testComm.h@{testComm.h}!loopRoot@{loopRoot}}
+\index{loopRoot@{loopRoot}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{loopRoot()}{loopRoot()}}
+{\footnotesize\ttfamily void loop\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} principal. 
+
+
+
+Definido na linha 52 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 \{   }
+\DoxyCodeLine{54     \mbox{\hyperlink{testComm_8h_a720ce5f07e29ff7661f8259da4f00739}{loopRcv}}();}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testComm_8h_abb80223164d90996a8928228657bbfce}\label{testComm_8h_abb80223164d90996a8928228657bbfce}} 
+\index{testComm.h@{testComm.h}!loopSend@{loopSend}}
+\index{loopSend@{loopSend}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{loopSend()}{loopSend()}}
+{\footnotesize\ttfamily void loop\+Send (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para envio de mensagens. 
+
+
+
+Definido na linha 61 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63     startTime = micros();}
+\DoxyCodeLine{64     serialComm.\mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(random(0, 10));}
+\DoxyCodeLine{65     \textcolor{keywordflow}{while}(micros() -\/ startTime < T\_S*1000);}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testComm_8h_ae7adbfbe609199c4b11f25f6add014ae}\label{testComm_8h_ae7adbfbe609199c4b11f25f6add014ae}} 
+\index{testComm.h@{testComm.h}!loopSendMult@{loopSendMult}}
+\index{loopSendMult@{loopSendMult}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{loopSendMult()}{loopSendMult()}}
+{\footnotesize\ttfamily void loop\+Send\+Mult (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para envio de mensagens compostas (que contém múltiplos dados). 
+
+
+
+Definido na linha 130 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131 \{}
+\DoxyCodeLine{132     sendFloatMulti[0] = random(300)/100.0;}
+\DoxyCodeLine{133     sendFloatMulti[1] = random(300)/100.0;}
+\DoxyCodeLine{134     serialComm.\mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(sendFloatMulti, 2);}
+\DoxyCodeLine{135     \textcolor{keywordflow}{while} (micros() -\/ startTime < 10000);}
+\DoxyCodeLine{136 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testComm_8h_aabbf2c5913b724ba40caae4a8ee56910}\label{testComm_8h_aabbf2c5913b724ba40caae4a8ee56910}} 
+\index{testComm.h@{testComm.h}!loopSendRcv@{loopSendRcv}}
+\index{loopSendRcv@{loopSendRcv}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{loopSendRcv()}{loopSendRcv()}}
+{\footnotesize\ttfamily void loop\+Send\+Rcv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento e envio simultâneo de mensagens simples (que contém somente um dado). 
+
+
+
+Definido na linha 88 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89 \{}
+\DoxyCodeLine{90     \textcolor{comment}{// Envio das medições}}
+\DoxyCodeLine{91     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'s'})}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93         startTime = micros();}
+\DoxyCodeLine{94         delay(6);}
+\DoxyCodeLine{95         serialComm.\mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(startTime);}
+\DoxyCodeLine{96         flag = \textcolor{charliteral}{'r'};}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{comment}{// Leitura da ação de controle}}
+\DoxyCodeLine{100     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'r'})}
+\DoxyCodeLine{101     \{}
+\DoxyCodeLine{102         rcvFloat = serialComm.\mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcvData}}();}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if}(serialComm.\mbox{\hyperlink{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}{dataReceived}}())}
+\DoxyCodeLine{104         \{}
+\DoxyCodeLine{105             serialComm.\mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(rcvFloat);}
+\DoxyCodeLine{106             flag = \textcolor{charliteral}{'a'};}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// Atuação nos motores}}
+\DoxyCodeLine{111     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'a'})}
+\DoxyCodeLine{112     \{}
+\DoxyCodeLine{113         delay(1);}
+\DoxyCodeLine{114         flag = \textcolor{charliteral}{'w'};}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{// Espera do tempo de amostragem}}
+\DoxyCodeLine{118     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'w'})}
+\DoxyCodeLine{119     \{}
+\DoxyCodeLine{120         flag = \textcolor{charliteral}{'s'};}
+\DoxyCodeLine{121         \textcolor{keywordflow}{while} (micros() -\/ startTime < 15000);}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testComm_8h_af192134c1d7ac57d1b9ac17328f047c8}\label{testComm_8h_af192134c1d7ac57d1b9ac17328f047c8}} 
+\index{testComm.h@{testComm.h}!loopSendRcvMult@{loopSendRcvMult}}
+\index{loopSendRcvMult@{loopSendRcvMult}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{loopSendRcvMult()}{loopSendRcvMult()}}
+{\footnotesize\ttfamily void loop\+Send\+Rcv\+Mult (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} para recebimento e envio simultâneo de mensagens compostas (que contém múltiplos dados). 
+
+
+
+Definido na linha 157 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158 \{}
+\DoxyCodeLine{159     \textcolor{comment}{// Envio das medições}}
+\DoxyCodeLine{160     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'s'})}
+\DoxyCodeLine{161     \{}
+\DoxyCodeLine{162         startTime = micros();}
+\DoxyCodeLine{163         sendFloatMulti[0] = startTime;}
+\DoxyCodeLine{164         sendFloatMulti[1] = 1;}
+\DoxyCodeLine{165         delay(6);}
+\DoxyCodeLine{166         serialComm.\mbox{\hyperlink{classSerialComm_a486db5fd5f770952ea3f982c7d94346c}{sendData}}(sendFloatMulti, 2);}
+\DoxyCodeLine{167         flag = \textcolor{charliteral}{'r'};}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{comment}{// Leitura da ação de controle}}
+\DoxyCodeLine{171     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'r'})}
+\DoxyCodeLine{172     \{}
+\DoxyCodeLine{173         serialComm.\mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcvData}}(\&rcvFloatMulti[0], 2);}
+\DoxyCodeLine{174         \textcolor{keywordflow}{if}(serialComm.\mbox{\hyperlink{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}{dataReceived}}())}
+\DoxyCodeLine{175         \{}
+\DoxyCodeLine{176             \textcolor{comment}{// serialComm.sendData(rcvFloatMulti, 2);}}
+\DoxyCodeLine{177             flag = \textcolor{charliteral}{'a'};}
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \textcolor{comment}{// Atuação nos motores}}
+\DoxyCodeLine{182     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'a'})}
+\DoxyCodeLine{183     \{}
+\DoxyCodeLine{184         delay(1);}
+\DoxyCodeLine{185         flag = \textcolor{charliteral}{'w'};}
+\DoxyCodeLine{186     \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{comment}{// Espera do tempo de amostragem}}
+\DoxyCodeLine{189     \textcolor{keywordflow}{if} (flag == \textcolor{charliteral}{'w'})}
+\DoxyCodeLine{190     \{}
+\DoxyCodeLine{191         flag = \textcolor{charliteral}{'s'};}
+\DoxyCodeLine{192         \textcolor{keywordflow}{while} (micros() -\/ startTime < 15000);}
+\DoxyCodeLine{193     \}}
+\DoxyCodeLine{194 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testComm_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{testComm_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
+\index{testComm.h@{testComm.h}!setupRoot@{setupRoot}}
+\index{setupRoot@{setupRoot}!testComm.h@{testComm.h}}
+\doxysubsubsection{\texorpdfstring{setupRoot()}{setupRoot()}}
+{\footnotesize\ttfamily void setup\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. 
+
+
+
+Definido na linha 42 do ficheiro test\+Comm.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     serialComm.\mbox{\hyperlink{classSerialComm_a39c0e8886d315a1d5f1beaf0536d190b}{setupComm}}();}
+\DoxyCodeLine{45     flag = \textcolor{charliteral}{'s'};}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}

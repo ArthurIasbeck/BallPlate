@@ -9,6 +9,7 @@ Coleta de dados para modelagem no eixo x.
 {\ttfamily \#include \char`\"{}Pin.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Motor.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Touch.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Serial\+Comm.\+h\char`\"{}}\newline
 \doxysubsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,11 +28,14 @@ void {\bfseries loop\+Root} ()
 \mbox{\Hypertarget{mainModel1Dof_8h_ad40fe08a194dff2da8cb6e162001f912}\label{mainModel1Dof_8h_ad40fe08a194dff2da8cb6e162001f912}} 
 \mbox{\hyperlink{classMotor}{Motor}} {\bfseries motorA}
 \item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a1bd356d672609d3321969c1431903e05}\label{mainModel1Dof_8h_a1bd356d672609d3321969c1431903e05}} 
+\mbox{\hyperlink{classSerialComm}{Serial\+Comm}} {\bfseries serial\+Comm}
+\item 
 \mbox{\Hypertarget{mainModel1Dof_8h_a4a18c770de97cada4d590c8205eca803}\label{mainModel1Dof_8h_a4a18c770de97cada4d590c8205eca803}} 
 int {\bfseries read\+PotA}
 \item 
-\mbox{\Hypertarget{mainModel1Dof_8h_a2b2f0c302b48f81e980832246b5babe0}\label{mainModel1Dof_8h_a2b2f0c302b48f81e980832246b5babe0}} 
-int {\bfseries posA}
+\mbox{\Hypertarget{mainModel1Dof_8h_a39d3f234815cc3cc2d8bd823f598d3d5}\label{mainModel1Dof_8h_a39d3f234815cc3cc2d8bd823f598d3d5}} 
+float {\bfseries posA}
 \item 
 \mbox{\Hypertarget{mainModel1Dof_8h_a70a521e476b723cca4aa3de1aa1bc825}\label{mainModel1Dof_8h_a70a521e476b723cca4aa3de1aa1bc825}} 
 long {\bfseries t0}
@@ -47,6 +51,9 @@ float {\bfseries x}
 \item 
 \mbox{\Hypertarget{mainModel1Dof_8h_ae7516701ded5167652dcfefc32d42bd4}\label{mainModel1Dof_8h_ae7516701ded5167652dcfefc32d42bd4}} 
 long {\bfseries count\+Loops}
+\item 
+\mbox{\Hypertarget{mainModel1Dof_8h_a4f4883034654e43fc9bf162be97af71d}\label{mainModel1Dof_8h_a4f4883034654e43fc9bf162be97af71d}} 
+float {\bfseries data} \mbox{[}4\mbox{]}
 \end{DoxyCompactItemize}
 
 

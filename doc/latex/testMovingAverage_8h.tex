@@ -1,0 +1,95 @@
+\hypertarget{testMovingAverage_8h}{}\doxysection{Referência ao ficheiro /home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/test/test\+Moving\+Average.h}
+\label{testMovingAverage_8h}\index{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/test/testMovingAverage.h@{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/test/testMovingAverage.h}}
+
+
+Teste da classe \mbox{\hyperlink{classMovingAverage}{Moving\+Average}}.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Moving\+Average.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pin.\+h\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{testMovingAverage_8h_a23b46a8d3d290aa5c53bdb452e17e38d}\label{testMovingAverage_8h_a23b46a8d3d290aa5c53bdb452e17e38d}} 
+\mbox{\hyperlink{classMovingAverage}{Moving\+Average}} {\bfseries filter} (F\+I\+L\+T\+E\+R\+\_\+\+S\+I\+ZE)
+\item 
+void \mbox{\hyperlink{testMovingAverage_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}{setup\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{testMovingAverage_8h_af359279fbda8fe082aa3fe8ea83c3174}{loop\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{testMovingAverage_8h_a0c92b536886cab3f637dce4b7a0956bd}\label{testMovingAverage_8h_a0c92b536886cab3f637dce4b7a0956bd}} 
+float {\bfseries input}
+\item 
+\mbox{\Hypertarget{testMovingAverage_8h_a1084d7e47a5571b229a33ad347cc9453}\label{testMovingAverage_8h_a1084d7e47a5571b229a33ad347cc9453}} 
+float {\bfseries output}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Teste da classe \mbox{\hyperlink{classMovingAverage}{Moving\+Average}}. 
+
+\begin{DoxyAuthor}{Autor}
+Arthur Iasbeck (\href{mailto:arthuriasbeck@gmail.com}{\texttt{ arthuriasbeck@gmail.\+com}})
+\end{DoxyAuthor}
+Uma sequência de números aleatórios é gerada e o filtro de médias móveis é aplicado a eles a partir da implementação da classe Moving\+Avarage. \begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2020-\/06-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{testMovingAverage_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{testMovingAverage_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
+\index{testMovingAverage.h@{testMovingAverage.h}!loopRoot@{loopRoot}}
+\index{loopRoot@{loopRoot}!testMovingAverage.h@{testMovingAverage.h}}
+\doxysubsubsection{\texorpdfstring{loopRoot()}{loopRoot()}}
+{\footnotesize\ttfamily void loop\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop()}} principal. 
+
+
+
+Definido na linha 38 do ficheiro test\+Moving\+Average.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     input = random(0,10);}
+\DoxyCodeLine{41     output = filter.\mbox{\hyperlink{classMovingAverage_a7247bd0a4b8c62b36356a0e32be496e2}{compute}}(input);}
+\DoxyCodeLine{42     Serial.println(String(input) + \textcolor{stringliteral}{"\(\backslash\)t"} + String(output));}
+\DoxyCodeLine{43     delay(1000);}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{testMovingAverage_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{testMovingAverage_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
+\index{testMovingAverage.h@{testMovingAverage.h}!setupRoot@{setupRoot}}
+\index{setupRoot@{setupRoot}!testMovingAverage.h@{testMovingAverage.h}}
+\doxysubsubsection{\texorpdfstring{setupRoot()}{setupRoot()}}
+{\footnotesize\ttfamily void setup\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} principal. 
+
+
+
+Definido na linha 28 do ficheiro test\+Moving\+Average.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     Serial.begin(BAUD\_RATE);}
+\DoxyCodeLine{31     \textcolor{keywordflow}{while}(!Serial);}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}

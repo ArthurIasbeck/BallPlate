@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['motor_63',['Motor',['../classMotor.html',1,'']]],
-  ['movingaverage_64',['MovingAverage',['../classMovingAverage.html',1,'']]]
+  ['motor_51',['Motor',['../classMotor.html',1,'']]],
+  ['movingaverage_52',['MovingAverage',['../classMovingAverage.html',1,'']]]
 ];

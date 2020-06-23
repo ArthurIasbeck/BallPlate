@@ -1,0 +1,64 @@
+\hypertarget{mainTouchVar_8h}{}\doxysection{Referência ao ficheiro /home/iasbeck/\+M\+E\+G\+A\+Sync/\+Mestrado/2020-\/1/ball\+Plate/main/main\+Touch\+Var.h}
+\label{mainTouchVar_8h}\index{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/main/mainTouchVar.h@{/home/iasbeck/MEGASync/Mestrado/2020-\/1/ballPlate/main/mainTouchVar.h}}
+
+
+Coleta de dados da tela touch para averiguação de ruídos.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$Pin.\+h$>$}\newline
+{\ttfamily \#include $<$Touch.\+h$>$}\newline
+{\ttfamily \#include $<$Serial\+Comm.\+h$>$}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}\label{mainTouchVar_8h_a4b446e2334d1cdbf64d4b180ed1e04f1}} 
+void {\bfseries setup\+Root} ()
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_af359279fbda8fe082aa3fe8ea83c3174}\label{mainTouchVar_8h_af359279fbda8fe082aa3fe8ea83c3174}} 
+void {\bfseries loop\+Root} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_a88badc5df94bbf568dd4d7064248a5f3}\label{mainTouchVar_8h_a88badc5df94bbf568dd4d7064248a5f3}} 
+\mbox{\hyperlink{classTouch}{Touch}} {\bfseries touch}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_a1bd356d672609d3321969c1431903e05}\label{mainTouchVar_8h_a1bd356d672609d3321969c1431903e05}} 
+\mbox{\hyperlink{classSerialComm}{Serial\+Comm}} {\bfseries serial\+Comm}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_ad0da36b2558901e21e7a30f6c227a45e}\label{mainTouchVar_8h_ad0da36b2558901e21e7a30f6c227a45e}} 
+float {\bfseries x}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_aa4f0d3eebc3c443f9be81bf48561a217}\label{mainTouchVar_8h_aa4f0d3eebc3c443f9be81bf48561a217}} 
+float {\bfseries y}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_a5fd2bfecc59545f7c8ae420c13aca500}\label{mainTouchVar_8h_a5fd2bfecc59545f7c8ae420c13aca500}} 
+float {\bfseries data} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_ab66ed8e0098c0a86b458672a55a9cca9}\label{mainTouchVar_8h_ab66ed8e0098c0a86b458672a55a9cca9}} 
+int {\bfseries k} = 0
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_a0e06ecdad9f318fafbb0b28370c3cfef}\label{mainTouchVar_8h_a0e06ecdad9f318fafbb0b28370c3cfef}} 
+unsigned long {\bfseries start\+Time}
+\item 
+\mbox{\Hypertarget{mainTouchVar_8h_a3cfe56f1773ddd654a64bd650091ec2d}\label{mainTouchVar_8h_a3cfe56f1773ddd654a64bd650091ec2d}} 
+unsigned long {\bfseries Ts} = 40000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Coleta de dados da tela touch para averiguação de ruídos. 
+
+\begin{DoxyAuthor}{Autor}
+Arthur Iasbeck (\href{mailto:arthuriasbeck@gmail.com}{\texttt{ arthuriasbeck@gmail.\+com}})
+\end{DoxyAuthor}
+Neste arquivo são implementadas funções para coleta de valores da tela touch. Os valores são coletados e enviados ao PC juntamente com tempo de amostragem. O objetivo desta coleta é determinar a variância do ruído de medida para projeto do Filtro de Kalman. Vale ressaltar que o experimento realizado dura 20 segundos e seu fim é ditado pelo Arduino. \begin{DoxyVersion}{Versão}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2020-\/06-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}

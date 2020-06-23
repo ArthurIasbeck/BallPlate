@@ -84,11 +84,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a4b446e2334d1cdbf64d4b180ed1e04f1"><td class="memItemLeft" align="right" valign="top"><a id="a4b446e2334d1cdbf64d4b180ed1e04f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setupRoot</b> ()</td></tr>
+<tr class="memitem:a4b446e2334d1cdbf64d4b180ed1e04f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainTouch_8h.html#a4b446e2334d1cdbf64d4b180ed1e04f1">setupRoot</a> ()</td></tr>
+<tr class="memdesc:a4b446e2334d1cdbf64d4b180ed1e04f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função <a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Função setup() principal.">setup()</a> principal.  <a href="mainTouch_8h.html#a4b446e2334d1cdbf64d4b180ed1e04f1">Mais...</a><br /></td></tr>
 <tr class="separator:a4b446e2334d1cdbf64d4b180ed1e04f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af359279fbda8fe082aa3fe8ea83c3174"><td class="memItemLeft" align="right" valign="top"><a id="af359279fbda8fe082aa3fe8ea83c3174"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loopRoot</b> ()</td></tr>
+<tr class="memitem:af359279fbda8fe082aa3fe8ea83c3174"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mainTouch_8h.html#af359279fbda8fe082aa3fe8ea83c3174">loopRoot</a> ()</td></tr>
+<tr class="memdesc:af359279fbda8fe082aa3fe8ea83c3174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função <a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Função setup() principal.">setup()</a> principal.  <a href="mainTouch_8h.html#af359279fbda8fe082aa3fe8ea83c3174">Mais...</a><br /></td></tr>
 <tr class="separator:af359279fbda8fe082aa3fe8ea83c3174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -108,6 +108,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
 <tr class="memitem:aa4f0d3eebc3c443f9be81bf48561a217"><td class="memItemLeft" align="right" valign="top"><a id="aa4f0d3eebc3c443f9be81bf48561a217"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
 <tr class="separator:aa4f0d3eebc3c443f9be81bf48561a217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c2ddcda5da5b15c941856f105c44411"><td class="memItemLeft" align="right" valign="top"><a id="a8c2ddcda5da5b15c941856f105c44411"></a>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>isTouching</b></td></tr>
+<tr class="separator:a8c2ddcda5da5b15c941856f105c44411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Teste da classe <a class="el" href="classTouch.html" title="Realiza a leitura da touchscreen.">Touch</a>. </p>
@@ -117,7 +120,72 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2020 </dd></dl>
 
 <p class="definition">Definido no ficheiro <a class="el" href="mainTouch_8h_source.html">mainTouch.h</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="af359279fbda8fe082aa3fe8ea83c3174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af359279fbda8fe082aa3fe8ea83c3174">&#9670;&nbsp;</a></span>loopRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loopRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função <a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Função setup() principal.">setup()</a> principal. </p>
+
+<p class="definition">Definido na linha <a class="el" href="mainTouch_8h_source.html#l00036">36</a> do ficheiro <a class="el" href="mainTouch_8h_source.html">mainTouch.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    xRaw = touch.<a class="code" href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">getRawX</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    yRaw = touch.<a class="code" href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">getRawY</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    x = touch.<a class="code" href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">getCmX</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    y = touch.<a class="code" href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">getCmY</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    isTouching = touch.<a class="code" href="classTouch.html#ab4a71e86848de6476a0a03ea15fdbf2b">isTouching</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Serial.print(String(xRaw) + <span class="stringliteral">&quot;\t&quot;</span> + String(yRaw) + <span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Serial.print(String(x) + <span class="stringliteral">&quot;\t&quot;</span> + String(y) + <span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Serial.println(String(isTouching));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    delay(100);   </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4b446e2334d1cdbf64d4b180ed1e04f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b446e2334d1cdbf64d4b180ed1e04f1">&#9670;&nbsp;</a></span>setupRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setupRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função <a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Função setup() principal.">setup()</a> principal. </p>
+
+<p class="definition">Definido na linha <a class="el" href="mainTouch_8h_source.html#l00026">26</a> do ficheiro <a class="el" href="mainTouch_8h_source.html">mainTouch.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                 {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    touch.<a class="code" href="classTouch.html#aaf458ff086081e2b19e972e1668549b9">setupTouch</a>(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Serial.begin(BAUD_RATE);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">while</span>(!Serial);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<div class="ttc" id="aclassTouch_html_adef1e84e216d347900a36c5b8c30a888"><div class="ttname"><a href="classTouch.html#adef1e84e216d347900a36c5b8c30a888">Touch::getRawY</a></div><div class="ttdeci">int getRawY()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00039">Touch.cpp:39</a></div></div>
+<div class="ttc" id="aclassTouch_html_a54a50de35fd6f5c8b52ae33f7d8bb473"><div class="ttname"><a href="classTouch.html#a54a50de35fd6f5c8b52ae33f7d8bb473">Touch::getCmY</a></div><div class="ttdeci">float getCmY()</div><div class="ttdoc">Retorna a posição do toque em centímetros no eixo Y.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00069">Touch.cpp:69</a></div></div>
+<div class="ttc" id="aclassTouch_html_aaf458ff086081e2b19e972e1668549b9"><div class="ttname"><a href="classTouch.html#aaf458ff086081e2b19e972e1668549b9">Touch::setupTouch</a></div><div class="ttdeci">void setupTouch(int touchPin1, int touchPin2, int touchPin3, int touchPin4)</div><div class="ttdoc">inicializa objeto Touch.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00014">Touch.cpp:14</a></div></div>
+<div class="ttc" id="aclassTouch_html_a273f44de152e01e8d04cb4eecf704ef0"><div class="ttname"><a href="classTouch.html#a273f44de152e01e8d04cb4eecf704ef0">Touch::getCmX</a></div><div class="ttdeci">float getCmX()</div><div class="ttdoc">Retorna a posição do toque em centímetros no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00053">Touch.cpp:53</a></div></div>
+<div class="ttc" id="aclassTouch_html_aade4096a1f33ce849f0e2464e11549c2"><div class="ttname"><a href="classTouch.html#aade4096a1f33ce849f0e2464e11549c2">Touch::getRawX</a></div><div class="ttdeci">int getRawX()</div><div class="ttdoc">Retorna o valor bruto (0-1023) lido no eixo X.</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00025">Touch.cpp:25</a></div></div>
+<div class="ttc" id="aclassTouch_html_ab4a71e86848de6476a0a03ea15fdbf2b"><div class="ttname"><a href="classTouch.html#ab4a71e86848de6476a0a03ea15fdbf2b">Touch::isTouching</a></div><div class="ttdeci">boolean isTouching()</div><div class="ttdoc">Boleano que indica se a tela está sendo pressionada. Esta função deve ser chamada após a utilização d...</div><div class="ttdef"><b>Definition:</b> <a href="Touch_8cpp_source.html#l00095">Touch.cpp:95</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">

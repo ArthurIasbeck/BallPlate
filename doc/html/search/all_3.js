@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['flag_4',['flag',['../mainComm_8h.html#a11764cc96bb263d1f257bcc01205a787',1,'mainComm.h']]]
+  ['invertmotor_9',['invertMotor',['../classMotor.html#a8ccaa9779238c00e11bb7cba7edcc071',1,'Motor']]],
+  ['istouching_10',['isTouching',['../classTouch.html#ab4a71e86848de6476a0a03ea15fdbf2b',1,'Touch']]]
 ];

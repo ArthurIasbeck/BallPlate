@@ -47,7 +47,7 @@ void SerialComm::sendData(float data[], int sizeData)
 float SerialComm::rcvData()
 {
     String rcvString; 
-    float rcvFloat;
+    float rcvFloat = 0;
     char rcvChar;
 
     received = false; 
@@ -65,6 +65,28 @@ float SerialComm::rcvData()
         received = true; 
     }
     return rcvFloat;
+}
+
+String SerialComm::rcvData(boolean str)
+{
+    String rcvString; 
+    float rcvFloat;
+    char rcvChar;
+
+    received = false; 
+    if (Serial.available())
+    {
+        rcvString = "";
+        while (true)
+        {
+            rcvChar = Serial.read();
+            if (rcvChar == '\n') break;
+            rcvString += rcvChar;
+        }
+        serialClear();
+        received = true; 
+    }
+    return rcvString;
 }
 
 void SerialComm::rcvData(float* rcvFloat, int sizeData)

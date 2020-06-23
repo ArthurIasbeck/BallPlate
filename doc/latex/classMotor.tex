@@ -17,8 +17,10 @@ void \mbox{\hyperlink{classMotor_a74a46ad078664fb39729f88749b38184}{setup\+Motor
 \mbox{\Hypertarget{classMotor_a72fd6780dc8333a294725385177bc4eb}\label{classMotor_a72fd6780dc8333a294725385177bc4eb}} 
 void \mbox{\hyperlink{classMotor_a72fd6780dc8333a294725385177bc4eb}{setup\+Motor}} ()
 \begin{DoxyCompactList}\small\item\em Realiza configurações iniciais do motor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMotor_ae6f2c3c9a4397d9f2c95796903559918}{set\+Pos}} (int pos)
-\begin{DoxyCompactList}\small\item\em Envia o motor para uma dada posição. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMotor_a5223cc533ad2d069ec67197d09b41fb5}{set\+Pos}} (float real\+Pos)
+\begin{DoxyCompactList}\small\item\em Envia o motor para uma dada posição (em graus). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMotor_a2e4862fc107371736ea09e92db1ec770}{set\+Pos\+Rad}} (float rad\+Pos)
+\begin{DoxyCompactList}\small\item\em Envia o motor para uma dada posição (em radianos). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMotor_af5b6660996ea030c706b051d32e671f9}{set\+Zero}} (int zero\+Pos)
 \begin{DoxyCompactList}\small\item\em Define o zero do motor (igual a 90 por padrão). \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classMotor_aa33f89ca0051d53454b8a4cf4bb6d7c1}\label{classMotor_aa33f89ca0051d53454b8a4cf4bb6d7c1}} 
@@ -37,19 +39,19 @@ Definido na linha 19 do ficheiro Motor.\+h.
 
 
 \doxysubsection{Documentação dos métodos}
-\mbox{\Hypertarget{classMotor_ae6f2c3c9a4397d9f2c95796903559918}\label{classMotor_ae6f2c3c9a4397d9f2c95796903559918}} 
+\mbox{\Hypertarget{classMotor_a5223cc533ad2d069ec67197d09b41fb5}\label{classMotor_a5223cc533ad2d069ec67197d09b41fb5}} 
 \index{Motor@{Motor}!setPos@{setPos}}
 \index{setPos@{setPos}!Motor@{Motor}}
 \doxysubsubsection{\texorpdfstring{setPos()}{setPos()}}
-{\footnotesize\ttfamily void Motor\+::set\+Pos (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Motor\+::set\+Pos (\begin{DoxyParamCaption}\item[{float}]{real\+Pos }\end{DoxyParamCaption})}
 
 
 
-Envia o motor para uma dada posição. 
+Envia o motor para uma dada posição (em graus). 
 
 
 \begin{DoxyParams}{Parâmetros}
-{\em pos} & Posição para a qual é enviada o motor. \\
+{\em real\+Pos} & Posição para a qual é enviada o motor. \\
 \hline
 \end{DoxyParams}
 
@@ -59,11 +61,39 @@ Definido na linha 30 do ficheiro Motor.\+cpp.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{31 \{}
-\DoxyCodeLine{32     pos *= direction;}
-\DoxyCodeLine{33     \textcolor{keywordflow}{if}(pos < infLimit) pos = infLimit;}
-\DoxyCodeLine{34     \textcolor{keywordflow}{if}(pos > supLimit) pos = supLimit;}
-\DoxyCodeLine{35     servo.write(pos + zeroPos);}
-\DoxyCodeLine{36 \}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} pos = round(realPos);}
+\DoxyCodeLine{33     pos *= direction;}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if}(pos < infLimit) pos = infLimit;}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if}(pos > supLimit) pos = supLimit;}
+\DoxyCodeLine{36     servo.write(pos + zeroPos);}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMotor_a2e4862fc107371736ea09e92db1ec770}\label{classMotor_a2e4862fc107371736ea09e92db1ec770}} 
+\index{Motor@{Motor}!setPosRad@{setPosRad}}
+\index{setPosRad@{setPosRad}!Motor@{Motor}}
+\doxysubsubsection{\texorpdfstring{setPosRad()}{setPosRad()}}
+{\footnotesize\ttfamily void Motor\+::set\+Pos\+Rad (\begin{DoxyParamCaption}\item[{float}]{rad\+Pos }\end{DoxyParamCaption})}
+
+
+
+Envia o motor para uma dada posição (em radianos). 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em rad\+Pos} & Posição para a qual é enviada o motor. \\
+\hline
+\end{DoxyParams}
+
+
+Definido na linha 39 do ficheiro Motor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \textcolor{keywordtype}{float} realPos = radPos*180/PI;}
+\DoxyCodeLine{42     \mbox{\hyperlink{classMotor_a5223cc533ad2d069ec67197d09b41fb5}{setPos}}(realPos);}
+\DoxyCodeLine{43 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMotor_a74a46ad078664fb39729f88749b38184}\label{classMotor_a74a46ad078664fb39729f88749b38184}} 
@@ -124,13 +154,13 @@ Define o zero do motor (igual a 90 por padrão).
 \end{DoxyParams}
 
 
-Definido na linha 38 do ficheiro Motor.\+cpp.
+Definido na linha 45 do ficheiro Motor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{39 \{}
-\DoxyCodeLine{40     this-\/>zeroPos = zeroPos;}
-\DoxyCodeLine{41 \}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     this-\/>zeroPos = zeroPos;}
+\DoxyCodeLine{48 \}}
 
 \end{DoxyCode}
 

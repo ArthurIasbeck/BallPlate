@@ -9,7 +9,7 @@
  * 
  */
 
-#include "../main/mainMotor.h"
+#include "../main/mainModel1Dof.h"
 
 /**
  * @brief Função setup() principal.

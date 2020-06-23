@@ -26,7 +26,9 @@ void \mbox{\hyperlink{classSerialComm_a6d986b5899c339ebc16109083af8605f}{send\+D
 \begin{DoxyCompactList}\small\item\em Realiza o envio de mensagens compostas por vários elementos do tipo float. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcv\+Data}} ()
 \begin{DoxyCompactList}\small\item\em Realiza o recebimento de dados do tipo float. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classSerialComm_a41def9bce952551fcd4c285d1493d0bd}{rcv\+Data}} (float $\ast$\mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcv\+Float}}, int size\+Data)
+String \mbox{\hyperlink{classSerialComm_a96c1c9590733c218f15a753a385a11b4}{rcv\+Data}} (boolean str)
+\begin{DoxyCompactList}\small\item\em Realiza o recebimento de dados no formato String. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSerialComm_a41def9bce952551fcd4c285d1493d0bd}{rcv\+Data}} (float $\ast$rcv\+Float, int size\+Data)
 \begin{DoxyCompactList}\small\item\em Realiza o recebimento de dados compostos por vários elementos do tipo float. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSerialComm_ae89794915224cd70f6a9e9a6f40fe5a6}{data\+Received}} ()
 \begin{DoxyCompactList}\small\item\em Retorna uma flag que indica se a chamada da função \mbox{\hyperlink{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}{rcv\+Data()}} resultou na leitura de algum dado, ou seja, se algum dado foi de fato recebido. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -81,19 +83,19 @@ false -\/ Não havia dados a serem lidos.
 \end{DoxyReturn}
 
 
-Definido na linha 111 do ficheiro Serial\+Comm.\+cpp.
+Definido na linha 133 do ficheiro Serial\+Comm.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{112 \{}
-\DoxyCodeLine{113     \textcolor{keywordflow}{return} received;}
-\DoxyCodeLine{114 \}}
+\DoxyCodeLine{134 \{}
+\DoxyCodeLine{135     \textcolor{keywordflow}{return} received;}
+\DoxyCodeLine{136 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}\label{classSerialComm_aefc139f96dd64a1167134e7a4c35237a}} 
 \index{SerialComm@{SerialComm}!rcvData@{rcvData}}
 \index{rcvData@{rcvData}!SerialComm@{SerialComm}}
-\doxysubsubsection{\texorpdfstring{rcvData()}{rcvData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{rcvData()}{rcvData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily float Serial\+Comm\+::rcv\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -111,7 +113,7 @@ Definido na linha 47 do ficheiro Serial\+Comm.\+cpp.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{48 \{}
 \DoxyCodeLine{49     String rcvString; }
-\DoxyCodeLine{50     \textcolor{keywordtype}{float} \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{float} rcvFloat = 0;}
 \DoxyCodeLine{51     \textcolor{keywordtype}{char} rcvChar;}
 \DoxyCodeLine{52 }
 \DoxyCodeLine{53     received = \textcolor{keyword}{false}; }
@@ -124,18 +126,64 @@ Definido na linha 47 do ficheiro Serial\+Comm.\+cpp.
 \DoxyCodeLine{60             \textcolor{keywordflow}{if} (rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{break};}
 \DoxyCodeLine{61             rcvString += rcvChar;}
 \DoxyCodeLine{62         \}}
-\DoxyCodeLine{63         \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}} = rcvString.toFloat();}
+\DoxyCodeLine{63         rcvFloat = rcvString.toFloat();}
 \DoxyCodeLine{64         serialClear();}
 \DoxyCodeLine{65         received = \textcolor{keyword}{true}; }
 \DoxyCodeLine{66     \}}
-\DoxyCodeLine{67     \textcolor{keywordflow}{return} \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}};}
+\DoxyCodeLine{67     \textcolor{keywordflow}{return} rcvFloat;}
 \DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSerialComm_a96c1c9590733c218f15a753a385a11b4}\label{classSerialComm_a96c1c9590733c218f15a753a385a11b4}} 
+\index{SerialComm@{SerialComm}!rcvData@{rcvData}}
+\index{rcvData@{rcvData}!SerialComm@{SerialComm}}
+\doxysubsubsection{\texorpdfstring{rcvData()}{rcvData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily String Serial\+Comm\+::rcv\+Data (\begin{DoxyParamCaption}\item[{boolean}]{str }\end{DoxyParamCaption})}
+
+
+
+Realiza o recebimento de dados no formato String. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+ado (String) recebido. 
+\end{DoxyReturn}
+
+
+Definido na linha 70 do ficheiro Serial\+Comm.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72     String rcvString; }
+\DoxyCodeLine{73     \textcolor{keywordtype}{float} rcvFloat;}
+\DoxyCodeLine{74     \textcolor{keywordtype}{char} rcvChar;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     received = \textcolor{keyword}{false}; }
+\DoxyCodeLine{77     \textcolor{keywordflow}{if} (Serial.available())}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79         rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{80         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{81         \{}
+\DoxyCodeLine{82             rcvChar = Serial.read();}
+\DoxyCodeLine{83             \textcolor{keywordflow}{if} (rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{84             rcvString += rcvChar;}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86         serialClear();}
+\DoxyCodeLine{87         received = \textcolor{keyword}{true}; }
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89     \textcolor{keywordflow}{return} rcvString;}
+\DoxyCodeLine{90 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classSerialComm_a41def9bce952551fcd4c285d1493d0bd}\label{classSerialComm_a41def9bce952551fcd4c285d1493d0bd}} 
 \index{SerialComm@{SerialComm}!rcvData@{rcvData}}
 \index{rcvData@{rcvData}!SerialComm@{SerialComm}}
-\doxysubsubsection{\texorpdfstring{rcvData()}{rcvData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{rcvData()}{rcvData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily void Serial\+Comm\+::rcv\+Data (\begin{DoxyParamCaption}\item[{float $\ast$}]{rcv\+Float,  }\item[{int}]{size\+Data }\end{DoxyParamCaption})}
 
 
@@ -151,49 +199,49 @@ Realiza o recebimento de dados compostos por vários elementos do tipo float.
 \end{DoxyParams}
 
 
-Definido na linha 70 do ficheiro Serial\+Comm.\+cpp.
+Definido na linha 92 do ficheiro Serial\+Comm.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{71 \{}
-\DoxyCodeLine{72     String rcvStrings[sizeData];}
-\DoxyCodeLine{73     String rcvString = \textcolor{stringliteral}{""};}
-\DoxyCodeLine{74     \textcolor{keywordtype}{int} rcvStringIndex = 0;}
-\DoxyCodeLine{75     \textcolor{keywordtype}{char} rcvChar;}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77     received = \textcolor{keyword}{false}; }
-\DoxyCodeLine{78     \textcolor{keywordflow}{if} (Serial.available())}
-\DoxyCodeLine{79     \{}
-\DoxyCodeLine{80         rcvString = \textcolor{stringliteral}{""};}
-\DoxyCodeLine{81         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
-\DoxyCodeLine{82         \{}
-\DoxyCodeLine{83             rcvChar = Serial.read();}
-\DoxyCodeLine{84             \textcolor{keywordflow}{if}((rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) || (rcvChar == MSG\_BREAK))}
-\DoxyCodeLine{85             \{}
-\DoxyCodeLine{86                 rcvStrings[rcvStringIndex] = rcvString;}
-\DoxyCodeLine{87                 rcvStringIndex++;}
-\DoxyCodeLine{88                 rcvString = \textcolor{stringliteral}{""};}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90                 \textcolor{keywordflow}{if} (rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) }
-\DoxyCodeLine{91                 \{}
-\DoxyCodeLine{92                     \textcolor{keywordflow}{break}; }
-\DoxyCodeLine{93                 \}}
-\DoxyCodeLine{94             \}}
-\DoxyCodeLine{95             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{96             \{}
-\DoxyCodeLine{97                 rcvString += rcvChar;}
-\DoxyCodeLine{98             \}}
-\DoxyCodeLine{99         \}}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < sizeData; i++)}
-\DoxyCodeLine{102         \{}
-\DoxyCodeLine{103             \mbox{\hyperlink{mainComm_8h_a74c273fa73dd2b04a9fd3a2cabf3bdea}{rcvFloat}}[i] = rcvStrings[i].toFloat();}
-\DoxyCodeLine{104         \}}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106         serialClear();}
-\DoxyCodeLine{107         received = \textcolor{keyword}{true}; }
-\DoxyCodeLine{108     \}}
-\DoxyCodeLine{109 \}}
+\DoxyCodeLine{93 \{}
+\DoxyCodeLine{94     String rcvStrings[sizeData];}
+\DoxyCodeLine{95     String rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{96     \textcolor{keywordtype}{int} rcvStringIndex = 0;}
+\DoxyCodeLine{97     \textcolor{keywordtype}{char} rcvChar;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     received = \textcolor{keyword}{false}; }
+\DoxyCodeLine{100     \textcolor{keywordflow}{if} (Serial.available())}
+\DoxyCodeLine{101     \{}
+\DoxyCodeLine{102         rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{103         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{104         \{}
+\DoxyCodeLine{105             rcvChar = Serial.read();}
+\DoxyCodeLine{106             \textcolor{keywordflow}{if}((rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) || (rcvChar == MSG\_BREAK))}
+\DoxyCodeLine{107             \{}
+\DoxyCodeLine{108                 rcvStrings[rcvStringIndex] = rcvString;}
+\DoxyCodeLine{109                 rcvStringIndex++;}
+\DoxyCodeLine{110                 rcvString = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112                 \textcolor{keywordflow}{if} (rcvChar == \textcolor{charliteral}{'\(\backslash\)n'}) }
+\DoxyCodeLine{113                 \{}
+\DoxyCodeLine{114                     \textcolor{keywordflow}{break}; }
+\DoxyCodeLine{115                 \}}
+\DoxyCodeLine{116             \}}
+\DoxyCodeLine{117             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{118             \{}
+\DoxyCodeLine{119                 rcvString += rcvChar;}
+\DoxyCodeLine{120             \}}
+\DoxyCodeLine{121         \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < sizeData; i++)}
+\DoxyCodeLine{124         \{}
+\DoxyCodeLine{125             rcvFloat[i] = rcvStrings[i].toFloat();}
+\DoxyCodeLine{126         \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128         serialClear();}
+\DoxyCodeLine{129         received = \textcolor{keyword}{true}; }
+\DoxyCodeLine{130     \}}
+\DoxyCodeLine{131 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classSerialComm_a7abe942eec1b4019eb2953bfa3bc3458}\label{classSerialComm_a7abe942eec1b4019eb2953bfa3bc3458}} 
@@ -300,13 +348,13 @@ Determina o número de casas após a vírgula que será adotado no envio das men
 \end{DoxyParams}
 
 
-Definido na linha 116 do ficheiro Serial\+Comm.\+cpp.
+Definido na linha 138 do ficheiro Serial\+Comm.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{117 \{}
-\DoxyCodeLine{118     this-\/>precision = precision;}
-\DoxyCodeLine{119 \}}
+\DoxyCodeLine{139 \{}
+\DoxyCodeLine{140     this-\/>precision = precision;}
+\DoxyCodeLine{141 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classSerialComm_a39c0e8886d315a1d5f1beaf0536d190b}\label{classSerialComm_a39c0e8886d315a1d5f1beaf0536d190b}} 

@@ -27,12 +27,19 @@ void Motor::setupMotor(int controlPin, int infLimit, int supLimit)
     servo.attach(controlPin);
 }
 
-void Motor::setPos(int pos)
+void Motor::setPos(float realPos)
 {
+    int pos = round(realPos);
     pos *= direction;
     if(pos < infLimit) pos = infLimit;
     if(pos > supLimit) pos = supLimit;
     servo.write(pos + zeroPos);
+}
+
+void Motor::setPosRad(float radPos)
+{
+    float realPos = radPos*180/PI;
+    setPos(realPos);
 }
 
 void Motor::setZero(int zeroPos)

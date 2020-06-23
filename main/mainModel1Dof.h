@@ -19,21 +19,25 @@
 #include "Pin.h"
 #include "Motor.h"
 #include "Touch.h"
+#include "SerialComm.h"
 
 Touch touch; 
 Motor motorA;
+SerialComm serialComm; 
 int readPotA;
-int posA;
+float posA;
 long t0, tf, dt;
 float x; 
 long countLoops;
+float data[4];
 
 void setupRoot()
 {
     countLoops = 0;
-    motorA = Motor(MOT_A, -90, 90);
-    touch = Touch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
-    motorA.setupMotor();
+    motorA.setupMotor(MOT_A, -90, 90);
+    touch.setupTouch(TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4);
+    serialComm.setupComm();
+    serialComm.setPrecision(10);
     Serial.begin(BAUD_RATE);
     while(!Serial);
     t0 = micros();
@@ -42,28 +46,33 @@ void setupRoot()
 void loopRoot()
 {   
     readPotA = analogRead(POT_A);
-    posA = map(readPotA, 0, 1023, -90, 90);
+    posA = readPotA*PI/1023 - PI/2;
 
-    x = touch.getCmX();
-    motorA.setPos(posA);
+    x = touch.getX();
+    motorA.setPosRad(posA);
 
-    Serial.print(String(posA) + " ");
-    Serial.print(String(x) + " ");
-    Serial.print(String(dt));
-    Serial.print("\n");
+    data[0] = posA;
+    data[1] = x;
+    data[2] = dt;
+    data[3] = countLoops;
+    serialComm.sendData(data, 4);
 
     while(1)
     {
         tf = micros();
         dt = tf - t0;
-        if(dt > 10000) break;
+        if(dt > 20000) break;
     }
     t0 = micros();
     countLoops++;
     
-    if(countLoops == 6000)
+    if(countLoops == 1500)
     {
-        Serial.println("Fim do teste");
+        data[0] = -999;
+        data[1] = -999;
+        data[2] = -999;
+        data[3] = -999;
+        serialComm.sendData(data, 4);
         while(1);
     }
 }

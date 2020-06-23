@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serialcomm_67',['SerialComm',['../classSerialComm.html',1,'']]]
+  ['touch_54',['Touch',['../classTouch.html',1,'']]]
 ];

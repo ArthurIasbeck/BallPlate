@@ -1,16 +1,4 @@
 var searchData=
 [
-  ['main_2ecpp_22',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['maincomm_2eh_23',['mainComm.h',['../mainComm_8h.html',1,'']]],
-  ['maincommcontrol1dof_2eh_24',['mainCommControl1DOF.h',['../mainCommControl1DOF_8h.html',1,'']]],
-  ['mainmodel1dof_2eh_25',['mainModel1Dof.h',['../mainModel1Dof_8h.html',1,'']]],
-  ['mainmotor_2eh_26',['mainMotor.h',['../mainMotor_8h.html',1,'']]],
-  ['mainpid_2eh_27',['mainPID.h',['../mainPID_8h.html',1,'']]],
-  ['maintouch_2eh_28',['mainTouch.h',['../mainTouch_8h.html',1,'']]],
-  ['motor_29',['Motor',['../classMotor.html',1,'']]],
-  ['motor_2ecpp_30',['Motor.cpp',['../Motor_8cpp.html',1,'']]],
-  ['motor_2eh_31',['Motor.h',['../Motor_8h.html',1,'']]],
-  ['movingaverage_32',['MovingAverage',['../classMovingAverage.html',1,'MovingAverage'],['../classMovingAverage.html#af279499768c6221aed920f7d5250ddcf',1,'MovingAverage::MovingAverage()']]],
-  ['movingaverage_2ecpp_33',['MovingAverage.cpp',['../MovingAverage_8cpp.html',1,'']]],
-  ['movingaverage_2eh_34',['MovingAverage.h',['../MovingAverage_8h.html',1,'']]]
+  ['rcvdata_30',['rcvData',['../classSerialComm.html#aefc139f96dd64a1167134e7a4c35237a',1,'SerialComm::rcvData()'],['../classSerialComm.html#a96c1c9590733c218f15a753a385a11b4',1,'SerialComm::rcvData(boolean str)'],['../classSerialComm.html#a41def9bce952551fcd4c285d1493d0bd',1,'SerialComm::rcvData(float *rcvFloat, int sizeData)']]]
 ];

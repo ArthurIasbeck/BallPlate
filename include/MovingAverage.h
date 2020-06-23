@@ -26,7 +26,13 @@ class MovingAverage
          * @param filterSize Número de dados considerado na computação da média.
          */
         MovingAverage(int filterSize);
+
+        /**
+         *@brief Constrói um objeto MovingAverage.
+         *
+         */
         MovingAverage();
+        
         /**
          * @brief Retorna o dado filtrado (saída do filtro)
          * 

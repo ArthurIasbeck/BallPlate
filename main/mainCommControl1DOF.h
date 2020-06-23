@@ -1,7 +1,7 @@
 /**
  * @file mainCommControl1DOF.h
  * @author Arthur Iasbeck (arthuriasbeck@gmail.com)
- * @brief Implementação do controle 1DOF baseado na comunicação com o Matlab.
+ * @brief Implementação do controle 1DOF baseado na comunicação com o PC.
  * @details Neste arquivo estão definidas as funções utilizadas na implementação de um controlador
  * genérico considerando apenas a direção x do Ball and Plate. Observe que aqui a leitura da tela
  * é realizada, o valor é enviado ao Matlab, a ação de controle é recebida e aplicada aos motores. 
@@ -20,6 +20,8 @@
 #include "Motor.h"
 #include "SerialComm.h"
 #include "Pin.h"
+
+#define ERROR -999
 
 Touch touch;
 Motor motor;
@@ -54,8 +56,10 @@ void loopRoot()
     // Leitura da tela
     if(flag == 's')
     {
+        // Serial.println("Comecei o código");
         startLoopTime = micros();
         x = touch.getX();
+        // Serial.println("Li a tela");
         if(touch.isTouching())
         {
             serialComm.sendData(x);
@@ -63,6 +67,7 @@ void loopRoot()
         }
         else 
         {
+            // Serial.println("Não detectei toque");
             flag = 't';
         }
     }
@@ -70,10 +75,14 @@ void loopRoot()
     // Estado de espera pro caso da bola ter sido removida  
     if(flag == 't')
     {
+        serialComm.sendData(ERROR);
+        motor.goZero();
+        // Serial.println("Enviei o erro e entrei no while");
         while(!touch.isTouching())
         {
             touch.getX();
         }
+        // Serial.println("Toquei na tela e saí do while");
         flag = 's';
     }
 
@@ -87,7 +96,7 @@ void loopRoot()
     // Atuação nos motores
     if(flag == 'a')
     {
-        motor.setPos(u*180/PI);
+        motor.setPosRad(u);
         flag = 'w';
     }
 

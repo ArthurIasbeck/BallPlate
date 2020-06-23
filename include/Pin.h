@@ -32,6 +32,6 @@
 
 #define BAUD_RATE 2000000
 
-#define T_S 40 // ms
+#define T_S 20 // ms
 
 #endif

@@ -27,26 +27,38 @@ class Motor
          * @param supLim Limite superior para a posição do motor (0 - 90).
          */
         void setupMotor(int controlPin, int infLimit, int supLimit); 
+
         /**
          * @brief Realiza configurações iniciais do motor.
          */
         void setupMotor();
+
         /**
-         * @brief Envia o motor para uma dada posição.
+         * @brief Envia o motor para uma dada posição (em graus).
          * 
-         * @param pos Posição para a qual é enviada o motor.
+         * @param realPos Posição para a qual é enviada o motor.
          */
-        void setPos(int pos);
+        void setPos(float realPos);
+
+        /**
+         * @brief Envia o motor para uma dada posição (em radianos).
+         * 
+         * @param radPos Posição para a qual é enviada o motor.
+         */
+        void setPosRad(float radPos);
+
         /**
          * @brief Define o zero do motor (igual a 90 por padrão).
          * 
          * @param zeroPos Posição considerada como zero do motor (0 - 180). 
          */
         void setZero(int zeroPos);
+
         /**
          * @brief Envia o motor para a posição 0.
          */
         void goZero();
+
         /**
          * @brief Inverte a direção do giro dos motores quando chamada.
          */

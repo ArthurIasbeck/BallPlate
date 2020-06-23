@@ -84,9 +84,12 @@ Membros públicos</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#a72fd6780dc8333a294725385177bc4eb">setupMotor</a> ()</td></tr>
 <tr class="memdesc:a72fd6780dc8333a294725385177bc4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza configurações iniciais do motor. <br /></td></tr>
 <tr class="separator:a72fd6780dc8333a294725385177bc4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f2c3c9a4397d9f2c95796903559918"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#ae6f2c3c9a4397d9f2c95796903559918">setPos</a> (int pos)</td></tr>
-<tr class="memdesc:ae6f2c3c9a4397d9f2c95796903559918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia o motor para uma dada posição.  <a href="classMotor.html#ae6f2c3c9a4397d9f2c95796903559918">Mais...</a><br /></td></tr>
-<tr class="separator:ae6f2c3c9a4397d9f2c95796903559918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5223cc533ad2d069ec67197d09b41fb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#a5223cc533ad2d069ec67197d09b41fb5">setPos</a> (float realPos)</td></tr>
+<tr class="memdesc:a5223cc533ad2d069ec67197d09b41fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia o motor para uma dada posição (em graus).  <a href="classMotor.html#a5223cc533ad2d069ec67197d09b41fb5">Mais...</a><br /></td></tr>
+<tr class="separator:a5223cc533ad2d069ec67197d09b41fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4862fc107371736ea09e92db1ec770"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#a2e4862fc107371736ea09e92db1ec770">setPosRad</a> (float radPos)</td></tr>
+<tr class="memdesc:a2e4862fc107371736ea09e92db1ec770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia o motor para uma dada posição (em radianos).  <a href="classMotor.html#a2e4862fc107371736ea09e92db1ec770">Mais...</a><br /></td></tr>
+<tr class="separator:a2e4862fc107371736ea09e92db1ec770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b6660996ea030c706b051d32e671f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMotor.html#af5b6660996ea030c706b051d32e671f9">setZero</a> (int zeroPos)</td></tr>
 <tr class="memdesc:af5b6660996ea030c706b051d32e671f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o zero do motor (igual a 90 por padrão).  <a href="classMotor.html#af5b6660996ea030c706b051d32e671f9">Mais...</a><br /></td></tr>
 <tr class="separator:af5b6660996ea030c706b051d32e671f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,8 +107,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p class="definition">Definido na linha <a class="el" href="Motor_8h_source.html#l00019">19</a> do ficheiro <a class="el" href="Motor_8h_source.html">Motor.h</a>.</p>
 </div><h2 class="groupheader">Documentação dos métodos</h2>
-<a id="ae6f2c3c9a4397d9f2c95796903559918"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6f2c3c9a4397d9f2c95796903559918">&#9670;&nbsp;</a></span>setPos()</h2>
+<a id="a5223cc533ad2d069ec67197d09b41fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5223cc533ad2d069ec67197d09b41fb5">&#9670;&nbsp;</a></span>setPos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -113,28 +116,61 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">void Motor::setPos </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>realPos</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Envia o motor para uma dada posição. </p>
+<p>Envia o motor para uma dada posição (em graus). </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>Posição para a qual é enviada o motor. </td></tr>
+    <tr><td class="paramname">realPos</td><td>Posição para a qual é enviada o motor. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definido na linha <a class="el" href="Motor_8cpp_source.html#l00030">30</a> do ficheiro <a class="el" href="Motor_8cpp_source.html">Motor.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    pos *= direction;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>(pos &lt; infLimit) pos = infLimit;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(pos &gt; supLimit) pos = supLimit;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    servo.write(pos + zeroPos);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> pos = round(realPos);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    pos *= direction;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(pos &lt; infLimit) pos = infLimit;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(pos &gt; supLimit) pos = supLimit;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    servo.write(pos + zeroPos);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2e4862fc107371736ea09e92db1ec770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4862fc107371736ea09e92db1ec770">&#9670;&nbsp;</a></span>setPosRad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Motor::setPosRad </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia o motor para uma dada posição (em radianos). </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radPos</td><td>Posição para a qual é enviada o motor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definido na linha <a class="el" href="Motor_8cpp_source.html#l00039">39</a> do ficheiro <a class="el" href="Motor_8cpp_source.html">Motor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">float</span> realPos = radPos*180/PI;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classMotor.html#a5223cc533ad2d069ec67197d09b41fb5">setPos</a>(realPos);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -222,10 +258,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definido na linha <a class="el" href="Motor_8cpp_source.html#l00038">38</a> do ficheiro <a class="el" href="Motor_8cpp_source.html">Motor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    this-&gt;zeroPos = zeroPos;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<p class="definition">Definido na linha <a class="el" href="Motor_8cpp_source.html#l00045">45</a> do ficheiro <a class="el" href="Motor_8cpp_source.html">Motor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;zeroPos = zeroPos;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -234,6 +270,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <li>/home/iasbeck/MEGASync/Mestrado/2020-1/ballPlate/src/<a class="el" href="Motor_8cpp_source.html">Motor.cpp</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassMotor_html_a5223cc533ad2d069ec67197d09b41fb5"><div class="ttname"><a href="classMotor.html#a5223cc533ad2d069ec67197d09b41fb5">Motor::setPos</a></div><div class="ttdeci">void setPos(float realPos)</div><div class="ttdoc">Envia o motor para uma dada posição (em graus).</div><div class="ttdef"><b>Definition:</b> <a href="Motor_8cpp_source.html#l00030">Motor.cpp:30</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">
